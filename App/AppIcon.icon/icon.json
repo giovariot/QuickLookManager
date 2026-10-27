@@ -1,13 +1,13 @@
 {
-  "fill": { "automatic-gradient": "srgb:0.20000,0.45000,0.95000,1.00000" },
+  "fill": { "automatic-gradient": "srgb:0.96000,0.97000,1.00000,1.00000" },
   "groups": [
     {
       "layers": [
-        { "image-name": "lens.svg", "name": "lens", "glass": true },
-        { "image-name": "sheet.svg", "name": "sheet", "glass": false }
+        { "image-name": "lens.svg", "name": "lens", "glass": false },
+        { "image-name": "eye.svg", "name": "eye", "glass": false }
       ],
-      "shadow": { "kind": "neutral", "opacity": 0.5 },
-      "translucency": { "enabled": true, "value": 0.4 }
+      "shadow": { "kind": "neutral", "opacity": 0.4 },
+      "translucency": { "enabled": false, "value": 0 }
     }
   ],
   "supported-platforms": { "squares": ["macOS"] }
