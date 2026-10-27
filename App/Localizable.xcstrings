@@ -1,0 +1,5571 @@
+{
+  "sourceLanguage": "it",
+  "strings": {
+    "%lld di %lld file": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld of %lld files"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sur %lld fichiers"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld von %lld Dateien"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld archivos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld من %lld ملفات"
+          }
+        }
+      }
+    },
+    "%lld dpi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dpi"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ppp"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dpi"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ppp"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld نقطة في البوصة"
+          }
+        }
+      }
+    },
+    "%lld file di «%@» hanno l'icona nuova.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld files on “%@” have the new icon."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers de « %@ » ont la nouvelle icône."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien auf „%@“ haben das neue Symbol."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivos de «%@» tienen el icono nuevo."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ملفات على «%@» لها الأيقونة الجديدة."
+          }
+        }
+      }
+    },
+    "%lld file di «%@» non hanno più l'icona.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld files on “%@” no longer have the icon."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers de « %@ » n'ont plus l'icône."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien auf „%@“ haben das Symbol nicht mehr."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivos de «%@» ya no tienen el icono."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم تعد %lld ملفات على «%@» تحمل الأيقونة."
+          }
+        }
+      }
+    },
+    "%lld file erano stati modificati dopo l'icona: il loro contenuto non è stato toccato, è stato tolto solo il segno dell'icona.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld files had been modified after the icon: their content was not touched, only the icon marker was removed."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers avaient été modifiés après l'icône : leur contenu n'a pas été touché, seul le repère d'icône a été retiré."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien waren nach dem Symbol geändert worden: Ihr Inhalt blieb unberührt, nur die Symbolmarkierung wurde entfernt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivos se habían modificado después del icono: su contenido no se ha tocado, solo se quitó la marca del icono."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "كان %lld ملفات قد عُدّلت بعد الأيقونة: لم يُمَسّ محتواها، وأُزيلت علامة الأيقونة فقط."
+          }
+        }
+      }
+    },
+    "%lld file guardati, %lld con l'icona nuova": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld files looked at, %lld with a new icon"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers examinés, %lld avec une nouvelle icône"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien geprüft, %lld mit neuem Symbol"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivos revisados, %lld con icono nuevo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم فحص %lld ملفات، %lld منها بأيقونة جديدة"
+          }
+        }
+      }
+    },
+    "%lld file sono già tornati com'erano; gli altri restano nell'elenco e puoi riprendere quando vuoi.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld files are already back to how they were; the rest stay in the list and you can resume whenever you like."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers sont déjà revenus à leur état d'origine ; les autres restent dans la liste et vous pouvez reprendre quand vous voulez."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien sind bereits im Ursprungszustand; die übrigen bleiben in der Liste und Sie können jederzeit fortfahren."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivos ya han vuelto a como estaban; los demás siguen en la lista y puedes reanudar cuando quieras."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عادت %lld ملفات إلى حالتها الأصلية؛ وتبقى البقية في القائمة ويمكنك المتابعة متى شئت."
+          }
+        }
+      }
+    },
+    "%lld sono tornati com'erano.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld went back to how they were."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sont revenus à leur état d'origine."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld wurden in den Ursprungszustand zurückversetzt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld han vuelto a como estaban."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عادت %lld ملفات إلى حالتها الأصلية."
+          }
+        }
+      }
+    },
+    "%lld spazi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld spaces"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld espaces"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Leerzeichen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld espacios"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld مسافات"
+          }
+        }
+      }
+    },
+    "%lld sì. L'elenco dei fork originali resta dov'è, così si può riprovare.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld did. The list of original forks stays where it is, so you can try again."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld oui. La liste des forks d'origine reste en place, vous pouvez donc réessayer."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld schon. Die Liste der ursprünglichen Forks bleibt erhalten, sodass Sie es erneut versuchen können."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sí. La lista de forks originales se queda donde está, así que se puede reintentar."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ملفات عادت. تبقى قائمة الفروع الأصلية في مكانها لتتمكن من المحاولة مجددًا."
+          }
+        }
+      }
+    },
+    ", e mi sono fermato al tetto di %lld.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", and stopped at the limit of %lld."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", et arrêté à la limite de %lld."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " und bei der Grenze von %lld angehalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", y me detuve en el límite de %lld."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "، وتوقفت عند الحد %lld."
+          }
+        }
+      }
+    },
+    ", e mi sono fermato perché me l'hai chiesto.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", and stopped because you asked me to."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", et arrêté à votre demande."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " und auf Ihren Wunsch angehalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", y me detuve porque lo pediste."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "، وتوقفت لأنك طلبت ذلك."
+          }
+        }
+      }
+    },
+    ".apk, .apkm: permessi, funzionalità, versione dell'SDK": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".apk, .apkm: permissions, features, SDK version"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".apk, .apkm : permissions, fonctionnalités, version du SDK"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".apk, .apkm: Berechtigungen, Funktionen, SDK-Version"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".apk, .apkm: permisos, funciones, versión del SDK"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".apk و.apkm: الأذونات والميزات وإصدار SDK"
+          }
+        }
+      }
+    },
+    ".app, framework, plug-in, estensioni, binari Mach-O: architetture, sistema minimo, firma, entitlement, notarizzazione": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".app, framework, plug-ins, extensions, Mach-O binaries: architectures, minimum system, signature, entitlements, notarization"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".app, frameworks, plug-ins, extensions, binaires Mach-O : architectures, système minimal, signature, entitlements, notarisation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".app, Frameworks, Plug-ins, Erweiterungen, Mach-O-Binärdateien: Architekturen, Mindestsystem, Signatur, Entitlements, Notarisierung"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".app, frameworks, plug-ins, extensiones, binarios Mach-O: arquitecturas, sistema mínimo, firma, entitlements, notarización"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".app وframework وplug-in والامتدادات وملفات Mach-O التنفيذية: البُنى والحد الأدنى للنظام والتوقيع والأذونات والتوثيق"
+          }
+        }
+      }
+    },
+    ".exe e .dll di Windows, pacchetti .flatpak, programmi e documenti dei vecchi Mac": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows .exe and .dll, .flatpak packages, classic Mac programs and documents"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".exe et .dll de Windows, paquets .flatpak, programmes et documents des Mac classiques"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows-.exe und -.dll, .flatpak-Pakete, Programme und Dokumente klassischer Macs"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".exe y .dll de Windows, paquetes .flatpak, programas y documentos del Mac clásico"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملفات .exe و.dll لويندوز وحزم .flatpak وبرامج ومستندات ماكنتوش القديمة"
+          }
+        }
+      }
+    },
+    ".ipa, .tipa, .xcarchive: profilo di provisioning, entitlement, App Transport Security": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".ipa, .tipa, .xcarchive: provisioning profile, entitlements, App Transport Security"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".ipa, .tipa, .xcarchive : profil de provisionnement, entitlements, App Transport Security"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".ipa, .tipa, .xcarchive: Provisioning-Profil, Entitlements, App Transport Security"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".ipa, .tipa, .xcarchive: perfil de aprovisionamiento, entitlements, App Transport Security"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".ipa و.tipa و.xcarchive: ملف التوفير والأذونات وApp Transport Security"
+          }
+        }
+      }
+    },
+    "A spaziatura fissa": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monospaced"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chasse fixe"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nichtproportional"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monoespaciada"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض ثابت"
+          }
+        }
+      }
+    },
+    "All'apertura": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On opening"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À l'ouverture"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Öffnen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al abrir"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عند الفتح"
+          }
+        }
+      }
+    },
+    "Altre app con le stesse anteprime": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other apps with the same previews"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autres apps avec les mêmes aperçus"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere Apps mit denselben Vorschauen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otras apps con las mismas vistas previas"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تطبيقات أخرى بالمعاينات نفسها"
+          }
+        }
+      }
+    },
+    "Altri formati": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other formats"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autres formats"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weitere Formate"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otros formatos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صيغ أخرى"
+          }
+        }
+      }
+    },
+    "Ampia (1100 pt)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide (1100 pt)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Large (1100 pt)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breit (1100 pt)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancho (1100 pt)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عريض (1100 نقطة)"
+          }
+        }
+      }
+    },
+    "Annulla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annuler"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abbrechen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إلغاء"
+          }
+        }
+      }
+    },
+    "Anteprima": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperçu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschau"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المعاينة"
+          }
+        }
+      }
+    },
+    "App Android": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android apps"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps Android"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-Apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps de Android"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تطبيقات أندرويد"
+          }
+        }
+      }
+    },
+    "App iOS": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS apps"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps iOS"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS-Apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps de iOS"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تطبيقات iOS"
+          }
+        }
+      }
+    },
+    "App macOS": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS apps"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps macOS"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS-Apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps de macOS"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تطبيقات macOS"
+          }
+        }
+      }
+    },
+    "Apri Impostazioni di Sistema…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open System Settings…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir les Réglages Système…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemeinstellungen öffnen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ajustes del Sistema…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فتح إعدادات النظام…"
+          }
+        }
+      }
+    },
+    "Apri Login e estensioni…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Login Items & Extensions…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir Éléments de connexion et extensions…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anmeldeobjekte und Erweiterungen öffnen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ítems de inicio de sesión y extensiones…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فتح عناصر الدخول والامتدادات…"
+          }
+        }
+      }
+    },
+    "Apri…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فتح…"
+          }
+        }
+      }
+    },
+    "Aspetto del pannello": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel appearance"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparence du panneau"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aussehen des Fensters"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aspecto del panel"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مظهر اللوحة"
+          }
+        }
+      }
+    },
+    "Attiva %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ einschalten"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar %@"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تفعيل %@"
+          }
+        }
+      }
+    },
+    "Attivazione": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activation"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktivierung"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activación"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التفعيل"
+          }
+        }
+      }
+    },
+    "Attivo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activé"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activado"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مفعّل"
+          }
+        }
+      }
+    },
+    "Automatica": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatique"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatisch"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تلقائي"
+          }
+        }
+      }
+    },
+    "Avvia il filmato all'apertura": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start the video on opening"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lancer la vidéo à l'ouverture"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video beim Öffnen starten"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar el vídeo al abrir"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تشغيل الفيديو عند الفتح"
+          }
+        }
+      }
+    },
+    "Basato su Preview3MF di Cavan O'Connor (MIT).": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Based on Preview3MF by Cavan O'Connor (MIT)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basé sur Preview3MF de Cavan O'Connor (MIT)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basiert auf Preview3MF von Cavan O'Connor (MIT)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basado en Preview3MF de Cavan O'Connor (MIT)."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مبني على Preview3MF من Cavan O'Connor (MIT)."
+          }
+        }
+      }
+    },
+    "Basato su QLVideo di Jonathan Harris (GPL 2 o successiva) per le versioni di ffmpeg e le patch.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Based on QLVideo by Jonathan Harris (GPL 2 or later) for the ffmpeg versions and patches."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basé sur QLVideo de Jonathan Harris (GPL 2 ou ultérieure) pour les versions de ffmpeg et les correctifs."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basiert auf QLVideo von Jonathan Harris (GPL 2 oder neuer) für die ffmpeg-Versionen und Patches."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basado en QLVideo de Jonathan Harris (GPL 2 o posterior) para las versiones de ffmpeg y los parches."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مبني على QLVideo من Jonathan Harris (GPL 2 أو أحدث) فيما يخص إصدارات ffmpeg والتصحيحات."
+          }
+        }
+      }
+    },
+    "Canon (CR2, CR3, CRW), Nikon (NEF, NRW), Sony (ARW, SR2), Fujifilm (RAF), Olympus (ORF), Panasonic (RW2), Pentax, Leica, Hasselblad, Phase One, Samsung, Adobe DNG e altri. Letti con LibRaw, incorporata nell'app.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon (CR2, CR3, CRW), Nikon (NEF, NRW), Sony (ARW, SR2), Fujifilm (RAF), Olympus (ORF), Panasonic (RW2), Pentax, Leica, Hasselblad, Phase One, Samsung, Adobe DNG and more. Read with LibRaw, built into the app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon (CR2, CR3, CRW), Nikon (NEF, NRW), Sony (ARW, SR2), Fujifilm (RAF), Olympus (ORF), Panasonic (RW2), Pentax, Leica, Hasselblad, Phase One, Samsung, Adobe DNG et autres. Lus avec LibRaw, intégrée à l'app."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon (CR2, CR3, CRW), Nikon (NEF, NRW), Sony (ARW, SR2), Fujifilm (RAF), Olympus (ORF), Panasonic (RW2), Pentax, Leica, Hasselblad, Phase One, Samsung, Adobe DNG und weitere. Gelesen mit LibRaw, in die App eingebaut."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon (CR2, CR3, CRW), Nikon (NEF, NRW), Sony (ARW, SR2), Fujifilm (RAF), Olympus (ORF), Panasonic (RW2), Pentax, Leica, Hasselblad, Phase One, Samsung, Adobe DNG y otros. Se leen con LibRaw, incluida en la app."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon (CR2 وCR3 وCRW) وNikon (NEF وNRW) وSony (ARW وSR2) وFujifilm (RAF) وOlympus (ORF) وPanasonic (RW2) وPentax وLeica وHasselblad وPhase One وSamsung وAdobe DNG وغيرها. تُقرأ بواسطة LibRaw المدمجة في التطبيق."
+          }
+        }
+      }
+    },
+    "Carattere": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Font"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Police"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuente"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الخط"
+          }
+        }
+      }
+    },
+    "Centrato": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Centered"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Centré"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zentriert"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Centrado"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "في الوسط"
+          }
+        }
+      }
+    },
+    "Codice": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Código"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الشيفرة"
+          }
+        }
+      }
+    },
+    "Codifica": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encoding"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encodage"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichenkodierung"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codificación"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الترميز"
+          }
+        }
+      }
+    },
+    "CommonMark": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CommonMark"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CommonMark"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CommonMark"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CommonMark"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CommonMark"
+          }
+        }
+      }
+    },
+    "Cosa mostra": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What it shows"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ce qui est affiché"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Was angezeigt wird"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qué muestra"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ما الذي يعرضه"
+          }
+        }
+      }
+    },
+    "Dai l'icona ai file dei vecchi Mac": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give icons to classic Mac files"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donner une icône aux fichiers des Mac classiques"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbole für klassische Mac-Dateien vergeben"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dar icono a los archivos del Mac clásico"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "منح أيقونات لملفات ماكنتوش القديمة"
+          }
+        }
+      }
+    },
+    "Dai le icone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give Icons"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donner les icônes"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbole vergeben"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dar iconos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "منح الأيقونات"
+          }
+        }
+      }
+    },
+    "Dai le icone a un disco…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give Icons to a Disk…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donner les icônes à un disque…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbole für einen Datenträger vergeben …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dar iconos a un disco…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "منح الأيقونات لقرص…"
+          }
+        }
+      }
+    },
+    "Di solito no: un disco condiviso si legge piano e non è tuo.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usually not: a shared disk is slow to read and isn't yours."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En général non : un disque partagé se lit lentement et n'est pas le vôtre."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meist nicht: Ein freigegebener Datenträger ist langsam und gehört nicht Ihnen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normalmente no: un disco compartido se lee despacio y no es tuyo."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عادةً لا: القرص المشترك بطيء في القراءة وليس ملكك."
+          }
+        }
+      }
+    },
+    "Diagrammi (Mermaid)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diagrams (Mermaid)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diagrammes (Mermaid)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diagramme (Mermaid)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diagramas (Mermaid)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المخططات (Mermaid)"
+          }
+        }
+      }
+    },
+    "Dialetto": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dialect"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dialecte"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dialekt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dialecto"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللهجة"
+          }
+        }
+      }
+    },
+    "Dimensione del carattere: %lld pt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Font size: %lld pt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taille de police : %lld pt"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schriftgröße: %lld pt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño de fuente: %lld pt"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حجم الخط: %lld نقطة"
+          }
+        }
+      }
+    },
+    "Dimensione massima evidenziata": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum size to highlight"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taille maximale à colorer"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximale Größe für die Hervorhebung"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño máximo a resaltar"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أقصى حجم للتمييز بالألوان"
+          }
+        }
+      }
+    },
+    "Dimensione massima letta": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum size to read"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taille maximale à lire"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximale Lesegröße"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño máximo a leer"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أقصى حجم للقراءة"
+          }
+        }
+      }
+    },
+    "Dimensione: %lld pt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Size: %lld pt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taille : %lld pt"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größe: %lld pt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño: %lld pt"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الحجم: %lld نقطة"
+          }
+        }
+      }
+    },
+    "Elenco": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "List"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "القائمة"
+          }
+        }
+      }
+    },
+    "Estensioni": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extensions"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extensions"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweiterungen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extensiones"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الامتدادات"
+          }
+        }
+      }
+    },
+    "Ferma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrêter"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stoppen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detener"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إيقاف"
+          }
+        }
+      }
+    },
+    "File 3MF (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura e altri): anteprima 3D che si può ruotare e ingrandire, con le piastre di stampa. Le miniature usano l'immagine incorporata dal programma, se c'è.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3MF files (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura and others): a 3D preview you can rotate and zoom, with the print plates. Thumbnails use the image embedded by the slicer, if there is one."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fichiers 3MF (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura et autres) : un aperçu 3D que l'on peut faire pivoter et agrandir, avec les plateaux d'impression. Les miniatures utilisent l'image intégrée par le logiciel de découpe, s'il y en a une."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3MF-Dateien (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura und andere): eine 3D-Vorschau zum Drehen und Zoomen, mit den Druckplatten. Miniaturen verwenden das vom Slicer eingebettete Bild, falls vorhanden."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivos 3MF (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura y otros): una vista previa 3D que se puede girar y ampliar, con las placas de impresión. Las miniaturas usan la imagen incrustada por el slicer, si la hay."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملفات 3MF (Bambu Studio وOrcaSlicer وPrusaSlicer وCura وغيرها): معاينة ثلاثية الأبعاد يمكن تدويرها وتكبيرها، مع لوحات الطباعة. تستخدم المصغّرات الصورة التي يضمّنها برنامج التقطيع إن وُجدت."
+          }
+        }
+      }
+    },
+    "Formati": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formats"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formats"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formate"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formatos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الصيغ"
+          }
+        }
+      }
+    },
+    "Formati supportati": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Formats"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formats pris en charge"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unterstützte Formate"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formatos admitidos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الصيغ المدعومة"
+          }
+        }
+      }
+    },
+    "Formule matematiche (KaTeX)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Math formulas (KaTeX)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formules mathématiques (KaTeX)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mathematische Formeln (KaTeX)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fórmulas matemáticas (KaTeX)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المعادلات الرياضية (KaTeX)"
+          }
+        }
+      }
+    },
+    "Funziona con i pacchetti «flat» (.pkg, .mpkg). L'elenco dei file viene dal file Bom, senza scompattare il contenuto: per questo è immediato anche con pacchetti da gigabyte. Della firma si mostrano i certificati e se la catena è valida; la verifica crittografica del contenuto e la notarizzazione non sono controllate.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works with “flat” packages (.pkg, .mpkg). The file list comes from the Bom file, without unpacking the content, so it's instant even with gigabyte-sized packages. For the signature it shows the certificates and whether the chain is valid; cryptographic verification of the content and notarization are not checked."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonctionne avec les paquets « flat » (.pkg, .mpkg). La liste des fichiers provient du fichier Bom, sans décompresser le contenu, donc elle est instantanée même pour des paquets de plusieurs gigaoctets. Pour la signature, il affiche les certificats et si la chaîne est valide ; la vérification cryptographique du contenu et la notarisation ne sont pas contrôlées."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funktioniert mit „flachen“ Paketen (.pkg, .mpkg). Die Dateiliste stammt aus der Bom-Datei, ohne den Inhalt zu entpacken, und erscheint daher sofort, auch bei Paketen im Gigabyte-Bereich. Zur Signatur werden die Zertifikate und die Gültigkeit der Kette angezeigt; die kryptografische Prüfung des Inhalts und die Notarisierung werden nicht kontrolliert."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funciona con paquetes «flat» (.pkg, .mpkg). La lista de archivos sale del archivo Bom, sin descomprimir el contenido, así que es inmediata incluso con paquetes de gigabytes. De la firma muestra los certificados y si la cadena es válida; no se comprueban la verificación criptográfica del contenido ni la notarización."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يعمل مع الحزم «المسطّحة» (.pkg و.mpkg). تأتي قائمة الملفات من ملف Bom دون فك ضغط المحتوى، لذا تظهر فورًا حتى مع حزم بحجم عدة غيغابايت. بالنسبة إلى التوقيع يعرض الشهادات وما إذا كانت السلسلة صالحة؛ أما التحقق التشفيري من المحتوى والتوثيق فلا يُفحصان."
+          }
+        }
+      }
+    },
+    "Ghostscript": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghostscript"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghostscript"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghostscript"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghostscript"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghostscript"
+          }
+        }
+      }
+    },
+    "GitHub (GFM)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub (GFM)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub (GFM)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub (GFM)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub (GFM)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub (GFM)"
+          }
+        }
+      }
+    },
+    "Gli archivi più grandi mostrano le prime voci e il totale.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Larger archives show the first items and the total."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les archives plus grandes affichent les premiers éléments et le total."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größere Archive zeigen die ersten Einträge und die Gesamtzahl."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los archivos más grandes muestran los primeros elementos y el total."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعرض الأرشيفات الأكبر العناصر الأولى والإجمالي."
+          }
+        }
+      }
+    },
+    "Guardati %lld file": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looked at %lld files"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers examinés"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien geprüft"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se revisaron %lld archivos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم فحص %lld ملفات"
+          }
+        }
+      }
+    },
+    "Guardati %lld file.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looked at %lld files."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers examinés."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien geprüft."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se revisaron %lld archivos."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم فحص %lld ملفات."
+          }
+        }
+      }
+    },
+    "Guardati %lld file: nessuno è un programma o un documento classico senza icona. I file che ce l'hanno già non si toccano.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looked at %lld files: none is a classic program or document without an icon. Files that already have one are left alone."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers examinés : aucun n'est un programme ou un document classique sans icône. Les fichiers qui en ont déjà une ne sont pas touchés."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien geprüft: Keine ist ein klassisches Programm oder Dokument ohne Symbol. Dateien, die bereits eines haben, bleiben unberührt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se revisaron %lld archivos: ninguno es un programa o documento clásico sin icono. Los que ya tienen uno no se tocan."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم فحص %lld ملفات: لا يوجد بينها برنامج أو مستند قديم بلا أيقونة. الملفات التي لها أيقونة بالفعل لا تُمَسّ."
+          }
+        }
+      }
+    },
+    "Guardo i file di «%@»": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking at the files on “%@”"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Examen des fichiers de « %@ »"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien auf „%@“ werden geprüft"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisando los archivos de «%@»"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ فحص ملفات «%@»"
+          }
+        }
+      }
+    },
+    "I file EPS senza anteprima, o quando la preferenza qui sopra è spenta, vengono resi da Ghostscript.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EPS files with no preview, or when the preference above is off, are rendered by Ghostscript."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les fichiers EPS sans aperçu, ou lorsque la préférence ci-dessus est désactivée, sont rendus par Ghostscript."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EPS-Dateien ohne Vorschau, oder wenn die obige Einstellung ausgeschaltet ist, werden von Ghostscript gezeichnet."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los archivos EPS sin vista previa, o cuando la preferencia anterior está desactivada, los dibuja Ghostscript."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تُرسم ملفات EPS التي لا معاينة لها، أو عند إيقاف التفضيل أعلاه، بواسطة Ghostscript."
+          }
+        }
+      }
+    },
+    "Icone dei vecchi Mac": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Classic Mac Icons"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icônes des Mac classiques"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbole klassischer Macs"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iconos del Mac clásico"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أيقونات ماكنتوش القديمة"
+          }
+        }
+      }
+    },
+    "Il disco è di sola lettura, oppure è montato da un driver FUSE: lì l'icona la costruisce già il driver, senza toccare il disco.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The disk is read-only, or it is mounted by a FUSE driver: there the driver already builds the icon, without touching the disk."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le disque est en lecture seule ou monté par un pilote FUSE : dans ce cas le pilote construit déjà l'icône, sans toucher au disque."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Datenträger ist schreibgeschützt oder wird von einem FUSE-Treiber eingebunden: Dort erzeugt der Treiber das Symbol bereits, ohne den Datenträger zu verändern."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El disco es de solo lectura o lo monta un controlador FUSE: allí el controlador ya construye el icono, sin tocar el disco."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "القرص للقراءة فقط أو مُركَّب بواسطة مشغّل FUSE: في هذه الحالة يبني المشغّل الأيقونة بنفسه دون المساس بالقرص."
+          }
+        }
+      }
+    },
+    "Il filmato si ferma da solo quando chiudi la finestra di Quick Look o passi a un altro file.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The video stops by itself when you close the Quick Look window or move to another file."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vidéo s'arrête toute seule quand vous fermez la fenêtre Quick Look ou passez à un autre fichier."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Video hält von selbst an, wenn Sie das Quick-Look-Fenster schließen oder zu einer anderen Datei wechseln."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El vídeo se detiene solo al cerrar la ventana de Quick Look o pasar a otro archivo."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتوقف الفيديو تلقائيًا عند إغلاق نافذة Quick Look أو الانتقال إلى ملف آخر."
+          }
+        }
+      }
+    },
+    "Il fork di risorse di ogni file torna quello di partenza e l'icona aggiunta sparisce. Un file modificato dopo l'icona non viene toccato: se ne toglie solo il segno dell'icona.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each file's resource fork goes back to the original and the added icon disappears. A file modified after the icon is left alone: only the icon marker is removed."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le fork de ressources de chaque fichier redevient celui d'origine et l'icône ajoutée disparaît. Un fichier modifié après l'icône n'est pas touché : seul le repère d'icône est retiré."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Ressourcenfork jeder Datei kehrt in den Ursprungszustand zurück und das hinzugefügte Symbol verschwindet. Eine nach dem Symbol geänderte Datei bleibt unberührt: Es wird nur die Symbolmarkierung entfernt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El fork de recursos de cada archivo vuelve al original y el icono añadido desaparece. Un archivo modificado después del icono no se toca: solo se quita la marca del icono."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يعود فرع الموارد لكل ملف إلى حالته الأصلية وتختفي الأيقونة المضافة. أما الملف الذي عُدّل بعد الأيقونة فلا يُمَسّ: تُزال علامة الأيقونة فقط."
+          }
+        }
+      }
+    },
+    "Il sorgente usa le impostazioni di carattere e numeri di riga della scheda Codice.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The source view uses the font and line number settings from the Code tab."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vue source utilise les réglages de police et de numéros de ligne de l'onglet Code."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Quelltextansicht verwendet die Schrift- und Zeilennummern-Einstellungen des Reiters „Code“."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vista de código fuente usa los ajustes de fuente y números de línea de la pestaña Código."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يستخدم عرض المصدر إعدادات الخط وأرقام الأسطر من تبويب الشيفرة."
+          }
+        }
+      }
+    },
+    "Importa CSS…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import CSS…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importer du CSS…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CSS importieren …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar CSS…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استيراد CSS…"
+          }
+        }
+      }
+    },
+    "Impostazioni": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإعدادات"
+          }
+        }
+      }
+    },
+    "In alto: titolo, identificatore, versione, dove si installa, numero di file e spazio occupato, architetture e macOS richiesto, script, riavvio e firma. In basso: l'albero dei file che il pacchetto installa, con permessi e dimensioni, e i suoi script.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At the top: title, identifier, version, where it installs, number of files and space used, architectures and required macOS, scripts, restart and signature. At the bottom: the tree of files the package installs, with permissions and sizes, and its scripts."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En haut : titre, identifiant, version, emplacement d'installation, nombre de fichiers et espace occupé, architectures et macOS requis, scripts, redémarrage et signature. En bas : l'arborescence des fichiers installés par le paquet, avec permissions et tailles, et ses scripts."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oben: Titel, Kennung, Version, Installationsort, Anzahl der Dateien und belegter Platz, Architekturen und erforderliches macOS, Skripte, Neustart und Signatur. Unten: der Dateibaum, den das Paket installiert, mit Berechtigungen und Größen, sowie seine Skripte."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arriba: título, identificador, versión, dónde se instala, número de archivos y espacio ocupado, arquitecturas y macOS requerido, scripts, reinicio y firma. Abajo: el árbol de archivos que instala el paquete, con permisos y tamaños, y sus scripts."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "في الأعلى: العنوان والمعرّف والإصدار ومكان التثبيت وعدد الملفات والمساحة المشغولة والبُنى وإصدار macOS المطلوب والسكربتات وإعادة التشغيل والتوقيع. في الأسفل: شجرة الملفات التي تثبّتها الحزمة مع الأذونات والأحجام وسكربتاتها."
+          }
+        }
+      }
+    },
+    "In attesa della tua approvazione.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for your approval."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En attente de votre approbation."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wartet auf Ihre Zustimmung."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperando tu aprobación."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بانتظار موافقتك."
+          }
+        }
+      }
+    },
+    "Includi anche i volumi di rete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include network volumes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inclure les volumes réseau"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Netzwerkvolumes einbeziehen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incluir volúmenes de red"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تضمين وحدات التخزين الشبكية"
+          }
+        }
+      }
+    },
+    "Incorporato nell'app": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built into the app"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intégré à l'app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In die App eingebaut"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incluido en la app"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مدمج في التطبيق"
+          }
+        }
+      }
+    },
+    "JSON e YAML": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON and YAML"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON et YAML"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON und YAML"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON y YAML"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON وYAML"
+          }
+        }
+      }
+    },
+    "L'agente non è dentro questa copia dell'app.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The agent isn't inside this copy of the app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'agent n'est pas dans cette copie de l'app."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Agent ist nicht in dieser Kopie der App enthalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El agente no está dentro de esta copia de la app."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الوكيل غير موجود داخل هذه النسخة من التطبيق."
+          }
+        }
+      }
+    },
+    "Larghezza della tabulazione": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tab width"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Largeur de tabulation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tabulatorbreite"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancho del tabulador"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض التبويب"
+          }
+        }
+      }
+    },
+    "Larghezza massima": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum width"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Largeur maximale"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximale Breite"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancho máximo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أقصى عرض"
+          }
+        }
+      }
+    },
+    "Le anteprime e le miniature sono estensioni di Quick Look. Se l'app sta in Applicazioni, macOS le attiva da solo; se vuoi controllare quale estensione ha la precedenza su un tipo di file:": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previews and thumbnails are Quick Look extensions. If the app is in Applications, macOS turns them on by itself; to check which extension takes precedence for a file type:"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les aperçus et les miniatures sont des extensions de Quick Look. Si l'app se trouve dans Applications, macOS les active tout seul ; pour vérifier quelle extension a la priorité pour un type de fichier :"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschauen und Miniaturen sind Quick-Look-Erweiterungen. Liegt die App im Ordner „Programme“, schaltet macOS sie von selbst ein; um zu prüfen, welche Erweiterung für einen Dateityp Vorrang hat:"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las vistas previas y las miniaturas son extensiones de Quick Look. Si la app está en Aplicaciones, macOS las activa solo; para comprobar qué extensión tiene prioridad para un tipo de archivo:"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المعاينات والمصغّرات هي امتدادات Quick Look. إن كان التطبيق في مجلد التطبيقات فإن macOS يفعّلها تلقائيًا؛ ولمعرفة أي امتداد له الأولوية لنوع ملف ما:"
+          }
+        }
+      }
+    },
+    "Leggi .nfo, .diz e simili come DOS (CP437)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read .nfo, .diz and similar as DOS (CP437)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lire .nfo, .diz et similaires en DOS (CP437)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".nfo, .diz und ähnliche als DOS (CP437) lesen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer .nfo, .diz y similares como DOS (CP437)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قراءة .nfo و.diz وما شابهها بترميز DOS (CP437)"
+          }
+        }
+      }
+    },
+    "Limiti": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limits"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limites"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grenzen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Límites"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الحدود"
+          }
+        }
+      }
+    },
+    "Linguaggio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langage"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprache"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللغة"
+          }
+        }
+      }
+    },
+    "Livelli espansi: %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expanded levels: %lld"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niveaux développés : %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aufgeklappte Ebenen: %lld"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niveles expandidos: %lld"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المستويات الموسّعة: %lld"
+          }
+        }
+      }
+    },
+    "MKV, WebM, AVI, WMV e ASF, FLV, OGV, M2TS, VOB, RealMedia, DivX, MXF e altri letti da ffmpeg, con VideoToolbox quando il codec lo permette. MP4, MOV e M4V restano a macOS.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MKV, WebM, AVI, WMV and ASF, FLV, OGV, M2TS, VOB, RealMedia, DivX, MXF and more, read by ffmpeg, with VideoToolbox when the codec allows it. MP4, MOV and M4V are left to macOS."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MKV, WebM, AVI, WMV et ASF, FLV, OGV, M2TS, VOB, RealMedia, DivX, MXF et autres, lus par ffmpeg, avec VideoToolbox quand le codec le permet. MP4, MOV et M4V restent à macOS."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MKV, WebM, AVI, WMV und ASF, FLV, OGV, M2TS, VOB, RealMedia, DivX, MXF und mehr, gelesen mit ffmpeg, mit VideoToolbox, wenn der Codec es erlaubt. MP4, MOV und M4V überlässt die App macOS."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MKV, WebM, AVI, WMV y ASF, FLV, OGV, M2TS, VOB, RealMedia, DivX, MXF y más, leídos por ffmpeg, con VideoToolbox cuando el códec lo permite. MP4, MOV y M4V los deja a macOS."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MKV وWebM وAVI وWMV وASF وFLV وOGV وM2TS وVOB وRealMedia وDivX وMXF وغيرها، تُقرأ بواسطة ffmpeg مع VideoToolbox عندما يسمح الترميز. أما MP4 وMOV وM4V فتُترك لنظام macOS."
+          }
+        }
+      }
+    },
+    "Markdown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown"
+          }
+        }
+      }
+    },
+    "Media (860 pt)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medium (860 pt)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moyenne (860 pt)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mittel (860 pt)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medio (860 pt)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متوسط (860 نقطة)"
+          }
+        }
+      }
+    },
+    "Miniature": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thumbnails"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miniatures"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miniaturen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miniaturas"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المصغّرات"
+          }
+        }
+      }
+    },
+    "Moduli": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modules"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modules"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Module"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Módulos"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الوحدات"
+          }
+        }
+      }
+    },
+    "Mostra": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض"
+          }
+        }
+      }
+    },
+    "Mostra anche Textile, AsciiDoc, Creole, reStructuredText e BBCode": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also render Textile, AsciiDoc, Creole, reStructuredText and BBCode"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher aussi Textile, AsciiDoc, Creole, reStructuredText et BBCode"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auch Textile, AsciiDoc, Creole, reStructuredText und BBCode darstellen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar también Textile, AsciiDoc, Creole, reStructuredText y BBCode"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض Textile وAsciiDoc وCreole وreStructuredText وBBCode أيضًا"
+          }
+        }
+      }
+    },
+    "Mostra cartella dei temi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Themes Folder"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher le dossier des thèmes"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Themenordner anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar la carpeta de temas"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار مجلد السمات"
+          }
+        }
+      }
+    },
+    "Mostra i dati di scatto sotto la foto": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the shooting data below the photo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher les données de prise de vue sous la photo"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aufnahmedaten unter dem Foto anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar los datos de la toma bajo la foto"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار بيانات التصوير أسفل الصورة"
+          }
+        }
+      }
+    },
+    "Mostra la colonna «Tipo»": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the “Type” column"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher la colonne « Type »"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spalte „Typ“ anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar la columna «Tipo»"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار عمود «النوع»"
+          }
+        }
+      }
+    },
+    "MultiMarkdown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MultiMarkdown"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MultiMarkdown"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MultiMarkdown"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MultiMarkdown"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MultiMarkdown"
+          }
+        }
+      }
+    },
+    "Nessun file di questo disco risulta modificato. L'elenco dei fork originali sta nella radice del disco o, se il disco è di sola lettura, nella cartella di supporto dell'app.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No file on this disk appears to have been modified. The list of original forks is in the root of the disk or, if the disk is read-only, in the app's support folder."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun fichier de ce disque ne semble avoir été modifié. La liste des forks d'origine se trouve à la racine du disque ou, si le disque est en lecture seule, dans le dossier de support de l'app."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es scheint keine Datei auf diesem Datenträger geändert worden zu sein. Die Liste der ursprünglichen Forks liegt im Stammverzeichnis des Datenträgers oder, wenn dieser schreibgeschützt ist, im Support-Ordner der App."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún archivo de este disco parece haberse modificado. La lista de forks originales está en la raíz del disco o, si el disco es de solo lectura, en la carpeta de soporte de la app."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يبدو أن أي ملف على هذا القرص قد عُدّل. توجد قائمة الفروع الأصلية في جذر القرص أو، إن كان القرص للقراءة فقط، في مجلد دعم التطبيق."
+          }
+        }
+      }
+    },
+    "Nomi di file": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File names"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noms de fichiers"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateinamen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombres de archivo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أسماء الملفات"
+          }
+        }
+      }
+    },
+    "Non ancora disponibile.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not available yet."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore disponible."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nicht verfügbar."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía no está disponible."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير متاح بعد."
+          }
+        }
+      }
+    },
+    "Non incluso in questa versione dell'app": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not included in this version of the app"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non inclus dans cette version de l'app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In dieser Version der App nicht enthalten"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No incluido en esta versión de la app"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير مضمّن في هذا الإصدار من التطبيق"
+          }
+        }
+      }
+    },
+    "Numeri di riga": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Line numbers"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numéros de ligne"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeilennummern"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Números de línea"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أرقام الأسطر"
+          }
+        }
+      }
+    },
+    "OK": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حسنًا"
+          }
+        }
+      }
+    },
+    "Originale (QLAppBundle)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original (QLAppBundle)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original (QLAppBundle)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original (QLAppBundle)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original (QLAppBundle)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأصلي (QLAppBundle)"
+          }
+        }
+      }
+    },
+    "Per %lld file la scrittura non è riuscita e non sono stati toccati%@.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Writing failed for %lld files and they were not touched%@."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'écriture a échoué pour %lld fichiers, qui n'ont pas été modifiés%@."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Schreiben ist für %lld Dateien fehlgeschlagen; sie wurden nicht verändert%@."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La escritura falló en %lld archivos y no se han tocado%@."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فشلت الكتابة في %lld ملفات ولم تُمَسّ%@."
+          }
+        }
+      }
+    },
+    "Preferisci l'anteprima incorporata nel file": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prefer the preview embedded in the file"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Préférer l'aperçu intégré au fichier"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im Datei eingebettete Vorschau bevorzugen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferir la vista previa incrustada en el archivo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تفضيل المعاينة المضمّنة في الملف"
+          }
+        }
+      }
+    },
+    "Property list: mostra la struttura": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property lists: show the structure"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property lists : afficher la structure"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property Lists: Struktur anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property lists: mostrar la estructura"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملفات plist: إظهار البنية"
+          }
+        }
+      }
+    },
+    "Proporzionale": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proportional"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proportionnelle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proportional"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proporcional"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نسبي"
+          }
+        }
+      }
+    },
+    "Prova un file": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try a File"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Essayer un fichier"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datei ausprobieren"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Probar un archivo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جرّب ملفًا"
+          }
+        }
+      }
+    },
+    "Punto del filmato": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Point in the video"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Point de la vidéo"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stelle im Video"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Punto del vídeo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "موضع في الفيديو"
+          }
+        }
+      }
+    },
+    "Quasi tutte le fotocamere salvano nel RAW un JPEG grande: è quello che si vede, ed è immediato. Lo sviluppo a mezza risoluzione è più lento e serve solo ai file che non lo hanno.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Almost every camera saves a large JPEG inside the RAW file: that is what you see, and it's instant. Developing at half resolution is slower and is only needed for files that don't have one."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Presque tous les appareils photo enregistrent un grand JPEG dans le fichier RAW : c'est ce que vous voyez, et c'est instantané. Le développement à demi-résolution est plus lent et ne sert que pour les fichiers qui n'en ont pas."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fast jede Kamera speichert ein großes JPEG in der RAW-Datei: Das sehen Sie, und es geht sofort. Das Entwickeln in halber Auflösung ist langsamer und nur für Dateien nötig, die keines enthalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Casi todas las cámaras guardan un JPEG grande dentro del RAW: eso es lo que ves, y es inmediato. Revelar a media resolución es más lento y solo hace falta para los archivos que no lo tienen."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحفظ معظم الكاميرات صورة JPEG كبيرة داخل ملف RAW: وهذا ما تراه، وهو فوري. التحميض بنصف الدقة أبطأ ولا يلزم إلا للملفات التي لا تحتوي عليها."
+          }
+        }
+      }
+    },
+    "Questa copia non è in Applicazioni: le estensioni non vengono registrate.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This copy isn't in Applications: the extensions are not registered."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cette copie n'est pas dans Applications : les extensions ne sont pas enregistrées."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Kopie liegt nicht im Ordner „Programme“: Die Erweiterungen werden nicht registriert."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta copia no está en Aplicaciones: las extensiones no se registran."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هذه النسخة ليست في مجلد التطبيقات: لا تُسجَّل الامتدادات."
+          }
+        }
+      }
+    },
+    "QuickLook Manager": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QuickLook Manager"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QuickLook Manager"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QuickLook Manager"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QuickLook Manager"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QuickLook Manager"
+          }
+        }
+      }
+    },
+    "Ricarica Quick Look": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reload Quick Look"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recharger Quick Look"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Look neu laden"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recargar Quick Look"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعادة تحميل Quick Look"
+          }
+        }
+      }
+    },
+    "Riconosci il linguaggio dal contenuto": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detect the language from the content"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnaître le langage d'après le contenu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprache am Inhalt erkennen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconocer el lenguaje por el contenido"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اكتشاف اللغة من المحتوى"
+          }
+        }
+      }
+    },
+    "Rimettere com'erano %lld file su «%@»?": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put %lld files on “%@” back as they were?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remettre %lld fichiers de « %@ » comme ils étaient ?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien auf „%@“ in den Ursprungszustand zurückversetzen?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Dejar como estaban %lld archivos de «%@»?"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعادة %lld ملفات على «%@» إلى حالتها الأصلية؟"
+          }
+        }
+      }
+    },
+    "Rimetto a posto i file di «%@»": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restoring the files on “%@”"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rétablissement des fichiers de « %@ »"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien auf „%@“ werden wiederhergestellt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurando los archivos de «%@»"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ استعادة ملفات «%@»"
+          }
+        }
+      }
+    },
+    "Ripristina": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rétablir"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة"
+          }
+        }
+      }
+    },
+    "Ripristina un disco…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore a Disk…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rétablir un disque…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenträger wiederherstellen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar un disco…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة قرص…"
+          }
+        }
+      }
+    },
+    "Ripristino fermato su «%@».": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore stopped on “%@”."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rétablissement interrompu sur « %@ »."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellung auf „%@“ angehalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restauración detenida en «%@»."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "توقفت الاستعادة على «%@»."
+          }
+        }
+      }
+    },
+    "Riproduzione": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Playback"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lecture"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiedergabe"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducción"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التشغيل"
+          }
+        }
+      }
+    },
+    "Risoluzione di resa": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rendering resolution"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résolution du rendu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renderauflösung"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolución de renderizado"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دقة الرسم"
+          }
+        }
+      }
+    },
+    "Scegli file": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose File"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisir un fichier"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datei auswählen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir archivo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختيار ملف"
+          }
+        }
+      }
+    },
+    "Scegli il disco a cui dare le icone dei file classici.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose the disk whose classic files should get their icons."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisissez le disque dont les fichiers classiques doivent recevoir leur icône."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wählen Sie den Datenträger, dessen klassische Dateien ihre Symbole erhalten sollen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige el disco cuyos archivos clásicos deben recibir su icono."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختر القرص الذي ستحصل ملفاته القديمة على أيقوناتها."
+          }
+        }
+      }
+    },
+    "Scegli il disco di cui rimettere a posto i fork originali.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose the disk whose original forks should be restored."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisissez le disque dont il faut rétablir les forks d'origine."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wählen Sie den Datenträger, dessen ursprüngliche Forks wiederhergestellt werden sollen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige el disco cuyos forks originales se deben restaurar."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختر القرص الذي تُستعاد فروعه الأصلية."
+          }
+        }
+      }
+    },
+    "Scegli un file…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a File…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisir un fichier…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datei auswählen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir un archivo…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختر ملفًا…"
+          }
+        }
+      }
+    },
+    "Se qualcosa non va": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If Something Is Wrong"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En cas de problème"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn etwas nicht stimmt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si algo no funciona"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إن حدثت مشكلة"
+          }
+        }
+      }
+    },
+    "Se sono installati anche QuickTextLook, QLAppBundle, QuickLook Video, Camera RawX o Preview3MF, per gli stessi tipi di file Quick Look ne sceglie una sola. Togli le app che QuickLook Manager sostituisce, o spegni la loro estensione nelle Impostazioni di Sistema.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If QuickTextLook, QLAppBundle, QuickLook Video, Camera RawX or Preview3MF are also installed, Quick Look picks only one of them for the same file types. Remove the apps QuickLook Manager replaces, or turn off their extension in System Settings."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si QuickTextLook, QLAppBundle, QuickLook Video, Camera RawX ou Preview3MF sont aussi installés, Quick Look n'en choisit qu'un seul pour les mêmes types de fichiers. Supprimez les apps que QuickLook Manager remplace, ou désactivez leur extension dans les Réglages Système."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sind auch QuickTextLook, QLAppBundle, QuickLook Video, Camera RawX oder Preview3MF installiert, wählt Quick Look für dieselben Dateitypen nur eines davon aus. Entfernen Sie die Apps, die QuickLook Manager ersetzt, oder schalten Sie deren Erweiterung in den Systemeinstellungen aus."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si también están instalados QuickTextLook, QLAppBundle, QuickLook Video, Camera RawX o Preview3MF, Quick Look elige solo uno para los mismos tipos de archivo. Quita las apps que QuickLook Manager sustituye o desactiva su extensión en Ajustes del Sistema."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إذا كانت QuickTextLook أو QLAppBundle أو QuickLook Video أو Camera RawX أو Preview3MF مثبّتة أيضًا فإن Quick Look يختار واحدة منها فقط لأنواع الملفات نفسها. أزل التطبيقات التي يحل QuickLook Manager محلها أو أوقف امتدادها من إعدادات النظام."
+          }
+        }
+      }
+    },
+    "Se un'anteprima non cambia dopo un aggiornamento, ricarica Quick Look.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If a preview doesn't change after an update, reload Quick Look."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si un aperçu ne change pas après une mise à jour, rechargez Quick Look."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn sich eine Vorschau nach einem Update nicht ändert, laden Sie Quick Look neu."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si una vista previa no cambia tras una actualización, recarga Quick Look."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إن لم تتغير المعاينة بعد التحديث، أعد تحميل Quick Look."
+          }
+        }
+      }
+    },
+    "Si vedono solo i file EPS con un'anteprima incorporata (TIFF o bitmap), come quelli di Illustrator o InDesign. Compilando Ghostscript con scripts/vendor-ghostscript.sh e ricostruendo l'app, viene incorporato.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only EPS files with an embedded preview (TIFF or bitmap), such as those from Illustrator or InDesign, can be shown. Building Ghostscript with scripts/vendor-ghostscript.sh and rebuilding the app embeds it."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seuls les fichiers EPS avec un aperçu intégré (TIFF ou bitmap), comme ceux d'Illustrator ou d'InDesign, peuvent être affichés. Compiler Ghostscript avec scripts/vendor-ghostscript.sh puis reconstruire l'app l'intègre."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur EPS-Dateien mit eingebetteter Vorschau (TIFF oder Bitmap), etwa aus Illustrator oder InDesign, lassen sich anzeigen. Wenn Sie Ghostscript mit scripts/vendor-ghostscript.sh bauen und die App neu erstellen, wird es eingebettet."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo se pueden mostrar los archivos EPS con vista previa incrustada (TIFF o mapa de bits), como los de Illustrator o InDesign. Compilar Ghostscript con scripts/vendor-ghostscript.sh y reconstruir la app lo incorpora."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يمكن عرض إلا ملفات EPS ذات المعاينة المضمّنة (TIFF أو صورة نقطية) مثل ملفات Illustrator وInDesign. تؤدي إعادة بناء Ghostscript بواسطة scripts/vendor-ghostscript.sh ثم إعادة بناء التطبيق إلى تضمينه."
+          }
+        }
+      }
+    },
+    "Sistema": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Système"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistema"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النظام"
+          }
+        }
+      }
+    },
+    "Sono compatibili i temi di Typora e qualunque CSS che usi #write o .markdown-body. Il tema scelto si applica sopra la base di sistema.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora themes and any CSS that targets #write or .markdown-body are supported. The chosen theme is applied on top of the system base style."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les thèmes Typora et tout CSS qui cible #write ou .markdown-body sont pris en charge. Le thème choisi s'applique par-dessus le style de base du système."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora-Themen und jedes CSS, das #write oder .markdown-body anspricht, werden unterstützt. Das gewählte Thema wird über den Systemstil gelegt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se admiten los temas de Typora y cualquier CSS que use #write o .markdown-body. El tema elegido se aplica sobre el estilo base del sistema."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تُدعم سمات Typora وأي CSS يستهدف #write أو .markdown-body. تُطبَّق السمة المختارة فوق النمط الأساسي للنظام."
+          }
+        }
+      }
+    },
+    "Sorgente": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quelltext"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Código fuente"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المصدر"
+          }
+        }
+      }
+    },
+    "Stile": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Style"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Style"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stil"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النمط"
+          }
+        }
+      }
+    },
+    "Stile Apparency": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparency style"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Style Apparency"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparency-Stil"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo Apparency"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نمط Apparency"
+          }
+        }
+      }
+    },
+    "Stretta (680 pt)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Narrow (680 pt)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Étroite (680 pt)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schmal (680 pt)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estrecho (680 pt)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ضيق (680 نقطة)"
+          }
+        }
+      }
+    },
+    "Struttura": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Structure"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Structure"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Struktur"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estructura"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "البنية"
+          }
+        }
+      }
+    },
+    "Su «%@» %lld file non sono tornati com'erano.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On “%@” %lld files did not go back to how they were."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sur « %@ », %lld fichiers ne sont pas revenus à leur état d'origine."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf „%@“ wurden %lld Dateien nicht in den Ursprungszustand zurückversetzt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En «%@», %lld archivos no han vuelto a como estaban."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "على «%@» لم تعد %lld ملفات إلى حالتها الأصلية."
+          }
+        }
+      }
+    },
+    "Su «%@» nessuna icona è stata scritta.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No icon was written on “%@”."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune icône n'a été écrite sur « %@ »."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf „%@“ wurde kein Symbol geschrieben."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se escribió ningún icono en «%@»."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم تُكتب أي أيقونة على «%@»."
+          }
+        }
+      }
+    },
+    "Su «%@» non c'era niente da fare.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing to do on “%@”."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien à faire sur « %@ »."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf „%@“ gibt es nichts zu tun."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay nada que hacer en «%@»."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا شيء لفعله على «%@»."
+          }
+        }
+      }
+    },
+    "Su «%@» non c'è niente da rimettere a posto.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing to restore on “%@”."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien à rétablir sur « %@ »."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf „%@“ gibt es nichts wiederherzustellen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay nada que restaurar en «%@»."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا شيء لاستعادته على «%@»."
+          }
+        }
+      }
+    },
+    "Su «%@» non si può scrivere.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” can't be written to."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible d'écrire sur « %@ »."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf „%@“ kann nicht geschrieben werden."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se puede escribir en «%@»."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يمكن الكتابة على «%@»."
+          }
+        }
+      }
+    },
+    "Sviluppa il RAW se non ha un'anteprima incorporata": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Develop the RAW if it has no embedded preview"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Développer le RAW s'il n'a pas d'aperçu intégré"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RAW entwickeln, wenn keine eingebettete Vorschau vorhanden ist"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revelar el RAW si no tiene vista previa incrustada"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحميض ملف RAW إن لم تكن له معاينة مضمّنة"
+          }
+        }
+      }
+    },
+    "Tema": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Theme"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thème"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thema"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "السمة"
+          }
+        }
+      }
+    },
+    "Testo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النص"
+          }
+        }
+      }
+    },
+    "Trascina un file qui": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drop a File Here"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déposez un fichier ici"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datei hierher ziehen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suelta un archivo aquí"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أسقط ملفًا هنا"
+          }
+        }
+      }
+    },
+    "Tutta la finestra": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full window"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toute la fenêtre"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganzes Fenster"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toda la ventana"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض النافذة كاملًا"
+          }
+        }
+      }
+    },
+    "Typora (tutte le estensioni)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora (all extensions)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora (toutes les extensions)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora (alle Erweiterungen)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora (todas las extensiones)"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typora (كل الامتدادات)"
+          }
+        }
+      }
+    },
+    "Un agente in background guarda i dischi che colleghi e dà l'icona ai programmi e ai documenti classici. Scrive solo sui dischi per cui hai dato il permesso.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A background agent watches the disks you connect and gives icons to classic programs and documents. It only writes to disks you have allowed."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un agent en arrière-plan surveille les disques que vous branchez et donne une icône aux programmes et documents classiques. Il n'écrit que sur les disques que vous avez autorisés."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Hintergrundagent beobachtet die angeschlossenen Datenträger und vergibt Symbole für klassische Programme und Dokumente. Er schreibt nur auf Datenträger, die Sie erlaubt haben."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un agente en segundo plano vigila los discos que conectas y da icono a los programas y documentos clásicos. Solo escribe en los discos que hayas permitido."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وكيل يعمل في الخلفية يراقب الأقراص التي توصلها ويمنح أيقونات للبرامج والمستندات القديمة. يكتب فقط على الأقراص التي سمحت بها."
+          }
+        }
+      }
+    },
+    "Usato quando l'estensione non indica un linguaggio noto.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Used when the file extension doesn't indicate a known language."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisé quand l'extension du fichier n'indique pas un langage connu."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird verwendet, wenn die Dateiendung keine bekannte Sprache angibt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se usa cuando la extensión del archivo no indica un lenguaje conocido."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يُستخدم عندما لا يدل امتداد الملف على لغة معروفة."
+          }
+        }
+      }
+    },
+    "Vai a capo automaticamente": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrap lines"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retour à la ligne automatique"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeilen umbrechen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustar líneas"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التفاف الأسطر تلقائيًا"
+          }
+        }
+      }
+    },
+    "Vedrai l'anteprima di Quick Look: se QuickLook Manager è attivo, è quella dei suoi moduli.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You'll see the Quick Look preview: if QuickLook Manager is active, it comes from its modules."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous verrez l'aperçu Quick Look : si QuickLook Manager est actif, il vient de ses modules."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sie sehen die Quick-Look-Vorschau: Ist QuickLook Manager aktiv, stammt sie aus seinen Modulen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verás la vista previa de Quick Look: si QuickLook Manager está activo, procede de sus módulos."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سترى معاينة Quick Look: إن كان QuickLook Manager مفعّلًا فهي قادمة من وحداته."
+          }
+        }
+      }
+    },
+    "Visualizzazione": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Affichage"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Darstellung"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualización"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "العرض"
+          }
+        }
+      }
+    },
+    "Voci mostrate al massimo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum items shown"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre maximal d'éléments affichés"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximal angezeigte Einträge"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máximo de elementos mostrados"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أقصى عدد من العناصر المعروضة"
+          }
+        }
+      }
+    },
+    "ZIP, 7z, RAR, tar (anche gz, bz2, xz, lzma, zst), cpio, CAB, LHA, ISO, XAR, RPM e DEB. Letti con la libarchive di macOS: i file con password mostrano i nomi solo se il formato lo permette.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZIP, 7z, RAR, tar (also gz, bz2, xz, lzma, zst), cpio, CAB, LHA, ISO, XAR, RPM and DEB. Read with macOS's libarchive: password-protected files show their names only if the format allows it."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZIP, 7z, RAR, tar (aussi gz, bz2, xz, lzma, zst), cpio, CAB, LHA, ISO, XAR, RPM et DEB. Lus avec la libarchive de macOS : les fichiers protégés par mot de passe n'affichent leurs noms que si le format le permet."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZIP, 7z, RAR, tar (auch gz, bz2, xz, lzma, zst), cpio, CAB, LHA, ISO, XAR, RPM und DEB. Gelesen mit der libarchive von macOS: Passwortgeschützte Dateien zeigen ihre Namen nur, wenn das Format es erlaubt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZIP, 7z, RAR, tar (también gz, bz2, xz, lzma, zst), cpio, CAB, LHA, ISO, XAR, RPM y DEB. Se leen con la libarchive de macOS: los archivos con contraseña muestran sus nombres solo si el formato lo permite."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZIP وَ7z وَRAR وtar (وكذلك gz وbz2 وxz وlzma وzst) وcpio وCAB وLHA وISO وXAR وRPM وDEB. تُقرأ بواسطة libarchive الخاصة بـ macOS: تُظهر الملفات المحمية بكلمة مرور أسماءها فقط إذا سمحت الصيغة بذلك."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{{T_Lang}}" dir="{{T_Dir}}">
+<head>
+	<meta charset="UTF-8">
+	<style>{{CSS}}</style>
+</head>
+<body>
+	<!--
+	  Lo stile «centrato»: icona grande in cima, nome sotto, e poi una tabella
+	  di campi -- il nome a sinistra, il valore a destra.
+
+	  La differenza con lo stile alla Apparency non e' un vezzo: lì le righe si
+	  leggono da sole («Versione 3.3 (918)») e stanno strette accanto
+	  all'icona, qui hanno il nome del campo davanti e tutta la larghezza. Su un
+	  programma del 1992, dove i campi sono codici di quattro lettere e cifre in
+	  byte, l'etichetta serve: «APPL / PNnu» da solo non dice niente.
+
+	  Le due forme escono dallo stesso lettore: {{Sommario}} le da' distese,
+	  {{SommarioRighe}} a tabella.
+	-->
+	<div class="app">
+		<div class="icona"><img alt="{{T_Icona}}" src="data:image/png;base64,{{AppIcon}}"/></div>
+		<div class="titolo">{{Titolo}}</div>
+	</div>
+	
+	<dl class="dati">
+	{{SommarioRighe}}
+		<div class="{{RisorseHidden}} riga-elenco">
+			<dt>{{T_Tipi}}</dt><dd class="mono elenco">{{RisorseElenco}}</dd>
+		</div>
+	</dl>
+	
+	<div class="{{NoPlistWarningHidden}}">
+		{{T_NoPlist}}
+	</div>
+	
+	<div class="{{FirmaHidden}}">
+		<h2>{{T_Firma}}</h2>
+		<dl class="dati">
+		{{FirmaRighe}}
+		</dl>
+	</div>
+	
+	<div class="{{ArchiveHidden}}">
+		<h2>{{T_NoteArchivio}}</h2>
+		<pre>{{ArchiveComment}}</pre>
+	</div>
+	
+	<div class="{{iTunesHidden}}">
+		<h2>{{T_MetadatiITunes}}</h2>
+		<dl class="dati">
+			<dt>{{T_ITunesId}}</dt><dd>{{iTunesId}}</dd>
+			<dt>{{T_Titolo}}</dt><dd>{{iTunesName}}</dd>
+			<dt>{{T_Generi}}</dt><dd>{{iTunesGenres}}</dd>
+			<dt>{{T_Uscita}}</dt><dd>{{iTunesReleaseDate}}</dd>
+			<dt>{{T_AppleId}}</dt><dd>{{iTunesAppleId}}</dd>
+			<dt>{{T_Acquistato}}</dt><dd>{{iTunesPurchaseDate}}</dd>
+			<dt>{{T_Prezzo}}</dt><dd>{{iTunesPrice}}</dd>
+		</dl>
+	</div>
+	
+	<div class="{{TransportSecurityHidden}}">
+		<h2>App Transport Security</h2>
+		{{TransportSecurityDict}}
+	</div>
+	
+	<!--
+	  Gli entitlement stanno chiusi: in certe applicazioni sono una lista lunga
+	  una pagina, e aperta sommerge tutto quello che viene prima. Il conteggio
+	  nel titolo dice se vale la pena aprirla.
+	-->
+	<details class="{{EntitlementsHidden}}">
+		<summary>Entitlements <span class="conteggio">{{EntitlementsConteggio}}</span></summary>
+		<div class="warning {{EntitlementsWarningHidden}}">
+			<strong>{{T_EntitlementsFallito}}</strong>
+		</div>
+		{{EntitlementsDict}}
+	</details>
+	
+	<div class="{{ProvisionHidden}}">
+		<h2>Provisioning</h2>
+		<dl class="dati">
+			<dt>{{T_NomeProfilo}}</dt><dd>{{ProvisionProfileName}}</dd>
+			<dt>{{T_UuidProfilo}}</dt><dd class="mono">{{ProvisionProfileId}}</dd>
+			<dt>{{T_TipoProfilo}}</dt><dd>{{ProvisionProfilePlatform}} {{ProvisionProfileType}}</dd>
+			<dt>Team</dt><dd>{{ProvisionTeamName}} ({{ProvisionTeamIds}})</dd>
+			<dt>{{T_DataCreazione}}</dt><dd>{{ProvisionCreateDate}}</dd>
+			<dt>{{T_DataScadenza}}</dt><dd class="{{ProvisionExpireStatus}}">{{ProvisionExpireDate}}</dd>
+		</dl>
+		
+		<h2>{{T_Certificati}}</h2>
+		{{ProvisionDevelopCertificates}}
+		
+		<h2>{{T_Dispositivi}} ({{ProvisionDeviceCount}})</h2>
+		{{ProvisionDeviceIds}}
+	</div>
+	
+	<div class="{{ApkFeaturesRequiredHidden}}">
+		<h2>{{T_FunzioniRichieste}}</h2>
+		{{ApkFeaturesRequiredList}}
+	</div>
+	
+	<div class="{{ApkFeaturesOptionalHidden}}">
+		<h2>{{T_FunzioniFacoltative}}</h2>
+		{{ApkFeaturesOptionalList}}
+	</div>
+	
+	<div class="{{ApkPermissionsHidden}}">
+		<h2>{{T_Permessi}}</h2>
+		{{ApkPermissionsList}}
+	</div>
+	
+	<div class="footer">
+		<p>{{SrcAppName}} v{{SrcVersion}} ({{SrcBuildVer}}) (Github: <a href="{{SrcLinkUrl}}">{{SrcLinkName}}</a>)</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+*.xcodeproj/xcuserdata/
+.DS_Store
+Vendor/build/
+Vendor/ffmpeg/
+Vendor/ghostscript/
+build/
+dist/
+tools/js/node_modules/

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>{{CSS}}</style>
+</head>
+<body>
+	<h1>{{QuickLookTitle}}</h1>
+	
+	<!--
+	  Il riquadro d'identita'. Nello stile originale le righe hanno il nome del
+	  campo davanti, ed e' il modello a chiederle in quella forma: {{Sommario}}
+	  sarebbe la stessa roba senza etichette.
+	-->
+	<div class="app">
+		<div class="floatLeft icon"><img alt="Icon" src="data:image/png;base64,{{AppIcon}}"/></div>
+		<div class="floatLeft info">
+			<strong>{{Titolo}}</strong>
+			<dl class="dati">
+			{{SommarioRighe}}
+			</dl>
+		</div>
+		<br class="clear" />
+	</div>
+	
+	<div class="not-{{AppInfoHidden}}">
+		Could not find any Info.plist
+	</div>
+	
+	<div class="{{FirmaHidden}}">
+		<h2>Signature</h2>
+		<dl class="dati">
+		{{FirmaRighe}}
+		</dl>
+	</div>
+	
+	<div class="{{RisorseHidden}}">
+		<h2>Resource types</h2>
+		<p class="mono elenco">{{RisorseElenco}}</p>
+	</div>
+	
+	<div class="{{ArchiveHidden}}">
+		<h2>Archive Notes</h2>
+		<pre>{{ArchiveComment}}</pre>
+	</div>
+	
+	<div class="{{iTunesHidden}}">
+		<h2>iTunes Metadata</h2>
+		iTunesId: {{iTunesId}}<br />
+		Title: {{iTunesName}}<br />
+		Genres: {{iTunesGenres}}<br />
+		Released: {{iTunesReleaseDate}}<br />
+		<br />
+		AppleId: {{iTunesAppleId}}<br />
+		Purchased: {{iTunesPurchaseDate}}<br />
+		Price: {{iTunesPrice}}<br />
+	</div>
+	
+	<div class="{{TransportSecurityHidden}}">
+		<h2>App Transport Security</h2>
+		{{TransportSecurityDict}}
+	</div>
+	
+	<details class="{{EntitlementsHidden}}">
+		<summary>Entitlements <span class="conteggio">{{EntitlementsConteggio}}</span></summary>
+		<div class="warning {{EntitlementsWarningHidden}}">
+			<strong>Entitlements extraction failed.</strong>
+		</div>
+		{{EntitlementsDict}}
+	</details>
+	
+	<div class="{{ProvisionHidden}}">
+		<h2>Provisioning</h2>
+		Profile name: <strong>{{ProvisionProfileName}}</strong><br />
+		Profile UUID: {{ProvisionProfileId}}<br />
+		Profile Type: {{ProvisionProfilePlatform}} {{ProvisionProfileType}}<br />
+		Team: {{ProvisionTeamName}} ({{ProvisionTeamIds}})<br />
+		Creation date: {{ProvisionCreateDate}}<br />
+		Expiration Date: <strong><span class="{{ProvisionExpireStatus}}">{{ProvisionExpireDate}}</span></strong><br />
+		
+		<h2>Developer Certificates</h2>
+		{{ProvisionDevelopCertificates}}
+		
+		<h2>Devices ({{ProvisionDeviceCount}})</h2>
+		{{ProvisionDeviceIds}}
+	</div>
+	
+	<div class="{{ApkFeaturesRequiredHidden}}">
+		<h2>Features (required)</h2>
+		{{ApkFeaturesRequiredList}}
+	</div>
+	
+	<div class="{{ApkFeaturesOptionalHidden}}">
+		<h2>Features (optional)</h2>
+		{{ApkFeaturesOptionalList}}
+	</div>
+	
+	<div class="{{ApkPermissionsHidden}}">
+		<h2>Permissions</h2>
+		{{ApkPermissionsList}}
+	</div>
+	
+	<div class="footer">
+		<p>{{SrcAppName}} v{{SrcVersion}} ({{SrcBuildVer}}) (Github: <a href="{{SrcLinkUrl}}">{{SrcLinkName}}</a>)</p>
+	</div>
+</body>
+</html>

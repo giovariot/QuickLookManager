@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Niente sandbox per l'app: scrive le impostazioni in ~/Library/Application Support/QuickLookManager/ e
+	  importa fogli di stile CSS scelti dall'utente. Le estensioni Quick Look, che leggono file qualunque,
+	  restano in sandbox. Distribuzione solo su GitHub, fuori dal Mac App Store.
+	-->
+</dict>
+</plist>

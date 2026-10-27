@@ -1,0 +1,13 @@
+/* Claude Code: stile della chat di Claude Code (scritto da zero): fondo caldo, testo sans, accento terracotta. */
+:root { --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --fg: #29261b; --bg: #faf9f5; --muted: #77716a; --link: #c15f3c; --rule: #e5e2d6; --code-bg: #f0eee6; --quote: #6b665c; --accent: #d97757; }
+@media (prefers-color-scheme: dark) { :root { --fg: #ece9de; --bg: #1f1e1d; --muted: #9b958a; --link: #e8896a; --rule: #3a3833; --code-bg: #2b2a27; --quote: #b0aa9e; --accent: #d97757; } }
+body { line-height: 1.65; }
+h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -.01em; }
+h1 { font-size: 1.8em; } h2 { font-size: 1.4em; } h3 { font-size: 1.15em; }
+a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--link) 40%, transparent); } a:hover { border-bottom-color: var(--link); text-decoration: none; }
+pre { border: 1px solid var(--rule); background: var(--code-bg); border-radius: 8px; } code { background: var(--code-bg); border: 1px solid var(--rule); font-size: .85em; }
+pre code { border: 0; }
+blockquote { border-left: 3px solid var(--accent); color: var(--quote); }
+li::marker { color: var(--accent); }
+th { background: var(--code-bg); }

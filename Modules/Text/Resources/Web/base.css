@@ -1,0 +1,70 @@
+/* Base comune a tutti i temi: colori di sistema WebKit, seguono Chiaro/Scuro e il colore d'accento. */
+:root {
+  color-scheme: light dark;
+  --qtl-font-size: 16px;
+  --qtl-max-width: 860px;
+  --fg: CanvasText;
+  --bg: Canvas;
+  --muted: GrayText;
+  --link: LinkText;
+  --accent: AccentColor;
+  --rule: color-mix(in srgb, CanvasText 18%, transparent);
+  --code-bg: color-mix(in srgb, CanvasText 7%, transparent);
+  --quote: color-mix(in srgb, CanvasText 45%, transparent);
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --hl-keyword: -apple-system-pink; --hl-string: -apple-system-red; --hl-number: -apple-system-purple;
+  --hl-comment: -apple-system-green; --hl-title: -apple-system-blue; --hl-type: -apple-system-teal;
+  --hl-attr: -apple-system-indigo; --hl-meta: -apple-system-orange;
+}
+html { background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: var(--qtl-font-size)/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+#write { box-sizing: border-box; max-width: var(--qtl-max-width); margin: 0 auto; padding: 28px 32px 64px; overflow-wrap: break-word; }
+#write > :first-child { margin-top: 0; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; margin: 1.6em 0 .6em; font-weight: 600; }
+h1 { font-size: 2em; } h2 { font-size: 1.5em; } h3 { font-size: 1.25em; } h4 { font-size: 1em; } h5 { font-size: .9em; } h6 { font-size: .85em; color: var(--muted); }
+p, ul, ol, dl, table, pre, blockquote { margin: 0 0 1em; }
+a { color: var(--link); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent); text-underline-offset: 2px; } a:hover { text-decoration-color: var(--link); }
+ul, ol { padding-left: 1.8em; } li > p { margin: .25em 0; }
+li.task-list-item { list-style: none; margin-left: -1.4em; } .task-list-item-checkbox { margin: 0 .5em 0 0; }
+blockquote { margin-left: 0; padding: 0 1em; color: var(--quote); border-left: .25em solid var(--rule); }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 1.6em 0; }
+img { max-width: 100%; }
+code, kbd, samp { font: .88em var(--mono); background: var(--code-bg); padding: .15em .35em; border-radius: 5px; }
+pre { background: var(--code-bg); border-radius: 8px; padding: 12px 14px; overflow: auto; line-height: 1.45; }
+pre code { background: none; padding: 0; font-size: .86em; }
+table { border-collapse: collapse; display: block; overflow: auto; max-width: 100%; }
+th, td { border: 1px solid var(--rule); padding: 6px 12px; } th { background: var(--code-bg); text-align: left; }
+tr:nth-child(2n) td { background: color-mix(in srgb, CanvasText 3%, transparent); }
+mark { background: color-mix(in srgb, -apple-system-yellow 55%, transparent); color: inherit; padding: 0 .15em; border-radius: 3px; }
+abbr[title] { text-decoration: underline dotted; }
+dt { font-weight: 600; } dd { margin: 0 0 .5em 1.6em; }
+.footnotes { font-size: .9em; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 2em; } .footnote-ref { font-size: .75em; vertical-align: super; }
+.footnote-backref { margin-left: .3em; }
+table.frontmatter { font-size: .9em; } table.frontmatter th { width: 1%; white-space: nowrap; color: var(--muted); background: none; }
+nav.toc { border: 1px solid var(--rule); border-radius: 8px; padding: 8px 14px; margin: 0 0 1.2em; }
+nav.toc .toc-2 { margin-left: 1em; } nav.toc .toc-3 { margin-left: 2em; } nav.toc .toc-4 { margin-left: 3em; }
+.admonition, .note, .warning, .markdown-alert { border-left: .25em solid var(--accent); background: var(--code-bg); padding: .6em 1em; border-radius: 0 6px 6px 0; }
+.warning { border-left-color: -apple-system-orange; }
+pre.mermaid { background: none; text-align: center; }
+.katex-display { overflow-x: auto; overflow-y: hidden; }
+/* evidenziazione nei blocchi di codice */
+.hljs-keyword, .hljs-selector-tag, .hljs-doctag { color: var(--hl-keyword); }
+.hljs-string, .hljs-regexp, .hljs-template-string { color: var(--hl-string); }
+.hljs-number, .hljs-literal, .hljs-symbol, .hljs-bullet { color: var(--hl-number); }
+.hljs-comment, .hljs-quote { color: var(--hl-comment); }
+.hljs-title, .hljs-section, .hljs-function { color: var(--hl-title); }
+.hljs-built_in, .hljs-type, .hljs-class { color: var(--hl-type); }
+.hljs-attr, .hljs-attribute, .hljs-variable, .hljs-params, .hljs-property { color: var(--hl-attr); }
+.hljs-meta, .hljs-tag, .hljs-name { color: var(--hl-meta); }
+.hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+.hljs-addition { color: -apple-system-green; } .hljs-deletion { color: -apple-system-red; }
+/* pagine man (mandoc) */
+.manpage { font-family: var(--mono); font-size: .92em; } .manpage h1.Sh, .manpage h2.Ss { font-family: var(--font); }
+@media print { #write { max-width: none; } }
+/* Aumenta contrasto: bordi e testo secondario più marcati, link sempre pieni */
+@media (prefers-contrast: more) {
+  :root { --rule: color-mix(in srgb, CanvasText 55%, transparent); --muted: CanvasText; --quote: CanvasText; --code-bg: color-mix(in srgb, CanvasText 14%, transparent); }
+  a { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+  th, td, pre, blockquote { border-color: CanvasText; }
+}

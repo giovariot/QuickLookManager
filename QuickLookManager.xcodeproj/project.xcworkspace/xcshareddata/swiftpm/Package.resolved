@@ -1,0 +1,23 @@
+{
+  "originHash" : "ed6789bacf41bec5877a22ef59471f56fcfaa75656a428c3bf4a254c403e5fad",
+  "pins" : [
+    {
+      "identity" : "androidxml",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/relikd/AndroidXML",
+      "state" : {
+        "revision" : "d9fe646bcc3b05548aebbd20b4eee0af675c129f",
+        "version" : "0.9.4"
+      }
+    },
+    {
+      "identity" : "zipfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cavoco/ZIPFoundation.git",
+      "state" : {
+        "revision" : "514ad8d8e6b98b2c535d5653ab77e15b09a4fa61"
+      }
+    }
+  ],
+  "version" : 3
+}

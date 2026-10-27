@@ -1,0 +1,173 @@
+body {
+	background: #f7f7f7;
+	color: #000;
+	margin: 20px;
+	font: 13px monospace;
+	line-height: 1.3;
+}
+
+.hidden, .not- {
+	display: none;
+}
+
+.app {
+	margin-bottom: 20px;
+}
+
+.app img {
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.5));
+	filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.5));
+	width: 100px;
+}
+
+.info .subsection {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.info .list {
+	padding-left: 20px;
+}
+
+.icon {
+	padding-right: 20px;
+}
+
+.info > .list {
+	display: inline-block;
+	padding-left: 0px;
+}
+
+.floatLeft {
+	float: left;
+}
+
+a         { color: #aaa; }
+a:hover   { color: #000; }
+a:visited { color: #aaa; }
+
+h1 {
+	font-size: 18px;
+}
+
+h2 {
+	font-size: 14px;
+	margin-top: 4ex;
+	text-transform: uppercase;
+}
+
+.expired, .warning {
+	color: darkred;
+}
+.expiring {
+	color: #996600;
+}
+.valid {
+	color: darkgreen;
+}
+
+.deviceType {
+	color: #aaa;
+	font-size: 11px;
+}
+
+.clear {
+	clear: left;
+}
+
+table {
+	width: 600px;
+}
+
+tr {
+	line-height: 1.75;
+}
+
+td {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+tr:nth-child(odd) {
+	background-color: #eee;
+}
+
+tr:nth-child(even) {
+	background-color: #fafafa;
+}
+.footer {
+	margin-top: 20px;
+	color: #aaa;
+	font-size: 11px;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #323232;
+		color: #fff;
+	}
+
+	a         { color: #aaa; }
+	a:hover   { color: #fff; }
+	a:visited { color: #aaa; }
+
+	.expired, .warning {
+		color: red;
+	}
+	.expiring {
+		color: orange;
+	}
+	.valid {
+		color: lightgreen;
+	}
+
+	tr:nth-child(odd) {
+		background-color: #1e1e1e;
+	}
+
+	tr:nth-child(even) {
+		background-color: #292929;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+   Le classi che servono alle sezioni aggiunte dal fork: identita' a tabella,
+   firma, elenco dei tipi di risorsa. Il resto del foglio e' quello del
+   progetto originale e non si tocca -- e' il punto di avere questo stile.
+   --------------------------------------------------------------------------- */
+
+.dati {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0 16px;
+	margin: 6px 0 0 0;
+}
+
+.dati dt { color: #666; }
+.dati dd { margin: 0; word-break: break-word; }
+
+/* Una riga che si legge da sola -- una descrizione, un copyright -- prende
+   tutta la larghezza invece di fingere un campo che non ha. */
+.dati dt.sola { display: none; }
+.dati dd.sola { grid-column: 1 / -1; }
+
+.elenco { margin: 0; word-spacing: 0.5em; line-height: 1.7; }
+
+@media (prefers-color-scheme: dark) {
+	.dati dt { color: #9a9a9a; }
+}
+
+.segno {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	margin-right: 8px;
+	vertical-align: 1px;
+	background: #98989d;
+}
+
+.segno.buono  { background: #34c759; }
+.segno.neutro { background: #98989d; }
+.segno.grave  { background: #ff3b30; }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{T_Lang}}" dir="{{T_Dir}}">
+<head>
+	<meta charset="UTF-8">
+	<style>{{CSS}}</style>
+</head>
+<body>
+	<h1>{{QuickLookTitle}}</h1>
+	
+	<!--
+	  Un riquadro solo, uguale per ogni tipo di file: icona a sinistra, nome, e
+	  sotto le righe che dicono cos'e'. Cosa ci finisce dentro lo decide chi ha
+	  letto il file -- un .ipa mette versione e bundle id, un programma del 1992
+	  mette type, creator e fork -- ma la forma e' quella, sempre, perche' e'
+	  cosi' che si riconosce un pannello a colpo d'occhio.
+	-->
+	<div class="app">
+		<div class="icona"><img alt="{{T_Icona}}" src="data:image/png;base64,{{AppIcon}}"/></div>
+		<div class="titolo">{{Titolo}}</div>
+		<div class="sommario">{{Sommario}}</div>
+		<br class="clear" />
+	</div>
+	
+	<div class="{{NoPlistWarningHidden}}">
+		{{T_NoPlist}}
+	</div>
+	
+	<!--
+	  La firma: sandbox, hardening, notarizzazione, Gatekeeper. Sta in alto e
+	  non in fondo perche' di un programma scaricato e' la domanda vera --
+	  «chi me lo manda?» -- mentre entitlement e provisioning interessano a chi
+	  lo sviluppa.
+	-->
+	<div class="{{FirmaHidden}}">
+		<h2>{{T_Firma}}</h2>
+		<dl class="dati">
+		{{FirmaRighe}}
+		</dl>
+	</div>
+	
+	<div class="{{RisorseHidden}}">
+		<h2>{{T_Risorse}}</h2>
+		<p class="mono elenco">{{RisorseElenco}}</p>
+	</div>
+	
+	<div class="{{ArchiveHidden}}">
+		<h2>{{T_NoteArchivio}}</h2>
+		<pre>{{ArchiveComment}}</pre>
+	</div>
+	
+	<div class="{{iTunesHidden}}">
+		<h2>{{T_MetadatiITunes}}</h2>
+		{{T_ITunesId}}: {{iTunesId}}<br />
+		{{T_Titolo}}: {{iTunesName}}<br />
+		{{T_Generi}}: {{iTunesGenres}}<br />
+		{{T_Uscita}}: {{iTunesReleaseDate}}<br />
+		<br />
+		{{T_AppleId}}: {{iTunesAppleId}}<br />
+		{{T_Acquistato}}: {{iTunesPurchaseDate}}<br />
+		{{T_Prezzo}}: {{iTunesPrice}}<br />
+	</div>
+	
+	<div class="{{TransportSecurityHidden}}">
+		<h2>App Transport Security</h2>
+		{{TransportSecurityDict}}
+	</div>
+	
+	<details class="{{EntitlementsHidden}}">
+		<summary>Entitlements <span class="conteggio">{{EntitlementsConteggio}}</span></summary>
+		<div class="warning {{EntitlementsWarningHidden}}">
+			<strong>{{T_EntitlementsFallito}}</strong>
+		</div>
+		{{EntitlementsDict}}
+	</details>
+	
+	<div class="{{ProvisionHidden}}">
+		<h2>Provisioning</h2>
+		{{T_NomeProfilo}}: <strong>{{ProvisionProfileName}}</strong><br />
+		{{T_UuidProfilo}}: {{ProvisionProfileId}}<br />
+		{{T_TipoProfilo}}: {{ProvisionProfilePlatform}} {{ProvisionProfileType}}<br />
+		Team: {{ProvisionTeamName}} ({{ProvisionTeamIds}})<br />
+		{{T_DataCreazione}}: {{ProvisionCreateDate}}<br />
+		{{T_DataScadenza}}: <strong><span class="{{ProvisionExpireStatus}}">{{ProvisionExpireDate}}</span></strong><br />
+		
+		<h2>{{T_Certificati}}</h2>
+		{{ProvisionDevelopCertificates}}
+		
+		<h2>{{T_Dispositivi}} ({{ProvisionDeviceCount}})</h2>
+		{{ProvisionDeviceIds}}
+	</div>
+	
+	<div class="{{ApkFeaturesRequiredHidden}}">
+		<h2>{{T_FunzioniRichieste}}</h2>
+		{{ApkFeaturesRequiredList}}
+	</div>
+	
+	<div class="{{ApkFeaturesOptionalHidden}}">
+		<h2>{{T_FunzioniFacoltative}}</h2>
+		{{ApkFeaturesOptionalList}}
+	</div>
+	
+	<div class="{{ApkPermissionsHidden}}">
+		<h2>{{T_Permessi}}</h2>
+		{{ApkPermissionsList}}
+	</div>
+	
+	<div class="footer">
+		<p>{{SrcAppName}} v{{SrcVersion}} ({{SrcBuildVer}}) (Github: <a href="{{SrcLinkUrl}}">{{SrcLinkName}}</a>)</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>QuickLook Manager gives the icons of classic Mac programs and documents to files on disks you attach. / QuickLook Manager dà l'icona ai programmi e ai documenti dei vecchi Mac che stanno sui dischi che colleghi.</string>
+	<key>NSNetworkVolumesUsageDescription</key>
+	<string>Only if you turn on "Include network volumes": QuickLook Manager gives icons to classic Mac files on shared disks. / Solo se accendi "Includi anche i volumi di rete": QuickLook Manager dà l'icona ai file dei vecchi Mac sui dischi condivisi.</string>
+	<!--
+	  L'agente e' un eseguibile nudo, non un pacchetto: il suo Info.plist va cucito dentro il binario
+	  (CREATE_INFOPLIST_SECTION_IN_BINARY). Senza, SMAppService non ha un'identita' da verificare e la
+	  registrazione fallisce con «Operation not permitted» (provato in QLAppBundle).
+	-->
+	<key>CFBundleIdentifier</key>          <string>com.giovariot.QuickLookManager.IconeAgent</string>
+	<key>CFBundleName</key>                <string>IconeAgent</string>
+	<key>CFBundleExecutable</key>          <string>IconeAgent</string>
+	<key>CFBundlePackageType</key>         <string>APPL</string>
+	<key>CFBundleShortVersionString</key>  <string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>             <string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSBackgroundOnly</key>            <true/>
+</dict>
+</plist>

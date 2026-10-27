@@ -1,0 +1,1017 @@
+name: QuickLookManager
+options:
+  bundleIdPrefix: com.giovariot
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: it
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    ARCHS: arm64
+    ONLY_ACTIVE_ARCH: NO
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "Apple Development"
+    DEVELOPMENT_TEAM: V65ZSTAL42
+    ENABLE_HARDENED_RUNTIME: YES
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+    CLANG_ENABLE_MODULES: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+packages:
+  ZIPFoundation:
+    url: https://github.com/cavoco/ZIPFoundation.git
+    revision: 514ad8d8e6b98b2c535d5653ab77e15b09a4fa61
+  AndroidXML:
+    url: https://github.com/relikd/AndroidXML
+    exactVersion: 0.9.4
+targets:
+  QLMNative:
+    type: framework
+    platform: macOS
+    preBuildScripts:
+      - name: Controlla le librerie del modulo Video
+        script: |
+          if [ ! -f "$SRCROOT/Vendor/ffmpeg/lib/libavcodec.dylib" ]; then
+            echo "error: ffmpeg non compilato: esegui scripts/vendor-video.sh (una volta) e riprova."
+            exit 1
+          fi
+        basedOnDependencyAnalysis: false
+    sources:
+      - path: Modules/Native
+        headerVisibility: public
+      - path: Vendor/LibRaw/src
+        excludes: ["Makefile", "**/*.h", "**/*_ph.cpp"]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager.Native
+        PRODUCT_NAME: QLMNative
+        GENERATE_INFOPLIST_FILE: YES
+        DEFINES_MODULE: YES
+        SKIP_INSTALL: YES
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks", "@loader_path/Frameworks"]
+        DYLIB_INSTALL_NAME_BASE: "@rpath"
+        HEADER_SEARCH_PATHS: ["$(SRCROOT)/Vendor/LibRaw", "$(SRCROOT)/Vendor/libarchive", "$(SRCROOT)/Vendor/ffmpeg/include"]
+        LIBRARY_SEARCH_PATHS: ["$(SRCROOT)/Vendor/ffmpeg/lib"]
+        GCC_PREPROCESSOR_DEFINITIONS: ["$(inherited)", "LIBRAW_NOTHREADS=1"]
+        CLANG_CXX_LANGUAGE_STANDARD: c++17
+        OTHER_CPLUSPLUSFLAGS: ["-w"]
+        OTHER_LDFLAGS: ["-larchive", "-lavformat", "-lavcodec", "-lavutil", "-lswscale", "-lswresample", "-framework", "CoreMedia", "-framework", "CoreVideo", "-framework", "CoreImage"]
+        WARNING_CFLAGS: ["-w"]
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Giovanni; LibRaw © LibRaw LLC (LGPL 2.1 / CDDL 1.0)"
+  AssetCarReader:
+    type: framework
+    platform: macOS
+    sources:
+      - path: AssetCarReader
+        excludes: [PrivateFrameworks, AssetCarReader.xcconfig]
+    configFiles:
+      Debug: AssetCarReader/AssetCarReader.xcconfig
+      Release: AssetCarReader/AssetCarReader.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager.AssetCarReader
+        PRODUCT_NAME: AssetCarReader
+        BUILD_LIBRARY_FOR_DISTRIBUTION: YES
+        OTHER_LDFLAGS: ["-framework", "CoreUI"]
+        SWIFT_INSTALL_MODULE: YES
+        DEAD_CODE_STRIPPING: YES
+        GENERATE_INFOPLIST_FILE: YES
+        DEFINES_MODULE: YES
+        SKIP_INSTALL: YES
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks", "@loader_path/Frameworks"]
+        DYLIB_INSTALL_NAME_BASE: "@rpath"
+
+  QLMCore:
+    type: framework
+    platform: macOS
+    sources:
+      - path: Kit
+      - path: Modules/Text/Sources
+      - path: Modules/Apps/Sources
+      - path: Modules/Raw/Sources
+      - path: Modules/Models/Sources
+      - path: Modules/EPS/Sources
+      - path: Modules/Archives/Sources
+      - path: Modules/Video/Player
+      - path: Modules/Pkg/Sources
+      - path: Modules/Text/Resources/Web
+        type: folder
+        buildPhase: resources
+      - path: Modules/Apps/AppsResources
+        type: folder
+        buildPhase: resources
+      - path: Modules/Text/Resources/Localizable.xcstrings
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager.Core
+        PRODUCT_NAME: QLMCore
+        GENERATE_INFOPLIST_FILE: YES
+        DEFINES_MODULE: YES
+        SKIP_INSTALL: YES
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks", "@loader_path/Frameworks"]
+        DYLIB_INSTALL_NAME_BASE: "@rpath"
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Giovanni"
+        FRAMEWORK_SEARCH_PATHS: $(PROJECT_DIR)/AssetCarReader/PrivateFrameworks
+        SWIFT_INCLUDE_PATHS: $(SRCROOT)/AssetCarReader/PrivateFrameworks/CoreUI.framework
+    postBuildScripts:
+      - name: Incorpora Ghostscript
+        script: '"$SRCROOT/scripts/embed-ghostscript.sh"'
+        basedOnDependencyAnalysis: false
+    dependencies:
+      - sdk: JavaScriptCore.framework
+      - sdk: WebKit.framework
+      - target: AssetCarReader
+        embed: false
+      - target: QLMNative
+        embed: false
+      - package: AndroidXML
+      - package: ZIPFoundation
+      - sdk: SceneKit.framework
+      - sdk: AVFoundation.framework
+      - sdk: QuickLookThumbnailing.framework
+
+  ClassicIconsAgent:
+    type: tool
+    platform: macOS
+    sources: [Agent/main.swift]
+    settings:
+      base:
+        PRODUCT_NAME: IconeAgent
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager.IconeAgent
+        INFOPLIST_FILE: Agent/Info.plist
+        CREATE_INFOPLIST_SECTION_IN_BINARY: YES
+        CODE_SIGN_ENTITLEMENTS: Config/IconeAgent.entitlements
+        SKIP_INSTALL: YES
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks"]
+        FRAMEWORK_SEARCH_PATHS: $(PROJECT_DIR)/AssetCarReader/PrivateFrameworks
+        SWIFT_INCLUDE_PATHS: $(SRCROOT)/AssetCarReader/PrivateFrameworks/CoreUI.framework
+    dependencies:
+      - target: QLMCore
+        embed: false
+
+  QLMPreview:
+    type: app-extension
+    platform: macOS
+    sources: [Extensions/Preview]
+    info:
+      path: Extensions/Preview/Info.plist
+      properties:
+        CFBundleDisplayName: QuickLook Manager Anteprima
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLIsDataBasedPreview: false
+            QLSupportsSearchableItems: false
+            QLSupportedContentTypes:
+            # BEGIN preview-types
+            - public.plain-text
+            - public.source-code
+            - public.script
+            - public.shell-script
+            - public.json
+            - public.yaml
+            - public.toml
+            - public.css
+            - public.markdown
+            - net.daringfireball.markdown
+            - net.multimarkdown.text
+            - org.asciidoc
+            - com.apple.property-list
+            - com.apple.xml-property-list
+            - com.apple.xcode.entitlements-property-list
+            - com.apple.xcode.strings-text
+            - com.microsoft.ini
+            - com.apple.log
+            - public.patch-file
+            - public.make-source
+            - public.c-source
+            - public.swift-source
+            - public.python-script
+            - public.c-header
+            - public.c-plus-plus-source
+            - public.c-plus-plus-header
+            - public.objective-c-source
+            - public.objective-c-plus-plus-source
+            - public.fortran-source
+            - public.pascal-source
+            - public.protobuf-source
+            - public.ruby-script
+            - public.perl-script
+            - public.php-script
+            - public.zsh-script
+            - public.csh-script
+            - public.ksh-script
+            - public.tcsh-script
+            - public.bash-script
+            - public.ada-source
+            - public.assembly-source
+            - public.lua-script
+            - public.nasm-assembly-source
+            - com.apple.applescript.text
+            - com.apple.interfacebuilder.document.cocoa
+            - com.apple.dt.interfacebuilder.document.storyboard
+            - com.netscape.javascript-source
+            - com.sun.java-source
+            - com.microsoft.c-sharp
+            - com.microsoft.typescript
+            - com.seriflabs.xmp
+            - com.psion.opl-source
+            - org.lua
+            - org.clojure
+            - org.tug
+            - org.oasis-open.xliff
+            - org.oasis-open.dita.map
+            - org.oasis-open.dita.document
+            - org.iso.sql
+            - com.barebones.bbedit.textile-source
+            - public.data
+            - com.giovariot.quicklookmanager.text.rust
+            - com.giovariot.quicklookmanager.text.go
+            - com.giovariot.quicklookmanager.text.kotlin
+            - com.giovariot.quicklookmanager.text.dart
+            - com.giovariot.quicklookmanager.text.elixir
+            - com.giovariot.quicklookmanager.text.erlang
+            - com.giovariot.quicklookmanager.text.haskell
+            - com.giovariot.quicklookmanager.text.julia
+            - com.giovariot.quicklookmanager.text.lisp
+            - com.giovariot.quicklookmanager.text.scheme
+            - com.giovariot.quicklookmanager.text.terraform
+            - com.giovariot.quicklookmanager.text.vue
+            - com.giovariot.quicklookmanager.text.elm
+            - com.giovariot.quicklookmanager.text.stylesheet
+            - com.giovariot.quicklookmanager.text.arduino
+            - com.giovariot.quicklookmanager.text.fsharp
+            - com.giovariot.quicklookmanager.text.vbscript
+            - com.giovariot.quicklookmanager.text.coffeescript
+            - com.giovariot.quicklookmanager.text.assembly
+            - com.giovariot.quicklookmanager.text.scala
+            - com.giovariot.quicklookmanager.text.systems
+            - com.giovariot.quicklookmanager.text.graphql
+            - com.giovariot.quicklookmanager.text.nix
+            - com.giovariot.quicklookmanager.text.powershell
+            - com.giovariot.quicklookmanager.text.batch
+            - com.giovariot.quicklookmanager.text.fish
+            - com.giovariot.quicklookmanager.text.template
+            - com.giovariot.quicklookmanager.text.cmake
+            - com.giovariot.quicklookmanager.text.makefile-ext
+            - com.giovariot.quicklookmanager.text.jsx
+            - com.giovariot.quicklookmanager.text.xmlish
+            - com.giovariot.quicklookmanager.text.conf
+            - com.giovariot.quicklookmanager.text.env
+            - com.giovariot.quicklookmanager.text.properties
+            - com.giovariot.quicklookmanager.text.dotfiles
+            - com.giovariot.quicklookmanager.text.nfo
+            - com.giovariot.quicklookmanager.text.text
+            - com.giovariot.quicklookmanager.text.subtitles
+            - com.giovariot.quicklookmanager.text.man
+            - com.giovariot.quicklookmanager.text.asciidoc
+            - com.giovariot.quicklookmanager.text.textile
+            - com.giovariot.quicklookmanager.text.creole
+            - com.giovariot.quicklookmanager.text.rst
+            - com.giovariot.quicklookmanager.text.bbcode
+            - com.giovariot.quicklookmanager.text.pendown
+            - com.giovariot.quicklookmanager.text.markdown-variants
+            - com.giovariot.quicklookmanager.text.json-variants
+            - com.giovariot.quicklookmanager.text.plist-variants
+            - com.apple.itunes.ipa
+            - com.apple.application-and-system-extension
+            - com.apple.xcode.archive
+            - com.opa334.trollstore.tipa
+            - dyn.ah62d4rv4ge81k4puqe
+            - com.google.android.apk
+            - dyn.ah62d4rv4ge80c6dp
+            - public.archive.apk
+            - dyn.ah62d4rv4ge80c6dpry
+            - com.giovariot.quicklookmanager.classic-application
+            - com.apple.application-file
+            - com.microsoft.windows-executable
+            - com.microsoft.windows-dynamic-link-library
+            - com.apple.application-bundle
+            - com.apple.framework
+            - com.apple.xpc-service
+            - com.apple.systempreference.prefpane
+            - com.apple.system-extension
+            - com.apple.driver-extension
+            - com.apple.kernel-extension
+            - com.apple.plugin
+            - com.apple.mach-o-dylib
+            - com.giovariot.quicklookmanager.flatpak-bundle
+            - dyn.ah62d4rv4ge80q5dbsv2gc42
+            - public.camera-raw-image
+            - com.nikon.raw-image
+            - com.canon.cr3-raw-image
+            - com.canon.cr2-raw-image
+            - com.fuji.raw-image
+            - com.panasonic.rw2-raw-image
+            - com.olympus.raw-image
+            - com.sony.arw-raw-image
+            - com.hasselblad.3fr-raw-image
+            - com.samsung.raw-image
+            - com.adobe.raw-image
+            - com.anogeissus.x3f
+            - com.sigmaphoto.photopro-X3F
+            - com.anogeissus.arq
+            - com.canon.crw-raw-image
+            - com.epson.raw-image
+            - com.gopro.gpr
+            - com.hasselblad.fff-raw-image
+            - com.kodak.raw-image
+            - com.konicaminolta.raw-image
+            - com.leafamerica.raw-image
+            - com.leica.rwl-raw-image
+            - com.nikon.nrw-raw-image
+            - com.panasonic.raw-image
+            - com.pentax.raw-image
+            - com.phaseone.raw-image
+            - com.sony.raw-image
+            - com.sony.sr2-raw-image
+            - com.preview3mf.3mf-file
+            - com.shapr3d.3d-manufacturing.3mf
+            - com.bambulab.3mf
+            - com.adobe.encapsulated-postscript
+            - public.zip-archive
+            - org.gnu.gnu-zip-archive
+            - public.tar-archive
+            - org.gnu.gnu-zip-tar-archive
+            - public.bzip2-archive
+            - public.tar-bzip2-archive
+            - public.cpio-archive
+            - com.apple.xar-archive
+            - org.debian.deb-archive
+            - com.redhat.rpm-archive
+            - org.7-zip.7-zip-archive
+            - com.rarlab.rar-archive
+            - org.tukaani.xz-archive
+            - org.tukaani.lzma-archive
+            - org.tukaani.tar-xz-archive
+            - com.microsoft.cab
+            - public.lha-archive
+            - com.facebook.zstd-archive
+            - public.iso-image
+            - org.matroska.mkv
+            - org.matroska.mka
+            - org.webmproject.webm
+            - public.avi
+            - com.microsoft.windows-media-wmv
+            - com.microsoft.advanced-systems-format
+            - com.adobe.flash.video
+            - org.xiph.ogv
+            - com.giovariot.quicklookmanager.m2ts
+            - com.giovariot.quicklookmanager.vob
+            - com.giovariot.quicklookmanager.realmedia
+            - com.giovariot.quicklookmanager.divx
+            - com.giovariot.quicklookmanager.mxf
+            - com.apple.installer-package-archive
+            - com.apple.installer-meta-package
+            # END preview-types
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager.Preview
+        PRODUCT_NAME: QLMPreview
+        FRAMEWORK_SEARCH_PATHS: $(PROJECT_DIR)/AssetCarReader/PrivateFrameworks
+        SWIFT_INCLUDE_PATHS: $(SRCROOT)/AssetCarReader/PrivateFrameworks/CoreUI.framework
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks", "@executable_path/../../../../Frameworks"]
+        CODE_SIGN_ENTITLEMENTS: Config/QLMPreview.entitlements
+    dependencies:
+      - target: QLMCore
+        embed: false
+
+  QLMThumbnail:
+    type: app-extension
+    platform: macOS
+    sources: [Extensions/Thumbnail]
+    info:
+      path: Extensions/Thumbnail/Info.plist
+      properties:
+        CFBundleDisplayName: QuickLook Manager Miniature
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.thumbnail
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ThumbnailProvider
+          NSExtensionAttributes:
+            QLThumbnailMinimumDimension: 16
+            QLSupportedContentTypes:
+            # BEGIN thumbnail-types
+            - public.plain-text
+            - public.source-code
+            - public.script
+            - public.shell-script
+            - public.json
+            - public.yaml
+            - public.toml
+            - public.css
+            - public.markdown
+            - net.daringfireball.markdown
+            - net.multimarkdown.text
+            - org.asciidoc
+            - com.apple.property-list
+            - com.apple.xml-property-list
+            - com.apple.xcode.entitlements-property-list
+            - com.apple.xcode.strings-text
+            - com.microsoft.ini
+            - com.apple.log
+            - public.patch-file
+            - public.make-source
+            - public.c-source
+            - public.swift-source
+            - public.python-script
+            - public.c-header
+            - public.c-plus-plus-source
+            - public.c-plus-plus-header
+            - public.objective-c-source
+            - public.objective-c-plus-plus-source
+            - public.fortran-source
+            - public.pascal-source
+            - public.protobuf-source
+            - public.ruby-script
+            - public.perl-script
+            - public.php-script
+            - public.zsh-script
+            - public.csh-script
+            - public.ksh-script
+            - public.tcsh-script
+            - public.bash-script
+            - public.ada-source
+            - public.assembly-source
+            - public.lua-script
+            - public.nasm-assembly-source
+            - com.apple.applescript.text
+            - com.apple.interfacebuilder.document.cocoa
+            - com.apple.dt.interfacebuilder.document.storyboard
+            - com.netscape.javascript-source
+            - com.sun.java-source
+            - com.microsoft.c-sharp
+            - com.microsoft.typescript
+            - com.seriflabs.xmp
+            - com.psion.opl-source
+            - org.lua
+            - org.clojure
+            - org.tug
+            - org.oasis-open.xliff
+            - org.oasis-open.dita.map
+            - org.oasis-open.dita.document
+            - org.iso.sql
+            - com.barebones.bbedit.textile-source
+            - public.data
+            - com.giovariot.quicklookmanager.text.rust
+            - com.giovariot.quicklookmanager.text.go
+            - com.giovariot.quicklookmanager.text.kotlin
+            - com.giovariot.quicklookmanager.text.dart
+            - com.giovariot.quicklookmanager.text.elixir
+            - com.giovariot.quicklookmanager.text.erlang
+            - com.giovariot.quicklookmanager.text.haskell
+            - com.giovariot.quicklookmanager.text.julia
+            - com.giovariot.quicklookmanager.text.lisp
+            - com.giovariot.quicklookmanager.text.scheme
+            - com.giovariot.quicklookmanager.text.terraform
+            - com.giovariot.quicklookmanager.text.vue
+            - com.giovariot.quicklookmanager.text.elm
+            - com.giovariot.quicklookmanager.text.stylesheet
+            - com.giovariot.quicklookmanager.text.arduino
+            - com.giovariot.quicklookmanager.text.fsharp
+            - com.giovariot.quicklookmanager.text.vbscript
+            - com.giovariot.quicklookmanager.text.coffeescript
+            - com.giovariot.quicklookmanager.text.assembly
+            - com.giovariot.quicklookmanager.text.scala
+            - com.giovariot.quicklookmanager.text.systems
+            - com.giovariot.quicklookmanager.text.graphql
+            - com.giovariot.quicklookmanager.text.nix
+            - com.giovariot.quicklookmanager.text.powershell
+            - com.giovariot.quicklookmanager.text.batch
+            - com.giovariot.quicklookmanager.text.fish
+            - com.giovariot.quicklookmanager.text.template
+            - com.giovariot.quicklookmanager.text.cmake
+            - com.giovariot.quicklookmanager.text.makefile-ext
+            - com.giovariot.quicklookmanager.text.jsx
+            - com.giovariot.quicklookmanager.text.xmlish
+            - com.giovariot.quicklookmanager.text.conf
+            - com.giovariot.quicklookmanager.text.env
+            - com.giovariot.quicklookmanager.text.properties
+            - com.giovariot.quicklookmanager.text.dotfiles
+            - com.giovariot.quicklookmanager.text.nfo
+            - com.giovariot.quicklookmanager.text.subtitles
+            - com.giovariot.quicklookmanager.text.man
+            - com.giovariot.quicklookmanager.text.asciidoc
+            - com.giovariot.quicklookmanager.text.textile
+            - com.giovariot.quicklookmanager.text.creole
+            - com.giovariot.quicklookmanager.text.rst
+            - com.giovariot.quicklookmanager.text.bbcode
+            - com.giovariot.quicklookmanager.text.pendown
+            - com.giovariot.quicklookmanager.text.markdown-variants
+            - com.giovariot.quicklookmanager.text.json-variants
+            - com.giovariot.quicklookmanager.text.plist-variants
+            - com.apple.itunes.ipa
+            - com.apple.xcode.archive
+            - com.opa334.trollstore.tipa
+            - dyn.ah62d4rv4ge81k4puqe
+            - com.google.android.apk
+            - dyn.ah62d4rv4ge80c6dp
+            - public.archive.apk
+            - dyn.ah62d4rv4ge80c6dpry
+            - com.giovariot.quicklookmanager.classic-application
+            - com.apple.application-file
+            - com.microsoft.windows-executable
+            - com.microsoft.windows-dynamic-link-library
+            - com.giovariot.quicklookmanager.flatpak-bundle
+            - dyn.ah62d4rv4ge80q5dbsv2gc42
+            - public.camera-raw-image
+            - com.nikon.raw-image
+            - com.canon.cr3-raw-image
+            - com.canon.cr2-raw-image
+            - com.fuji.raw-image
+            - com.panasonic.rw2-raw-image
+            - com.olympus.raw-image
+            - com.sony.arw-raw-image
+            - com.hasselblad.3fr-raw-image
+            - com.samsung.raw-image
+            - com.adobe.raw-image
+            - com.anogeissus.x3f
+            - com.sigmaphoto.photopro-X3F
+            - com.anogeissus.arq
+            - com.canon.crw-raw-image
+            - com.epson.raw-image
+            - com.gopro.gpr
+            - com.hasselblad.fff-raw-image
+            - com.kodak.raw-image
+            - com.konicaminolta.raw-image
+            - com.leafamerica.raw-image
+            - com.leica.rwl-raw-image
+            - com.nikon.nrw-raw-image
+            - com.panasonic.raw-image
+            - com.pentax.raw-image
+            - com.phaseone.raw-image
+            - com.sony.raw-image
+            - com.sony.sr2-raw-image
+            - com.preview3mf.3mf-file
+            - com.shapr3d.3d-manufacturing.3mf
+            - com.bambulab.3mf
+            - com.adobe.encapsulated-postscript
+            - org.matroska.mkv
+            - org.matroska.mka
+            - org.webmproject.webm
+            - public.avi
+            - com.microsoft.windows-media-wmv
+            - com.microsoft.advanced-systems-format
+            - com.adobe.flash.video
+            - org.xiph.ogv
+            - com.giovariot.quicklookmanager.m2ts
+            - com.giovariot.quicklookmanager.vob
+            - com.giovariot.quicklookmanager.realmedia
+            - com.giovariot.quicklookmanager.divx
+            - com.giovariot.quicklookmanager.mxf
+            # END thumbnail-types
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager.Thumbnail
+        PRODUCT_NAME: QLMThumbnail
+        FRAMEWORK_SEARCH_PATHS: $(PROJECT_DIR)/AssetCarReader/PrivateFrameworks
+        SWIFT_INCLUDE_PATHS: $(SRCROOT)/AssetCarReader/PrivateFrameworks/CoreUI.framework
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks", "@executable_path/../../../../Frameworks"]
+        CODE_SIGN_ENTITLEMENTS: Config/QLMThumbnail.entitlements
+    dependencies:
+      - target: QLMCore
+        embed: false
+
+  QuickLookManager:
+    type: application
+    platform: macOS
+    sources:
+      - path: App
+      - path: Agent/com.giovariot.QuickLookManager.IconeAgent.plist
+        buildPhase:
+          copyFiles:
+            destination: wrapper
+            subpath: Contents/Library/LaunchAgents
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: QuickLook Manager
+        CFBundleLocalizations: [it, en, fr, de, es, ar]
+        CFBundleDevelopmentRegion: it
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSApplicationCategoryType: public.app-category.utilities
+        NSHumanReadableCopyright: "Giovanni"
+        # BEGIN exported
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.rust
+            UTTypeDescription: Rust source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["rs"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.go
+            UTTypeDescription: Go source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["go"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.kotlin
+            UTTypeDescription: Kotlin source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["kt", "kts", "ktm"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.dart
+            UTTypeDescription: Dart source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["dart"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.elixir
+            UTTypeDescription: Elixir source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["ex", "exs"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.erlang
+            UTTypeDescription: Erlang source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["erl", "hrl"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.haskell
+            UTTypeDescription: Haskell source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["hs", "lhs"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.julia
+            UTTypeDescription: Julia source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["jl"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.lisp
+            UTTypeDescription: Lisp source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["lisp", "lsp", "fasl", "cl", "el"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.scheme
+            UTTypeDescription: Scheme source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["scm", "rkt"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.terraform
+            UTTypeDescription: Terraform
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["tf", "tfvars", "hcl"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.vue
+            UTTypeDescription: Vue component
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["vue"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.elm
+            UTTypeDescription: Elm source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["elm"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.stylesheet
+            UTTypeDescription: Sass/Less/Stylus
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["scss", "sass", "less", "styl"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.arduino
+            UTTypeDescription: Arduino sketch
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["ino", "pde"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.fsharp
+            UTTypeDescription: F# source
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["fs", "fsx", "fsi"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.vbscript
+            UTTypeDescription: VBScript
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["vbs", "vbe", "wsf", "bas"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.coffeescript
+            UTTypeDescription: CoffeeScript
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["coffee", "litcoffee"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.assembly
+            UTTypeDescription: Assembly
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["asm", "nasm"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.scala
+            UTTypeDescription: Scala/Groovy/Gradle
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["scala", "sc", "groovy", "gradle"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.systems
+            UTTypeDescription: Nim/Zig/D
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["nim", "zig", "d"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.graphql
+            UTTypeDescription: GraphQL
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["graphql", "gql", "prisma"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.nix
+            UTTypeDescription: Nix
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["nix"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.powershell
+            UTTypeDescription: PowerShell
+            UTTypeConformsTo: [public.script, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["ps1", "psm1"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.batch
+            UTTypeDescription: Batch file
+            UTTypeConformsTo: [public.script, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["bat", "cmd"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.fish
+            UTTypeDescription: fish/awk script
+            UTTypeConformsTo: [public.script, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["fish", "awk"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.template
+            UTTypeDescription: Template
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["pug", "jade", "haml", "erb", "ejs", "hbs", "mustache", "liquid", "njk", "twig"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.cmake
+            UTTypeDescription: CMake
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["cmake"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.makefile-ext
+            UTTypeDescription: Makefile include
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["mk", "make"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.jsx
+            UTTypeDescription: JSX/TSX/ES module
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["jsx", "tsx", "mjs", "cjs"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.xmlish
+            UTTypeDescription: XML-based
+            UTTypeConformsTo: [public.source-code, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["xsl", "xslt", "xsd", "rss", "atom", "tmx", "dita", "ditamap", "gml", "dop", "csproj", "xcprivacy"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.conf
+            UTTypeDescription: Configuration file
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["conf", "cfg", "cnf", "cf", "rc", "config"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.env
+            UTTypeDescription: Environment file
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["env"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.properties
+            UTTypeDescription: Properties file
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["properties", "xcconfig"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.dotfiles
+            UTTypeDescription: Dotfile
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["gitignore", "gitattributes", "dockerignore", "npmrc", "editorconfig", "gitconfig", "gitmodules"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.nfo
+            UTTypeDescription: NFO / DOS text
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["nfo", "diz", "info", "inf", "1st", "asi", "ans", "ascii"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.text
+            UTTypeDescription: Text file
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["tx", "lst", "me", "asc", "readme", "sig"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.subtitles
+            UTTypeDescription: Subtitles
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["srt", "sub", "vtt", "ssa", "ass", "sbv", "lrc"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.man
+            UTTypeDescription: Man page
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["man", "mdoc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "n", "1m", "3p", "3pm"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.asciidoc
+            UTTypeDescription: AsciiDoc
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["adoc", "asciidoc"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.textile
+            UTTypeDescription: Textile
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["textile"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.creole
+            UTTypeDescription: Creole wiki
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["creole"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.rst
+            UTTypeDescription: reStructuredText
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["rst", "rest"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.bbcode
+            UTTypeDescription: BBCode
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["bbcode", "bb"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.pendown
+            UTTypeDescription: Pen Down
+            UTTypeConformsTo: [public.plain-text, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["pendown", "pdn"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.markdown-variants
+            UTTypeDescription: Markdown variant
+            UTTypeConformsTo: [net.daringfireball.markdown, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["mmd", "multimarkdown", "mmdoc", "rmd", "qmd", "mdx", "livemd", "mdtxt", "mdtext", "gfm", "commonmark"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.json-variants
+            UTTypeDescription: JSON variant
+            UTTypeConformsTo: [public.json, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["jsonc", "json5", "geojson", "topojson", "jsonld", "har", "ipynb", "webmanifest"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.text.plist-variants
+            UTTypeDescription: Property list variant
+            UTTypeConformsTo: [com.apple.property-list, public.text]
+            UTTypeTagSpecification:
+              public.filename-extension: ["mobileconfig", "webloc", "tmtheme", "xcsettings"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.flatpak-bundle
+            UTTypeDescription: Flatpak bundle
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["flatpak"]
+              public.mime-type: ["application/vnd.flatpak"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.classic-application
+            UTTypeDescription: Classic Macintosh application
+            UTTypeConformsTo: [public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: ["macapp"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.m2ts
+            UTTypeDescription: MPEG-2 transport stream video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["m2ts", "mts"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.vob
+            UTTypeDescription: DVD video object
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["vob"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.realmedia
+            UTTypeDescription: RealMedia video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["rm", "rmvb"]
+              public.mime-type: ["application/vnd.rn-realmedia"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.divx
+            UTTypeDescription: DivX video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["divx"]
+          - UTTypeIdentifier: com.giovariot.quicklookmanager.mxf
+            UTTypeDescription: Material Exchange Format
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["mxf"]
+              public.mime-type: ["application/mxf"]
+        # END exported
+        # BEGIN imported
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: com.opa334.trollstore.tipa
+            UTTypeDescription: AirDrop friendly iOS app
+            UTTypeConformsTo: [public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: ["tipa"]
+              public.mime-type: ["application/trollstore-ipa"]
+          - UTTypeIdentifier: com.google.android.apk
+            UTTypeConformsTo: [public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: ["apk", "apkm"]
+              public.mime-type: ["application/vnd.android.package-archive"]
+          - UTTypeIdentifier: com.preview3mf.3mf-file
+            UTTypeDescription: 3D Manufacturing Format
+            UTTypeConformsTo: [public.zip-archive, public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: ["3mf"]
+              public.mime-type: ["model/3mf"]
+          - UTTypeIdentifier: org.7-zip.7-zip-archive
+            UTTypeDescription: 7-Zip archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["7z"]
+              public.mime-type: ["application/x-7z-compressed"]
+          - UTTypeIdentifier: com.rarlab.rar-archive
+            UTTypeDescription: RAR archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["rar"]
+              public.mime-type: ["application/vnd.rar"]
+          - UTTypeIdentifier: org.tukaani.xz-archive
+            UTTypeDescription: XZ archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["xz"]
+              public.mime-type: ["application/x-xz"]
+          - UTTypeIdentifier: org.tukaani.lzma-archive
+            UTTypeDescription: LZMA archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["lzma"]
+          - UTTypeIdentifier: org.tukaani.tar-xz-archive
+            UTTypeDescription: XZ-compressed tar archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["txz", "tar.xz"]
+          - UTTypeIdentifier: com.microsoft.cab
+            UTTypeDescription: Cabinet archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["cab"]
+              public.mime-type: ["application/vnd.ms-cab-compressed"]
+          - UTTypeIdentifier: public.lha-archive
+            UTTypeDescription: LHA archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["lzh", "lha"]
+          - UTTypeIdentifier: com.facebook.zstd-archive
+            UTTypeDescription: Zstandard archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["zst"]
+              public.mime-type: ["application/zstd"]
+          - UTTypeIdentifier: com.redhat.rpm-archive
+            UTTypeDescription: RPM package
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: ["rpm"]
+              public.mime-type: ["application/x-rpm"]
+          - UTTypeIdentifier: org.matroska.mkv
+            UTTypeDescription: Matroska video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["mkv", "mk3d"]
+              public.mime-type: ["video/x-matroska"]
+          - UTTypeIdentifier: org.matroska.mka
+            UTTypeDescription: Matroska audio
+            UTTypeConformsTo: [public.audio]
+            UTTypeTagSpecification:
+              public.filename-extension: ["mka"]
+              public.mime-type: ["audio/x-matroska"]
+          - UTTypeIdentifier: org.webmproject.webm
+            UTTypeDescription: WebM video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["webm"]
+              public.mime-type: ["video/webm"]
+          - UTTypeIdentifier: com.microsoft.windows-media-wmv
+            UTTypeDescription: Windows Media video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["wmv"]
+              public.mime-type: ["video/x-ms-wmv"]
+          - UTTypeIdentifier: com.microsoft.advanced-systems-format
+            UTTypeDescription: Advanced Systems Format
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["asf"]
+              public.mime-type: ["video/x-ms-asf"]
+          - UTTypeIdentifier: com.adobe.flash.video
+            UTTypeDescription: Flash video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["flv", "f4v"]
+              public.mime-type: ["video/x-flv"]
+          - UTTypeIdentifier: org.xiph.ogv
+            UTTypeDescription: Ogg video
+            UTTypeConformsTo: [public.movie]
+            UTTypeTagSpecification:
+              public.filename-extension: ["ogv", "ogm"]
+              public.mime-type: ["video/ogg"]
+        # END imported
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.giovariot.QuickLookManager
+        PRODUCT_NAME: QuickLookManager
+        FRAMEWORK_SEARCH_PATHS: $(PROJECT_DIR)/AssetCarReader/PrivateFrameworks
+        SWIFT_INCLUDE_PATHS: $(SRCROOT)/AssetCarReader/PrivateFrameworks/CoreUI.framework
+        CODE_SIGN_ENTITLEMENTS: Config/QuickLookManager.entitlements
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks"]
+    postBuildScripts:
+      - name: Incorpora le librerie video
+        script: '"$SRCROOT/scripts/embed-video-libs.sh"'
+        basedOnDependencyAnalysis: false
+    dependencies:
+      - target: QLMCore
+      - target: AssetCarReader
+      - target: QLMNative
+      - target: QLMPreview
+      - target: QLMThumbnail
+      - target: ClassicIconsAgent
+        copy:
+          destination: executables

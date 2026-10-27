@@ -1,0 +1,290 @@
+/* Colori: i token semantici del design system macOS, per Light, Dark e
+   Aumenta contrasto. Niente esadecimali sparsi nel resto del file: se un
+   valore di sistema cambia, cambia qui. `secondary-label` ha un contrasto noto
+   sotto 4,5:1 in Light (e' cosi' anche nel sistema): per questo ogni
+   informazione importante ha anche testo o forma, mai solo il colore. */
+:root {
+	--label: rgba(0,0,0,0.85);
+	--secondary-label: rgba(0,0,0,0.5);
+	--separator: rgba(0,0,0,0.1);
+	--alt-row: rgba(0,0,0,0.05);
+	--link: #0064d1;
+	--system-red: #ff383c;
+	--system-orange: #ff8d28;
+	--system-green: #34c759;
+	--system-gray: #8e8e93;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--label: rgba(255,255,255,0.85);
+		--secondary-label: rgba(255,255,255,0.55);
+		--separator: rgba(255,255,255,0.1);
+		--alt-row: rgba(255,255,255,0.05);
+		--link: #419cff;
+		--system-red: #ff4245;
+		--system-orange: #ff9230;
+		--system-green: #30d158;
+		--system-gray: #8e8e93;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--label: rgba(0,0,0,1);
+		--secondary-label: rgba(0,0,0,0.72);
+		--separator: rgba(0,0,0,0.35);
+		--alt-row: rgba(0,0,0,0.1);
+		--link: #0036c0;
+		--system-red: #e9152d;
+		--system-orange: #c55300;
+		--system-green: #008932;
+		--system-gray: #6c6c70;
+	}
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--label: rgba(255,255,255,1);
+		--secondary-label: rgba(255,255,255,0.78);
+		--separator: rgba(255,255,255,0.4);
+		--alt-row: rgba(255,255,255,0.12);
+		--link: #7cb8ff;
+		--system-red: #ff6165;
+		--system-orange: #ffa056;
+		--system-green: #4ad968;
+		--system-gray: #aeaeb2;
+	}
+}
+
+body {
+	background: transparent;
+	color: var(--label);
+	margin: 0;
+	padding: 28px 32px;
+	font: 13px -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+	line-height: 1.45;
+}
+
+.hidden, .not- {
+	display: none;
+}
+
+.app {
+	margin-bottom: 6px;
+}
+
+.app img {
+	width: 104px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+/* L'intestazione: icona a sinistra, nome e righe a destra, come fa Apparency.
+   L'icona non ha ombra: quelle del 1984 sono disegnate pixel per pixel, e
+   un'ombra sotto le fa sembrare una fotografia di sé stesse. */
+.icona {
+	float: left;
+	width: 104px;
+	margin-right: 24px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.titolo {
+	font-size: 17px;
+	font-weight: 600;
+	margin: 0 0 14px 0;
+}
+
+/* Le righe sotto il nome: niente etichette, come in Apparency. «Versione 1.5.0»
+   si legge da sé, e una colonna di etichette per cinque righe è più rumore che
+   informazione. */
+.sommario {
+	overflow: hidden;
+	color: var(--label);
+}
+
+/* Le righe etichetta/valore, per le sezioni dove i valori sono tanti. */
+/* Una colonna sola per tutte le tabelle: con `max-content` ognuna si misurava
+   per conto suo e i valori non erano incolonnati fra una sezione e l'altra. */
+:root {
+	--etichetta: 11em;
+}
+
+.dati {
+	display: grid;
+	grid-template-columns: var(--etichetta) 1fr;
+	gap: 0 20px;
+	overflow: hidden;
+}
+
+.segno {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	margin-right: 8px;
+	vertical-align: 1px;
+	background: var(--system-gray);
+}
+
+.segno.buono  { background: var(--system-green); }
+.segno.neutro { background: var(--system-gray); }
+.segno.grave  { background: var(--system-red); }
+
+details > summary {
+	cursor: default;
+	color: var(--secondary-label);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	margin: 24px 0 8px 0;
+}
+
+details .conteggio {
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 400;
+	color: var(--secondary-label);
+}
+
+.dati dt {
+	color: var(--secondary-label);
+	padding: 7px 0;
+	border-top: 1px solid var(--separator);
+}
+
+.dati dd {
+	margin: 0;
+	padding: 7px 0;
+	border-top: 1px solid var(--separator);
+	word-break: break-word;
+}
+
+.dati dt:first-of-type, .dati dt:first-of-type + dd {
+	border-top: none;
+}
+
+/* I quattro codici e gli elenchi di risorse restano a spaziatura fissa: sono
+   codici, e incolonnati si leggono. */
+.mono {
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	font-size: 12px;
+}
+
+/* L'elenco dei tipi di risorsa: per un'applicazione del 1992 sono cinquanta
+   codici di quattro lettere, e incolonnati si scorrono. */
+.elenco {
+	margin: 0;
+	word-spacing: 0.5em;
+	line-height: 1.7;
+}
+
+.info .subsection {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.info .list {
+	padding-left: 20px;
+}
+
+.icon {
+	padding-right: 20px;
+}
+
+.info > .list {
+	display: inline-block;
+	padding-left: 0px;
+}
+
+.floatLeft {
+	float: left;
+}
+
+a         { color: var(--link); }
+a:hover   { color: var(--label); }
+a:visited { color: var(--link); }
+
+h1 {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--secondary-label);
+	margin: 0 0 18px 0;
+}
+
+h2 {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	margin-top: 24px;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+	color: var(--secondary-label);
+}
+
+.expired, .warning {
+	color: var(--system-red);
+}
+.expiring {
+	color: var(--system-orange);
+}
+.valid {
+	color: var(--system-green);
+}
+
+.deviceType {
+	color: var(--secondary-label);
+	font-size: 11px;
+}
+
+/* Serve solo a contenere il float dell'icona: non deve occupare una riga di
+   testo, o lascia un vuoto sotto ogni riquadro. */
+.clear {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+}
+
+table {
+	width: 600px;
+}
+
+tr {
+	line-height: 1.75;
+}
+
+td {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+tr:nth-child(odd) {
+	background-color: var(--alt-row);
+}
+
+tr:nth-child(even) {
+	background-color: transparent;
+}
+.footer {
+	margin-top: 20px;
+	color: var(--secondary-label);
+	font-size: 11px;
+}
+
+/* Il segno non e' solo un colore: ha anche una forma, cosi' si legge anche
+   senza distinguere il verde dal rosso. Pieno e tondo = a posto; anello =
+   non richiesto qui; triangolo = manca e dovrebbe esserci. */
+.segno.neutro {
+	background: transparent;
+	border: 2px solid var(--system-gray);
+	box-sizing: border-box;
+}
+.segno.grave {
+	border-radius: 0;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}

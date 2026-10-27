@@ -1,0 +1,265 @@
+/* Lo stile «centrato»: icona in cima, nome sotto, campi a tabella.
+   L'icona non ha ombra: quelle del 1984 sono disegnate pixel per pixel, e
+   un'ombra sotto le fa sembrare una fotografia di se' stesse. */
+
+/* Colori: i token semantici del design system macOS, per Light, Dark e
+   Aumenta contrasto. Niente esadecimali sparsi nel resto del file: se un
+   valore di sistema cambia, cambia qui. `secondary-label` ha un contrasto noto
+   sotto 4,5:1 in Light (e' cosi' anche nel sistema): per questo ogni
+   informazione importante ha anche testo o forma, mai solo il colore. */
+:root {
+	--label: rgba(0,0,0,0.85);
+	--secondary-label: rgba(0,0,0,0.5);
+	--separator: rgba(0,0,0,0.1);
+	--alt-row: rgba(0,0,0,0.05);
+	--link: #0064d1;
+	--system-red: #ff383c;
+	--system-orange: #ff8d28;
+	--system-green: #34c759;
+	--system-gray: #8e8e93;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--label: rgba(255,255,255,0.85);
+		--secondary-label: rgba(255,255,255,0.55);
+		--separator: rgba(255,255,255,0.1);
+		--alt-row: rgba(255,255,255,0.05);
+		--link: #419cff;
+		--system-red: #ff4245;
+		--system-orange: #ff9230;
+		--system-green: #30d158;
+		--system-gray: #8e8e93;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--label: rgba(0,0,0,1);
+		--secondary-label: rgba(0,0,0,0.72);
+		--separator: rgba(0,0,0,0.35);
+		--alt-row: rgba(0,0,0,0.1);
+		--link: #0036c0;
+		--system-red: #e9152d;
+		--system-orange: #c55300;
+		--system-green: #008932;
+		--system-gray: #6c6c70;
+	}
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--label: rgba(255,255,255,1);
+		--secondary-label: rgba(255,255,255,0.78);
+		--separator: rgba(255,255,255,0.4);
+		--alt-row: rgba(255,255,255,0.12);
+		--link: #7cb8ff;
+		--system-red: #ff6165;
+		--system-orange: #ffa056;
+		--system-green: #4ad968;
+		--system-gray: #aeaeb2;
+	}
+}
+
+body {
+	/* Trasparente, non bianco: il pannello di QuickLook ha il suo sfondo, e
+	   dipingerci sopra un rettangolo bianco si vede -- soprattutto in tema
+	   scuro, dove il riquadro bianco stonava con tutto il resto della
+	   finestra. */
+	background: transparent;
+	color: var(--label);
+	margin: 0;
+	padding: 28px 32px;
+	font: 13px -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+	line-height: 1.45;
+}
+
+/* `!important` perché la riga dell'elenco è un blocco con `display: contents`
+   -- serve a non rompere l'incolonnamento della griglia -- e senza questo
+   vincerebbe lui: si vedeva una riga «Tipi» vuota su ogni file che risorse non
+   ne ha. */
+.hidden, .not- {
+	display: none !important;
+}
+
+.app {
+	text-align: center;
+	margin: 8px 0 22px 0;
+}
+
+.app img {
+	width: 128px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+.titolo {
+	font-size: 17px;
+	font-weight: 600;
+	margin: 10px 0 0 0;
+}
+
+/* I campi: nome a sinistra in grigio, valore a destra, una riga sottile fra
+   l'uno e l'altro. Le righe sono `display: contents` dentro la griglia, cosi'
+   un blocco che ne raggruppa qualcuna (l'elenco dei tipi, che si nasconde) non
+   rompe l'incolonnamento. */
+/* La colonna delle etichette è **larga uguale in tutte le tabelle**.
+   Con `max-content` ogni tabella si misurava per conto suo: l'identità e la
+   firma finivano con due colonne di larghezza diversa e i valori non erano
+   incolonnati fra una sezione e l'altra. */
+:root {
+	--etichetta: 12em;
+}
+
+.dati {
+	display: grid;
+	grid-template-columns: var(--etichetta) 1fr;
+	gap: 0 24px;
+	margin: 0;
+}
+
+.riga-elenco {
+	display: contents;
+}
+
+.dati dt {
+	color: var(--secondary-label);
+	padding: 7px 0;
+	border-top: 1px solid var(--separator);
+}
+
+.dati dd {
+	margin: 0;
+	padding: 7px 0;
+	border-top: 1px solid var(--separator);
+	word-break: break-word;
+}
+
+.dati dt:first-of-type, .dati dt:first-of-type + dd {
+	border-top: none;
+}
+
+/* Una riga che si legge da sola -- «Applicazione», un copyright -- prende
+   tutta la larghezza invece di fingere un campo che non ha. */
+.dati dt.sola { display: none; }
+.dati dd.sola { grid-column: 1 / -1; }
+
+/* Il pallino che dice come sta messa una riga della firma: verde quando la cosa
+   c'è ed è quella giusta, grigio quando qui non è richiesta, rosso quando manca
+   e dovrebbe esserci. I colori sono quelli di sistema, e la forma è piena
+   perché un cerchietto vuoto a 11 pixel non si distingue. */
+.segno {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	margin-right: 8px;
+	vertical-align: 1px;
+	background: var(--system-gray);
+}
+
+.segno.buono  { background: var(--system-green); }
+.segno.neutro { background: var(--system-gray); }
+.segno.grave  { background: var(--system-red); }
+
+/* Le sezioni richiudibili: gli entitlement di certe applicazioni sono una
+   lista lunga una pagina, e aperta di default sommerge tutto il resto. */
+details {
+	margin-top: 4px;
+}
+
+details > summary {
+	cursor: default;
+	color: var(--secondary-label);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	margin: 26px 0 8px 0;
+	list-style: revert;
+}
+
+details > summary::-webkit-details-marker {
+	color: var(--secondary-label);
+}
+
+details .conteggio {
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 400;
+	color: var(--secondary-label);
+}
+
+/* I codici di quattro lettere e gli elenchi di risorse restano a spaziatura
+   fissa: sono codici, e incolonnati si leggono. */
+.mono {
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	font-size: 12px;
+}
+
+.elenco {
+	word-spacing: 0.5em;
+	line-height: 1.7;
+}
+
+a         { color: var(--link); }
+a:hover   { color: var(--label); }
+a:visited { color: var(--link); }
+
+h1 {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--secondary-label);
+	margin: 0 0 18px 0;
+}
+
+h2 {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	margin: 26px 0 8px 0;
+	text-transform: uppercase;
+	color: var(--secondary-label);
+}
+
+.expired, .warning { color: var(--system-red); }
+.expiring { color: var(--system-orange); }
+.valid { color: var(--system-green); }
+
+pre {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+}
+
+table { width: 100%; }
+tr { line-height: 1.75; }
+td { padding-left: 8px; padding-right: 8px; }
+tr:nth-child(odd)  { background-color: var(--alt-row); }
+tr:nth-child(even) { background-color: transparent; }
+
+.footer {
+	margin-top: 24px;
+	color: var(--secondary-label);
+	font-size: 11px;
+}
+
+/* Il segno non e' solo un colore: ha anche una forma, cosi' si legge anche
+   senza distinguere il verde dal rosso. Pieno e tondo = a posto; anello =
+   non richiesto qui; triangolo = manca e dovrebbe esserci. */
+.segno.neutro {
+	background: transparent;
+	border: 2px solid var(--system-gray);
+	box-sizing: border-box;
+}
+.segno.grave {
+	border-radius: 0;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}

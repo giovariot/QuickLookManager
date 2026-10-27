@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.app-sandbox</key> <true/>
+	<key>com.apple.security.files.user-selected.read-only</key> <true/>
+	<!--
+	  Impostazioni e fogli di stile scelti dall'utente: li scrive l'app (non in sandbox) in
+	  ~/Library/Application Support/QuickLookManager/ e le estensioni li leggono soltanto.
+	  Niente App Group: servirebbe un profilo di provisioning, e la distribuzione e' solo su GitHub.
+	-->
+	<key>com.apple.security.temporary-exception.files.home-relative-path.read-only</key>
+	<array>
+		<string>/Library/Application Support/QuickLookManager/</string>
+	</array>
+	<!--
+	  WebKit non avvia il processo web di una pagina in sandbox senza questo permesso (le anteprime di
+	  Markdown e simili resterebbero sul cerchio di attesa). La rete non si usa: la pagina ha una CSP
+	  senza risorse remote e i collegamenti vengono aperti fuori.
+	-->
+	<key>com.apple.security.network.client</key> <true/>
+	<!-- JavaScriptCore con JIT: l'evidenziazione di file grandi resta veloce. -->
+	<key>com.apple.security.cs.allow-jit</key> <true/>
+</dict>
+</plist>

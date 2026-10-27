@@ -1,0 +1,17 @@
+/* Claude: stile della visualizzazione Markdown di Claude (scritto da zero): fondo neutro, titoli serif, testo sans, link blu.
+   Usa il serif di sistema (New York) al posto dei caratteri proprietari. */
+:root { --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; --serif: ui-serif, "New York", Georgia, serif; --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --fg: #141413; --bg: #ffffff; --muted: #6b6a68; --link: #2c63c0; --rule: #e6e4de; --code-bg: #f3f2ee; --quote: #5f5e5a; --accent: #2c63c0; }
+@media (prefers-color-scheme: dark) { :root { --fg: #f0eee6; --bg: #262624; --muted: #a8a69c; --link: #7aa7ee; --rule: #3d3c38; --code-bg: #30302e; --quote: #b8b6ac; --accent: #7aa7ee; } }
+body { line-height: 1.6; }
+#write { padding-top: 28px; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; line-height: 1.15; }
+h1 { font-size: 2.1em; margin: .3em 0 .5em; } h2 { font-size: 1.45em; margin: 1.4em 0 .5em; } h3 { font-size: 1.2em; } h4 { font-size: 1.05em; }
+h5, h6 { font-family: var(--font); font-weight: 600; }
+strong { font-weight: 600; }
+ul, ol { padding-left: 1.6em; } li { margin: .35em 0; } li::marker { color: var(--fg); }
+a { text-decoration: none; } a:hover { text-decoration: underline; }
+pre { background: var(--code-bg); border-radius: 10px; border: 0; } code { font-family: var(--mono); background: var(--code-bg); }
+blockquote { border-left: 2px solid var(--rule); color: var(--quote); }
+th { font-weight: 600; background: transparent; border-bottom: 1px solid var(--rule); } th, td { border-width: 0 0 1px 0; }
+tr:nth-child(2n) td { background: transparent; }

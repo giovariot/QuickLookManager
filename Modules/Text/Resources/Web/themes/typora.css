@@ -1,0 +1,6 @@
+/* Ispirato al tema predefinito di Typora (scritto da zero). Struttura compatibile con #write. */
+:root { --font: -apple-system, "Helvetica Neue", system-ui, sans-serif; --fg: #333333; --bg: #ffffff; --muted: #777777; --link: #4183c4; --rule: #e7e7e7; --code-bg: #f3f4f4; --quote: #777777; --accent: #4183c4; }
+@media (prefers-color-scheme: dark) { :root { --fg: #dcdcdc; --bg: #2b2b2b; --muted: #a0a0a0; --link: #6aa5e0; --rule: #444444; --code-bg: #363636; --quote: #a0a0a0; --accent: #6aa5e0; } }
+#write { max-width: var(--qtl-max-width); }
+h1 { font-size: 1.9em; border-bottom: 1px solid var(--rule); padding-bottom: .2em; } h2 { font-size: 1.5em; border-bottom: 1px solid var(--rule); padding-bottom: .2em; }
+h6 { color: var(--muted); }
