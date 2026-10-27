@@ -68,6 +68,7 @@ QuickLook Manager è rilasciato con licenza **GNU GPL v3** (vedi [LICENSE](LICEN
 - [QLAppBundle](https://github.com/relikd/QLAppBundle) by relikd (MIT) — App e pacchetti;
 - [Preview3MF](https://github.com/cavoco/Preview3MF) by Cavan O'Connor (MIT) — modelli 3D;
 - [QLVideo](https://github.com/Marginal/QLVideo) by Jonathan Harris (GPL 2+) — versioni e patch di ffmpeg;
+- L'idea dell'icona viene dal mockup di [Donnnno](https://github.com/Donnnno) in [QL-Win/QuickLook#627](https://github.com/QL-Win/QuickLook/issues/627);
 - [LibRaw](https://github.com/LibRaw/LibRaw), [Ghostscript](https://ghostscript.com) (AGPL v3), [FFmpeg](https://ffmpeg.org), [dav1d](https://code.videolan.org/videolan/dav1d), [zimg](https://github.com/sekrit-twc/zimg), ZIPFoundation, AndroidXML, highlight.js, markdown-it, KaTeX, Mermaid and others.
 
 L'elenco completo, con le licenze, è in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
