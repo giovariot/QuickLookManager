@@ -1,0 +1,11 @@
+/* Regole che l'app mette in base.css e che Typora non ha: senza, tabelle e citazioni escono "nude".
+   Va messo prima del tema (scripts/installa-temi-typora.sh). Spaziature con #write (devono vincere su Typora);
+   bordi e sfondi con :where(), così i temi che le ridefiniscono (es. Claude) vincono su queste. */
+#write table { border-collapse: collapse; width: auto; max-width: 100%; margin: 0 0 1em; }
+#write th, #write td { padding: 8px 12px; text-align: left; vertical-align: top; }
+:where(#write) th, :where(#write) td { border: 1px solid var(--rule); }
+:where(#write) th { background: var(--code-bg); }
+:where(#write) tr:nth-child(2n) td { background: color-mix(in srgb, CanvasText 3%, transparent); }
+#write blockquote { margin: 0 0 1em; padding: 0 1em; }
+:where(#write) blockquote { border-left: .25em solid var(--rule); color: var(--quote); }
+#write blockquote > :last-child { margin-bottom: 0; }

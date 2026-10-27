@@ -53,7 +53,7 @@ struct PreviewGenerator {
 			procEntitlements(meta, plistApp, plistProvision)
 			procProvision(plistProvision)
 			// App Icon (last, because the image uses a lot of memory)
-			data["AppIcon"] = AppIcon(meta).extractImage(from: plistApp.icons).withRoundCorners().asBase64()
+			data["AppIcon"] = AppIcon(meta).extractImage(from: plistApp.icons).roundedIfSquare().asBase64()
 			
 		case .APK:
 			guard let manifest = meta.readApk_Manifest() else {
@@ -61,11 +61,11 @@ struct PreviewGenerator {
 			}
 			procAppInfoAndroid(manifest)
 			// App Icon (last, because the image uses a lot of memory)
-			data["AppIcon"] = AppIcon(meta).extractImage(from: manifest.icon).withRoundCorners().asBase64()
+			data["AppIcon"] = AppIcon(meta).extractImage(from: manifest.icon).roundedIfSquare().asBase64()
 			
 		case .ClassicMac, .WindowsPE, .Flatpak:
 			// App Icon (last, because the image uses a lot of memory)
-			data["AppIcon"] = AppIcon(meta).extractImageForThumbnail().withRoundCorners().asBase64()
+			data["AppIcon"] = AppIcon(meta).extractImageForThumbnail().roundedIfSquare().asBase64()
 			
 		case .MacApp:
 			// L'`Info.plist` qui può anche non esserci — un binario nudo non ne

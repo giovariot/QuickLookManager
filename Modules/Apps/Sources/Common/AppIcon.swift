@@ -204,6 +204,19 @@ extension NSImage {
 		return NSSize(width: w, height: h)
 	}
 	
+	/// Rounds the corners only when the image is an opaque square (iOS and Android icons): an icon that
+	/// already has its own shape (macOS, Windows, classic Mac) keeps it, with its transparent corners.
+	func roundedIfSquare() -> NSImage {
+		let size = bestImageSize()
+		guard size.width > 0, size.height > 0,
+		      let tiff = tiffRepresentation, let rep = NSBitmapImageRep(data: tiff),
+		      rep.hasAlpha else { return withRoundCorners() }
+		let w = rep.pixelsWide, h = rep.pixelsHigh
+		let corners = [(1, 1), (w - 2, 1), (1, h - 2), (w - 2, h - 2)]
+		let opaque = corners.allSatisfy { (rep.colorAt(x: $0.0, y: $0.1)?.alphaComponent ?? 1) > 0.98 }
+		return opaque ? withRoundCorners() : self
+	}
+	
 	/// Apply rounded corners to image (iOS7 style)
 	func withRoundCorners() -> NSImage {
 		let existingSize = bestImageSize()

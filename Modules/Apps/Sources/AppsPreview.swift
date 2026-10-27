@@ -43,7 +43,7 @@ public enum AppsPreview {
 
     public static func drawThumbnail(url: URL, in rect: CGRect) -> Bool {
         let meta = MetaInfo(url)
-        let image = AppIcon(meta).extractImageForThumbnail().withRoundCorners()
+        let image = AppIcon(meta).extractImageForThumbnail().roundedIfSquare()
         image.draw(in: rect)
         return true
     }
