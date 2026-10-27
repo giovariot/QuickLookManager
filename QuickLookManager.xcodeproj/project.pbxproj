@@ -57,6 +57,7 @@
 		3C6566A25A6D1C1F76A6F9F0 /* AndroidSdkMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26043CF1FB053D4FE29E7F0 /* AndroidSdkMap.swift */; };
 		3D3C03A2812A06E38970AF84 /* x3f_parse_process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B46BBED74918F4713FEEA77C /* x3f_parse_process.cpp */; };
 		3D4C2B9B471C314289D1829F /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C688F77BA6AD4F073DA17 /* Entitlements.swift */; };
+		3D759651E8D75CAEB79DB940 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = EDC2D3D079A4AC0FE8DDE0E0 /* AppIcon.icon */; };
 		3DA38CFB254B8BA1DA93AB48 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25D32E27980D78C23CD041C /* SceneKit.framework */; };
 		3EA5C90CAF23BEDF8C468BEC /* Preview+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A75A68001E4DBAAB242B8CA /* Preview+AppInfo.swift */; };
 		406709DAE401B237DF1C65D0 /* FlatpakBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAAD18419E0B85833C3197D /* FlatpakBundle.swift */; };
@@ -525,6 +526,7 @@
 		EAF7F4C357E39AAF4C3CC886 /* ClassicSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicSupport.swift; sourceTree = "<group>"; };
 		EB0E459D2336C6A1F22490EC /* ClassicIconsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicIconsService.swift; sourceTree = "<group>"; };
 		ED653A47928AA490287128A1 /* file_write.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file_write.cpp; sourceTree = "<group>"; };
+		EDC2D3D079A4AC0FE8DDE0E0 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		EE165E4A513495D2B3AB924E /* wblists.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = wblists.cpp; sourceTree = "<group>"; };
 		EF0719ADCDDA434716588720 /* olympus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = olympus.cpp; sourceTree = "<group>"; };
 		F03E114F33FFCAC06C529E92 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				A1F3ABFE3AC9875F47F17575 /* ActivationView.swift */,
+				EDC2D3D079A4AC0FE8DDE0E0 /* AppIcon.icon */,
 				A6AA63E3167772521F25DAF9 /* ClassicIconsSection.swift */,
 				9DC92EF13CC49D4A406D416C /* ContentView.swift */,
 				26B95E2629821183B1F4AF23 /* DebugTools.swift */,
@@ -1452,6 +1455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D759651E8D75CAEB79DB940 /* AppIcon.icon in Resources */,
 				F9202CC94951B828240A676F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
