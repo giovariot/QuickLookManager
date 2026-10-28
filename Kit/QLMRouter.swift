@@ -1,3 +1,4 @@
+import os
 import AppKit
 import QuickLookThumbnailing
 import UniformTypeIdentifiers
@@ -13,6 +14,8 @@ public enum QLMError: Error, LocalizedError {
 }
 
 /// Sceglie il modulo che si occupa di un file e gli chiede la vista o la miniatura.
+private let thumbLog = Logger(subsystem: "com.giovariot.QuickLookManager", category: "thumbnail")
+
 public enum QLMRouter {
     #if DEBUG
     /// Solo Debug: forza il modulo, per provare un tipo che il sistema non conosce ancora (l'app di prova non è registrata).
@@ -57,7 +60,14 @@ public enum QLMRouter {
             let size = CGSize(width: Swift.min(max.width, max.height * 0.78), height: max.height)
             return QLThumbnailReply(contextSize: size) { Thumbnailer.draw(url: url, in: CGRect(origin: .zero, size: size)) }
         case .apps:
-            return QLThumbnailReply(contextSize: max) { AppsPreview.drawThumbnail(url: url, in: CGRect(origin: .zero, size: max)) }
+            return QLThumbnailReply(contextSize: max) {
+                // Il tempo qui è quello della lettura dell'icona dal file (grosso per gli .exe): finisce nel log.
+                let start = ContinuousClock.now
+                let ok = AppsPreview.drawThumbnail(url: url, in: CGRect(origin: .zero, size: max))
+                let d = ContinuousClock.now - start
+                thumbLog.info("icona di \(url.lastPathComponent, privacy: .public) disegnata in \(Int(d.components.seconds * 1000 + d.components.attoseconds / 1_000_000_000_000_000)) ms")
+                return ok
+            }
         case .raw: return try RawPreview.thumbnailReply(for: url, maximumSize: max)
         case .models: return try ThreeMFPreview.thumbnailReply(for: url, maximumSize: max, scale: request.scale)
         case .eps: return try EPSPreview.thumbnailReply(for: url, maximumSize: max)
