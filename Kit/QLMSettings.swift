@@ -11,6 +11,8 @@ public struct QLMSettings: Codable, Equatable, Sendable {
     public var eps = EPS()
     public var archives = Archives()
     public var video = Video()
+    /// Scrive nel log di sistema i tempi delle miniature (categoria `thumbnail`), per capire dove si perde tempo.
+    public var diagnosticLog = false
 
     public init() {}
 
@@ -79,7 +81,7 @@ public struct QLMSettings: Codable, Equatable, Sendable {
         if on { disabled.remove(module) } else { disabled.insert(module) }
     }
 
-    enum CodingKeys: CodingKey { case disabled, appsPanelStyle, raw, eps, archives, video }
+    enum CodingKeys: CodingKey { case disabled, appsPanelStyle, raw, eps, archives, video, diagnosticLog }
     public init(from d: Decoder) throws {
         let c = try d.container(keyedBy: CodingKeys.self)
         disabled = try c.decodeIfPresent(Set<QLMModule>.self, forKey: .disabled) ?? disabled
@@ -88,6 +90,7 @@ public struct QLMSettings: Codable, Equatable, Sendable {
         eps = try c.decodeIfPresent(EPS.self, forKey: .eps) ?? eps
         archives = try c.decodeIfPresent(Archives.self, forKey: .archives) ?? archives
         video = try c.decodeIfPresent(Video.self, forKey: .video) ?? video
+        diagnosticLog = try c.decodeIfPresent(Bool.self, forKey: .diagnosticLog) ?? diagnosticLog
     }
 
     public static var file: URL { QTLPaths.supportDirectory.appendingPathComponent("manager.json") }

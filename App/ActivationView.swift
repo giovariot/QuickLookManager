@@ -40,6 +40,8 @@ enum ExtensionRegistrar {
 }
 
 struct ActivationView: View {
+    @EnvironmentObject var store: ManagerStore
+
     var body: some View {
         Form {
             Section("Estensioni") {
@@ -55,6 +57,9 @@ struct ActivationView: View {
             Section("Se qualcosa non va") {
                 Text("Se un'anteprima non cambia dopo un aggiornamento, ricarica Quick Look.")
                 Button("Ricarica Quick Look") { ExtensionRegistrar.reloadQuickLook() }
+                Toggle("Registra nel log i tempi delle miniature", isOn: $store.value.diagnosticLog)
+                Text("Serve a capire dove si perde tempo quando le miniature sono lente. Si legge in Console.app, cercando la categoria «thumbnail» del sottosistema com.giovariot.QuickLookManager.")
+                    .font(.callout).foregroundStyle(.secondary)
             }
             Section("Altre app con le stesse anteprime") {
                 Text("Se sono installati anche QuickTextLook, QLAppBundle, QuickLook Video, Camera RawX o Preview3MF, per gli stessi tipi di file Quick Look ne sceglie una sola. Togli le app che QuickLook Manager sostituisce, o spegni la loro estensione nelle Impostazioni di Sistema.")

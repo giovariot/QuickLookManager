@@ -4096,6 +4096,41 @@
         }
       }
     },
+    "Registra nel log i tempi delle miniature": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log thumbnail timings"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journaliser la durée des miniatures"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dauer der Miniaturen protokollieren"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrar los tiempos de las miniaturas"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تسجيل أزمنة المصغّرات في السجل"
+          }
+        }
+      }
+    },
     "Ricarica Quick Look": {
       "extractionState": "manual",
       "localizations": {
@@ -4652,6 +4687,41 @@
           "stringUnit": {
             "state": "translated",
             "value": "إن لم تتغير المعاينة بعد التحديث، أعد تحميل Quick Look."
+          }
+        }
+      }
+    },
+    "Serve a capire dove si perde tempo quando le miniature sono lente. Si legge in Console.app, cercando la categoria «thumbnail» del sottosistema com.giovariot.QuickLookManager.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Helps find where time is lost when thumbnails are slow. Read it in Console.app, looking for the “thumbnail” category of the com.giovariot.QuickLookManager subsystem."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aide à trouver où le temps est perdu quand les miniatures sont lentes. À lire dans Console.app, en cherchant la catégorie « thumbnail » du sous-système com.giovariot.QuickLookManager."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hilft herauszufinden, wo bei langsamen Miniaturen Zeit verloren geht. Zu lesen in Console.app, in der Kategorie „thumbnail“ des Subsystems com.giovariot.QuickLookManager."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sirve para saber dónde se pierde tiempo cuando las miniaturas son lentas. Se lee en Console.app, buscando la categoría «thumbnail» del subsistema com.giovariot.QuickLookManager."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يساعد على معرفة أين يضيع الوقت عندما تكون المصغّرات بطيئة. يمكن قراءته في Console.app بالبحث عن الفئة «thumbnail» ضمن النظام الفرعي com.giovariot.QuickLookManager."
           }
         }
       }

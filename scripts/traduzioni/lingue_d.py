@@ -21,3 +21,12 @@ LD = {
   ".exe y .dll de Windows, paquetes .flatpak, programas y documentos del Mac clásico",
   "ملفات .exe و.dll لويندوز وحزم .flatpak وبرامج ومستندات ماكنتوش القديمة"),
 }
+
+LD.update({
+ "Log thumbnail timings": ("Journaliser la durée des miniatures", "Dauer der Miniaturen protokollieren", "Registrar los tiempos de las miniaturas", "تسجيل أزمنة المصغّرات في السجل"),
+ "Helps find where time is lost when thumbnails are slow. Read it in Console.app, looking for the “thumbnail” category of the com.giovariot.QuickLookManager subsystem.": (
+  "Aide à trouver où le temps est perdu quand les miniatures sont lentes. À lire dans Console.app, en cherchant la catégorie « thumbnail » du sous-système com.giovariot.QuickLookManager.",
+  "Hilft herauszufinden, wo bei langsamen Miniaturen Zeit verloren geht. Zu lesen in Console.app, in der Kategorie „thumbnail“ des Subsystems com.giovariot.QuickLookManager.",
+  "Sirve para saber dónde se pierde tiempo cuando las miniaturas son lentas. Se lee en Console.app, buscando la categoría «thumbnail» del subsistema com.giovariot.QuickLookManager.",
+  "يساعد على معرفة أين يضيع الوقت عندما تكون المصغّرات بطيئة. يمكن قراءته في Console.app بالبحث عن الفئة «thumbnail» ضمن النظام الفرعي com.giovariot.QuickLookManager."),
+})

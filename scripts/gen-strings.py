@@ -91,6 +91,8 @@ PLURAL = {
     {"zero": "0 بايت", "one": "بايت واحد", "two": "بايتان", "few": "%lld بايتات", "many": "%lld بايتًا", "other": "%lld بايت"}),
 }
 EN.update({
+ "Registra nel log i tempi delle miniature": "Log thumbnail timings",
+ "Serve a capire dove si perde tempo quando le miniature sono lente. Si legge in Console.app, cercando la categoria «thumbnail» del sottosistema com.giovariot.QuickLookManager.": "Helps find where time is lost when thumbnails are slow. Read it in Console.app, looking for the “thumbnail” category of the com.giovariot.QuickLookManager subsystem.",
  ".app, framework, plug-in, estensioni, binari Mach-O: architetture, sistema minimo, firma, entitlement, notarizzazione": ".app, framework, plug-ins, extensions, Mach-O binaries: architectures, minimum system, signature, entitlements, notarization",
  ".ipa, .tipa, .xcarchive: profilo di provisioning, entitlement, App Transport Security": ".ipa, .tipa, .xcarchive: provisioning profile, entitlements, App Transport Security",
  ".apk, .apkm: permessi, funzionalità, versione dell'SDK": ".apk, .apkm: permissions, features, SDK version",

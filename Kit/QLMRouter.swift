@@ -52,7 +52,9 @@ public enum QLMRouter {
         let url = request.fileURL
         let max = request.maximumSize
         let module = module(for: url)
-        guard QLMSettings.load().isEnabled(module) else { throw QLMError.moduleDisabled(module) }
+        let settings = QLMSettings.load()
+        guard settings.isEnabled(module) else { throw QLMError.moduleDisabled(module) }
+        let logging = settings.diagnosticLog
         switch module {
         case .text:
             // Il testo sotto 48 pt non si legge: meglio l'icona del tipo di file, che il sistema usa se rifiutiamo.
@@ -65,7 +67,7 @@ public enum QLMRouter {
                 let start = ContinuousClock.now
                 let ok = AppsPreview.drawThumbnail(url: url, in: CGRect(origin: .zero, size: max))
                 let d = ContinuousClock.now - start
-                thumbLog.info("icona di \(url.lastPathComponent, privacy: .public) disegnata in \(Int(d.components.seconds * 1000 + d.components.attoseconds / 1_000_000_000_000_000)) ms")
+                if logging { thumbLog.info("icona di \(url.lastPathComponent, privacy: .public) disegnata in \(Int(d.components.seconds * 1000 + d.components.attoseconds / 1_000_000_000_000_000)) ms") }
                 return ok
             }
         case .raw: return try RawPreview.thumbnailReply(for: url, maximumSize: max)
