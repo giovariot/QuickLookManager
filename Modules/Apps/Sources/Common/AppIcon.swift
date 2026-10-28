@@ -20,8 +20,11 @@ struct AppIcon {
 			extractImage(from: meta.readPlist_Icon()?.filenames)
 		case .APK:
 			extractImage(from: meta.readApk_Icon())
-		case .ClassicMac, .WindowsPE:
+		case .ClassicMac:
 			ClassicSupport.icon(for: meta) ?? defaultIcon()
+		case .WindowsPE:
+			// Una DLL (o un .exe) senza icona propria: pagina di documento con il simbolo di Windows.
+			ClassicSupport.icon(for: meta) ?? windowsDocumentIcon(label: meta.url.pathExtension)
 		case .Flatpak:
 			// I due PNG che `flatpak build-bundle` mette nei metadati: si legge
 			// il più grande, e non si tocca il resto del file.
@@ -88,6 +91,32 @@ struct AppIcon {
 	}
 	
 	/// Return the bundled default icon `"defaultIcon.png"`
+	/// La pagina di documento generica del sistema, con il simbolo di Windows (quattro riquadri) al posto del punto
+	/// interrogativo e l'estensione sotto, come fa il sistema con i file .reg.
+	private func windowsDocumentIcon(label: String) -> NSImage {
+		let side: CGFloat = 512
+		let page = NSWorkspace.shared.icon(for: .data)
+		return NSImage(size: NSSize(width: side, height: side), flipped: false) { rect in
+			NSGraphicsContext.current?.imageInterpolation = .high
+			page.draw(in: rect)
+			let ink = NSColor.systemGray.withAlphaComponent(0.8)
+			ink.setFill()
+			let pane: CGFloat = 62, gap: CGFloat = 10
+			let origin = CGPoint(x: rect.midX - pane - gap / 2 - 12, y: rect.midY - 44)
+			for row in 0..<2 {
+				for col in 0..<2 {
+					let r = NSRect(x: origin.x + CGFloat(col) * (pane + gap), y: origin.y + CGFloat(row) * (pane + gap), width: pane, height: pane)
+					NSBezierPath(roundedRect: r, xRadius: 6, yRadius: 6).fill()
+				}
+			}
+			let text = label.uppercased() as NSString
+			let attrs: [NSAttributedString.Key: Any] = [.font: NSFont.systemFont(ofSize: 44, weight: .semibold), .foregroundColor: ink]
+			let w = text.size(withAttributes: attrs).width
+			text.draw(at: CGPoint(x: rect.midX - w / 2 - 12, y: origin.y - 64), withAttributes: attrs)
+			return true
+		}
+	}
+	
 	private func defaultIcon() -> NSImage {
 		// Anche qui niente `!`: un'icona che manca vale un riquadro vuoto, non
 		// un'anteprima che non compare.
