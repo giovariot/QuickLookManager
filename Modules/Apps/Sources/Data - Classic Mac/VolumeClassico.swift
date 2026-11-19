@@ -59,11 +59,27 @@ enum VolumeClassico {
         let tipo = withUnsafeBytes(of: fs.f_fstypename) { raw -> String in
             String(cString: raw.bindMemory(to: CChar.self).baseAddress!)
         }
-        // "macfuse_hfs" e "macfuse_mfs" sono i nostri; il prefisso copre anche
-        // gli altri filesystem FUSE, dove comunque non sappiamo cosa
-        // sopravvive.
-        if tipo.hasPrefix("macfuse") || tipo.hasPrefix("fuse") { return false }
-        return true
+        let origine = withUnsafeBytes(of: fs.f_mntfromname) { raw -> String in
+            String(cString: raw.bindMemory(to: CChar.self).baseAddress!)
+        }
+        return !eFuse(tipo: tipo, origine: origine)
+    }
+
+    /// Il volume è montato da un driver FUSE?
+    ///
+    /// Con macFUSE lo dice il tipo: "macfuse_hfs" e "macfuse_mfs" sono i volumi
+    /// di FuseMac, e il prefisso copre anche gli altri filesystem FUSE, dove
+    /// comunque non sappiamo cosa sopravvive.
+    ///
+    /// Con **FUSE-T** il tipo non lo dice: il volume passa da un server NFS (o
+    /// SMB) locale, e il kernel lo chiama "nfs" come un server qualunque. Lo
+    /// dice l'origine del mount, che FUSE-T scrive come "fuse-t:/Nome". Senza
+    /// questo controllo un volume di FuseMac montato con FUSE-T passava per
+    /// scrivibile, cioè proprio il caso da cui questa funzione protegge.
+    static func eFuse(tipo: String, origine: String) -> Bool {
+        let tipo = tipo.lowercased()
+        if tipo.hasPrefix("macfuse") || tipo.hasPrefix("fuse") { return true }
+        return origine.lowercased().contains("fuse-t")
     }
 
     /// Vale la pena occuparsi di questo volume?

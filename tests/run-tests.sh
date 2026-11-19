@@ -201,6 +201,14 @@ else
     fail "si scriverebbe sui volumi FUSE, e senza poter tornare indietro"
 fi
 
+# 14b. Lo stesso con FUSE-T, dove il tipo del volume è "nfs" e a dire che è
+# FUSE è solo l'origine del mount. Prova eseguita, non cercata nel sorgente.
+prova tests/fuse/main.swift \
+    "i volumi FUSE si riconoscono anche con FUSE-T (tipo nfs, origine fuse-t:)" \
+    "un volume FUSE-T passerebbe per scrivibile, o un volume vero per FUSE" \
+    "$CM/VolumeClassico.swift" "$CM/IconeAutomatiche.swift" "$CM/ClassicIcon.swift" \
+    "$CM/ClassicIconWriter.swift" "$CM/ForkBackup.swift"
+
 # 15. I tipi dell'icns che il servizio icone sa davvero leggere.
 #
 # Il guasto: si scrivevano PNG sotto `ic04`/`ic05`, che il formato definisce come
