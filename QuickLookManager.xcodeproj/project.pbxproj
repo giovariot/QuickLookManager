@@ -50,6 +50,7 @@
 		330CF95E07D2C62C1B33AFEF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E114F33FFCAC06C529E92 /* Settings.swift */; };
 		345BC4B85628AC9043E3692F /* decoder_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 157881055EA9341409B21DF0 /* decoder_info.cpp */; };
 		34B8A959C431993958C3439A /* canon_600.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFB53ADC5202D4DB568B765E /* canon_600.cpp */; };
+		34E810B44BE3381D00D3E3CE /* pana8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 862AA88BC4BE9A02B740D61D /* pana8.cpp */; };
 		36CF19899234F283CF07A069 /* StilePannello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7D880E3288BC02901A5D9 /* StilePannello.swift */; };
 		3771047A4802E5B99374B24B /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A73635E9EF5392692E4D0BE /* Paths.swift */; };
 		377FDD9842A309660593BEE7 /* QLMNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855FFC49E023E0F6F2BA62A /* QLMNative.framework */; };
@@ -101,6 +102,7 @@
 		7D8C30F26C5FC4FD9F895459 /* misc_parsers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C1E5F12AD633361B605177 /* misc_parsers.cpp */; };
 		7FA02452CB285CEA83F17D46 /* libraw_datastream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8216E8AD1F614ACDFFC6E7D2 /* libraw_datastream.cpp */; };
 		7FA22C60D97FA951F097EC3B /* FirmaCodice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21E6210CA7ADD3C243BBED /* FirmaCodice.swift */; };
+		7FDB1F89A601FE7AAD61037F /* olympus14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0982DBCDDBFF37C7D5666BE7 /* olympus14.cpp */; };
 		8147F0A8A41BFDA768ABC27E /* com.giovariot.QuickLookManager.IconeAgent.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3236B510E8C2A1B7A13A976B /* com.giovariot.QuickLookManager.IconeAgent.plist */; };
 		8244895791F64FF965A02E7E /* AssetCarReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8241D2AC773D93D6BD56EB9 /* AssetCarReader.swift */; };
 		838FB4720547805A0C023538 /* Apk+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E47982589CCF7FE0321C2 /* Apk+Icon.swift */; };
@@ -117,6 +119,7 @@
 		8EB15C90D933546C0CBEEA9B /* OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAC29BCC778A7DEA34493 /* OutlineView.swift */; };
 		8FCA01D9C40F104CB5313591 /* Preview+Sommario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9089C4359F377E46A09616DF /* Preview+Sommario.swift */; };
 		91E0F03ABBDC5C374B4D449D /* AssetCarReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97719238D840A952606F2EA6 /* AssetCarReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9264744D11ECFE0611149A86 /* sonycc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B049DEA1F9DFD9C36A0491A /* sonycc.cpp */; };
 		934A50E313EECEDC9D60B1F6 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11691F6CDA8B255A2E1D5EEF /* QuickLookThumbnailing.framework */; };
 		9357F6EBC565CF12B8ED53E3 /* TextSettingsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8709EE45FAEC5A46A8495 /* TextSettingsViews.swift */; };
 		938FC60E4B5B66D2628F8F2C /* apply_profile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92545B1E63672F59AC5BE793 /* apply_profile.cpp */; };
@@ -156,6 +159,7 @@
 		C13BDA444AF4433095F989E8 /* QLMTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBEA337D22F5F9125E8AF28 /* QLMTypes.swift */; };
 		C29A2C04CE3B30F328B04B3B /* Preview+Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EEC7ABF574B85D9EEA80F9 /* Preview+Entitlements.swift */; };
 		C33D6492C6A51C0744671671 /* misc_demosaic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E27531934EFF473C66C656EB /* misc_demosaic.cpp */; };
+		C3F01D50ABCE40D511950D67 /* losslessjpeg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E2365613EC2A8FFBBD100D6 /* losslessjpeg.cpp */; };
 		C537E9A2E2D582BEED2B59A1 /* canon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF6978966DFAA8C910E698D1 /* canon.cpp */; };
 		C639A65826782A40841E3B24 /* SlicerProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1EAD0D375654513BDFB20 /* SlicerProject.swift */; };
 		C63D8B155D2E5514BBFB87C9 /* BomReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0035DC532D6F0CA678DE57 /* BomReader.swift */; };
@@ -349,6 +353,7 @@
 		0226597865FA4E0DAC080794 /* Preview+Firma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Firma.swift"; sourceTree = "<group>"; };
 		03B4AAF1F525DE0F578D61E3 /* Preview+Provisioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Provisioning.swift"; sourceTree = "<group>"; };
 		05A3C7E7F7033C11F22FD6C8 /* QLMMediaKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLMMediaKit.m; sourceTree = "<group>"; };
+		0982DBCDDBFF37C7D5666BE7 /* olympus14.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = olympus14.cpp; sourceTree = "<group>"; };
 		0BF792E1174715DC18118DB7 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		0F176665F6A04128E89F3D32 /* PkgPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PkgPreview.swift; sourceTree = "<group>"; };
 		101587D016F4AACF1D48CC6F /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
@@ -387,6 +392,7 @@
 		37CB61C9CDC9CF1C57340386 /* VolumeClassico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeClassico.swift; sourceTree = "<group>"; };
 		38783CB182982434EF897AD9 /* leica.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = leica.cpp; sourceTree = "<group>"; };
 		3A73635E9EF5392692E4D0BE /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		3B049DEA1F9DFD9C36A0491A /* sonycc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sonycc.cpp; sourceTree = "<group>"; };
 		3C16B0577855D4A09E2FB67D /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 		3EB6650C7ECC3576C2927D17 /* Provisioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provisioning.swift; sourceTree = "<group>"; };
 		411ECD2D65AF74D2C9DE75C6 /* Preview+TransportSecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+TransportSecurity.swift"; sourceTree = "<group>"; };
@@ -396,6 +402,7 @@
 		4B35D184BFEC52E74EF5DDEE /* libraw_c_api.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libraw_c_api.cpp; sourceTree = "<group>"; };
 		4C54EACA783B769676B9D0B7 /* fp_dng.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fp_dng.cpp; sourceTree = "<group>"; };
 		4D5D75F38DB0D728A71CC399 /* IconeAutomatiche.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconeAutomatiche.swift; sourceTree = "<group>"; };
+		4E2365613EC2A8FFBBD100D6 /* losslessjpeg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = losslessjpeg.cpp; sourceTree = "<group>"; };
 		4EE9FE75994D1E3E8E719C1C /* ClassicIconsAgent */ = {isa = PBXFileReference; includeInIndex = 0; path = ClassicIconsAgent; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF1EAD0D375654513BDFB20 /* SlicerProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlicerProject.swift; sourceTree = "<group>"; };
 		5059D43E0B2B6EFF97529E1F /* ThreeMFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMFViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +453,7 @@
 		8216E8AD1F614ACDFFC6E7D2 /* libraw_datastream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libraw_datastream.cpp; sourceTree = "<group>"; };
 		8333BFD3E65A7E7E27B63263 /* ConsensiDischi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsensiDischi.swift; sourceTree = "<group>"; };
 		849B89978BDEA6D57A3C2C83 /* PreviewGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGenerator.swift; sourceTree = "<group>"; };
+		862AA88BC4BE9A02B740D61D /* pana8.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pana8.cpp; sourceTree = "<group>"; };
 		86F663FE7F3FEE6DFFAE11ED /* WindowsVersionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsVersionInfo.swift; sourceTree = "<group>"; };
 		870B19D04B892DF5D0BA4FA8 /* ext_preprocess.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ext_preprocess.cpp; sourceTree = "<group>"; };
 		8855FFC49E023E0F6F2BA62A /* QLMNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QLMNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -757,6 +765,7 @@
 				4B35D184BFEC52E74EF5DDEE /* libraw_c_api.cpp */,
 				8216E8AD1F614ACDFFC6E7D2 /* libraw_datastream.cpp */,
 				B0999A6852C539D3A6547E37 /* decoders */,
+				7A383681428E685DE3E003A5 /* decompressors */,
 				EF25B8F626C3153F229C04F7 /* demosaic */,
 				D03A6B5F2119EFDCCC80F931 /* integration */,
 				339FAEBA999BF1455E85DAD3 /* metadata */,
@@ -898,6 +907,14 @@
 				0AB37B4229CE7B9A2419DA9B /* Video */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		7A383681428E685DE3E003A5 /* decompressors */ = {
+			isa = PBXGroup;
+			children = (
+				4E2365613EC2A8FFBBD100D6 /* losslessjpeg.cpp */,
+			);
+			path = decompressors;
 			sourceTree = "<group>";
 		};
 		7C36017C3E489E4B9A80CD6B /* AssetCarReader */ = {
@@ -1063,7 +1080,10 @@
 				FFC8E17CC5A53784D0D5E0FA /* generic.cpp */,
 				1ADE46854812365D0E689808 /* kodak_decoders.cpp */,
 				E57174734A2303760C43F63F /* load_mfbacks.cpp */,
+				0982DBCDDBFF37C7D5666BE7 /* olympus14.cpp */,
+				862AA88BC4BE9A02B740D61D /* pana8.cpp */,
 				E93108F38C1500B35BFE2981 /* smal.cpp */,
+				3B049DEA1F9DFD9C36A0491A /* sonycc.cpp */,
 				6E1AB45A5A5F147D87D28BE3 /* unpack_thumb.cpp */,
 				C8D7F4EB8EA0CC0E5F8E37D3 /* unpack.cpp */,
 			);
@@ -1374,7 +1394,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					341B5685ECC637E9DBE7B41A = {
 						DevelopmentTeam = V65ZSTAL42;
@@ -1595,6 +1615,7 @@
 				559EE5BFDDFB63C6B9EFE2D1 /* libraw_c_api.cpp in Sources */,
 				7FA02452CB285CEA83F17D46 /* libraw_datastream.cpp in Sources */,
 				F7AC414DCBE1EE7A0FABF2E8 /* load_mfbacks.cpp in Sources */,
+				C3F01D50ABCE40D511950D67 /* losslessjpeg.cpp in Sources */,
 				B627680A79A5D3B18CBF1FFC /* makernotes.cpp in Sources */,
 				F4149E35569C9310044EAD93 /* mediumformat.cpp in Sources */,
 				0B56971665812114D9455FAE /* mem_image.cpp in Sources */,
@@ -1604,8 +1625,10 @@
 				DFC6CBD38E43AD8F52ED4C0C /* nikon.cpp in Sources */,
 				71381AF10AEA370462A7FFC8 /* normalize_model.cpp in Sources */,
 				FB3EC150828DF1A3B4928C59 /* olympus.cpp in Sources */,
+				7FDB1F89A601FE7AAD61037F /* olympus14.cpp in Sources */,
 				D1075759ADB9D1290E305255 /* open.cpp in Sources */,
 				D31D663C8E4ABBADBE5743FF /* p1.cpp in Sources */,
+				34E810B44BE3381D00D3E3CE /* pana8.cpp in Sources */,
 				21683AA4AC7D283122347CFE /* pentax.cpp in Sources */,
 				07D491C97EDEBDA6C2217DF6 /* phaseone_processing.cpp in Sources */,
 				6E9D0E7C18EA06CB733E22F8 /* postprocessing_aux.cpp in Sources */,
@@ -1617,6 +1640,7 @@
 				1F32C4788AEEFF3DCFFDB45B /* samsung.cpp in Sources */,
 				E5DACF294243B1A441106352 /* smal.cpp in Sources */,
 				E6A2704B14307A576087B662 /* sony.cpp in Sources */,
+				9264744D11ECFE0611149A86 /* sonycc.cpp in Sources */,
 				E8B046161CC59A51300F6176 /* subtract_black.cpp in Sources */,
 				99A8D9A1776E459F7DFF3905 /* thumb_utils.cpp in Sources */,
 				9BE1E185F09FE36A08EC6546 /* tiff.cpp in Sources */,

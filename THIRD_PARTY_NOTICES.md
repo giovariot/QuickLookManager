@@ -8,7 +8,7 @@ QuickLook Manager è distribuito con licenza GPL v3 (vedi `LICENSE`). Contiene c
 | [AndroidXML](https://github.com/relikd/AndroidXML) 0.9.4 | MIT | dipendenza Swift Package |
 | [Preview3MF](https://github.com/cavoco/Preview3MF) di Cavan O'Connor (modulo «Modelli 3D») | MIT | `Modules/Models` (testo della licenza: `Modules/Models/LICENSE-Preview3MF`) |
 | [ZIPFoundation](https://github.com/cavoco/ZIPFoundation) (fork di Cavan O'Connor con correzione ZIP64) | MIT | dipendenza Swift Package |
-| [LibRaw](https://github.com/LibRaw/LibRaw) 0.21.4 (modulo «Foto RAW») | LGPL 2.1 o CDDL 1.0, © LibRaw LLC | `Vendor/LibRaw`, compilata dentro `QLMNative.framework` |
+| [LibRaw](https://github.com/LibRaw/LibRaw) 0.22.3 (modulo «Foto RAW») | LGPL 2.1 o CDDL 1.0, © LibRaw LLC | `Vendor/LibRaw`, compilata dentro `QLMNative.framework` |
 | libarchive (modulo «Archivi») | BSD-2: si usa la libreria di macOS; le intestazioni `Vendor/libarchive/*.h` sono quelle del progetto | `Vendor/libarchive` |
 | [Ghostscript](https://ghostscript.com) 10.x (modulo EPS, se incorporato) | AGPL v3, © Artifex Software | compilato da `scripts/vendor-ghostscript.sh` in `Vendor/ghostscript`, incorporato nel framework |
 | [QLVideo](https://github.com/Marginal/QLVideo) di Jonathan Harris (le versioni di ffmpeg/dav1d/zimg e le due patch a ffmpeg in `scripts/video-patches`) | GPL 2 o successiva | `scripts/vendor-video.sh` (licenza: `Modules/Video/LICENSE-QLVideo.txt`) |

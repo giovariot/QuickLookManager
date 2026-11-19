@@ -1,8 +1,8 @@
 #!/bin/zsh
-# Rigenera i bundle JavaScript in Core/Resources/Web. Richiede node/npm (npm install una volta).
+# Rigenera i bundle JavaScript in Modules/Text/Resources/Web. Richiede node/npm (npm install una volta).
 set -e
 cd "$(dirname "$0")"
-OUT=../../Core/Resources/Web
+OUT=../../Modules/Text/Resources/Web
 mkdir -p $OUT/fonts
 E=node_modules/.bin/esbuild
 common=(--bundle --minify --format=iife --legal-comments=none --log-level=warning)
