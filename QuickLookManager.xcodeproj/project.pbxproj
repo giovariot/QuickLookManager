@@ -46,6 +46,7 @@
 		2C5A98109B361D1E8DB89450 /* wblists.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE165E4A513495D2B3AB924E /* wblists.cpp */; };
 		2D85888BF511883548D7B8AD /* DataTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F1FF8209EE68BF43004BF /* DataTree.swift */; };
 		2EECBB5598659583013C1C37 /* postprocessing_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25976F323CC76F51914741A8 /* postprocessing_utils.cpp */; };
+		2F76338DA3D52D512A03BC15 /* ClassicDecompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7971CFB44AC0D460F5A6C /* ClassicDecompress.swift */; };
 		328D7687AA8A136C89645301 /* Preview+FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866575296593AA44D9D6687 /* Preview+FileInfo.swift */; };
 		330CF95E07D2C62C1B33AFEF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E114F33FFCAC06C529E92 /* Settings.swift */; };
 		345BC4B85628AC9043E3692F /* decoder_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 157881055EA9341409B21DF0 /* decoder_info.cpp */; };
@@ -355,6 +356,7 @@
 		03B4AAF1F525DE0F578D61E3 /* Preview+Provisioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Provisioning.swift"; sourceTree = "<group>"; };
 		05A3C7E7F7033C11F22FD6C8 /* QLMMediaKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLMMediaKit.m; sourceTree = "<group>"; };
 		0982DBCDDBFF37C7D5666BE7 /* olympus14.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = olympus14.cpp; sourceTree = "<group>"; };
+		0BA7971CFB44AC0D460F5A6C /* ClassicDecompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDecompress.swift; sourceTree = "<group>"; };
 		0BF792E1174715DC18118DB7 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		0F176665F6A04128E89F3D32 /* PkgPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PkgPreview.swift; sourceTree = "<group>"; };
 		101587D016F4AACF1D48CC6F /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 		724B33C5391DA683B1242EB7 /* Data - Classic Mac */ = {
 			isa = PBXGroup;
 			children = (
+				0BA7971CFB44AC0D460F5A6C /* ClassicDecompress.swift */,
 				BE261FFAD8A00B0F91057EAA /* ClassicIcon.swift */,
 				8C37DB8251BBBA218FAC16AE /* ClassicIconWriter.swift */,
 				EAF7F4C357E39AAF4C3CC886 /* ClassicSupport.swift */,
@@ -1697,6 +1700,7 @@
 				A37DE9854A106153AA270145 /* AppsPreview.swift in Sources */,
 				0B30FB7BE0FE7C15F06BFF94 /* ArchivePreview.swift in Sources */,
 				C63D8B155D2E5514BBFB87C9 /* BomReader.swift in Sources */,
+				2F76338DA3D52D512A03BC15 /* ClassicDecompress.swift in Sources */,
 				019911E7B59303661DEE54E8 /* ClassicIcon.swift in Sources */,
 				C909D8F04F5B66B1EE82111A /* ClassicIconWriter.swift in Sources */,
 				61275F96942968969633FD8F /* ClassicIconsService.swift in Sources */,
@@ -1931,7 +1935,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.1.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -1997,7 +2001,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.1.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;

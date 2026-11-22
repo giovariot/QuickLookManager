@@ -18,7 +18,7 @@ echo "── Test ────────────────────�
 #    guasto stava nei pixel, non in una riga che si possa cercare.
 if command -v swiftc >/dev/null 2>&1; then
     b=$(mktemp -t icona)
-    if swiftc -O -o "$b" tests/icona/main.swift "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" 2>/dev/null \
+    if swiftc -O -o "$b" tests/icona/main.swift "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" "Modules/Apps/Sources/Data - Classic Mac/ClassicDecompress.swift" 2>/dev/null \
        && "$b" >/dev/null 2>&1; then
         ok "icone classiche: colori dal membro giusto, maschera applicata"
     else
@@ -95,12 +95,12 @@ CM="Modules/Apps/Sources/Data - Classic Mac"
 prova tests/percorso/main.swift \
     "il giro del volume ha un tetto e si ferma, la radice di sistema e' di sola lettura, i percorsi non escono dal volume" \
     "il giro del volume, la scelta dei volumi o i percorsi non fidati non fanno quello che devono" \
-    "$CM/IconeAutomatiche.swift" "$CM/VolumeClassico.swift" "$CM/ClassicIcon.swift" \
+    "$CM/IconeAutomatiche.swift" "$CM/VolumeClassico.swift" "$CM/ClassicIcon.swift" "$CM/ClassicDecompress.swift" \
     "$CM/ClassicIconWriter.swift" "$CM/ForkBackup.swift"
 prova tests/fork/main.swift \
     "area riservata, testa della mappa e attributi passano intatti, ogni risorsa originale torna identica" \
     "l'icona accodata altera parti del fork originale" \
-    "$CM/ClassicIcon.swift" "$CM/ClassicIconWriter.swift" "$CM/ForkBackup.swift"
+    "$CM/ClassicIcon.swift" "$CM/ClassicDecompress.swift" "$CM/ClassicIconWriter.swift" "$CM/ForkBackup.swift"
 prova tests/consensi/main.swift \
     "i permessi disco per disco si scrivono, si rileggono e si dimenticano" \
     "i permessi disco per disco non funzionano" \
@@ -206,7 +206,7 @@ fi
 prova tests/fuse/main.swift \
     "i volumi FUSE si riconoscono anche con FUSE-T (tipo nfs, origine fuse-t:)" \
     "un volume FUSE-T passerebbe per scrivibile, o un volume vero per FUSE" \
-    "$CM/VolumeClassico.swift" "$CM/IconeAutomatiche.swift" "$CM/ClassicIcon.swift" \
+    "$CM/VolumeClassico.swift" "$CM/IconeAutomatiche.swift" "$CM/ClassicIcon.swift" "$CM/ClassicDecompress.swift" \
     "$CM/ClassicIconWriter.swift" "$CM/ForkBackup.swift"
 
 # 15. I tipi dell'icns che il servizio icone sa davvero leggere.
@@ -248,6 +248,7 @@ if command -v swiftc >/dev/null 2>&1 && command -v hdiutil >/dev/null 2>&1; then
     b=$(mktemp -t ripristino)
     if swiftc -O -o "$b" tests/ripristino/main.swift tests/support/Testi.swift \
             "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" \
+            "Modules/Apps/Sources/Data - Classic Mac/ClassicDecompress.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ClassicIconWriter.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ForkBackup.swift" 2>/dev/null \
        && hdiutil create -size 20m -fs HFS+ -volname ProvaFork -ov "$immagine" >/dev/null 2>&1; then
@@ -289,6 +290,7 @@ if command -v swiftc >/dev/null 2>&1; then
     b=$(mktemp -t limiti)
     if swiftc -O -o "$b" tests/limiti/main.swift tests/support/Testi.swift \
             "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" \
+            "Modules/Apps/Sources/Data - Classic Mac/ClassicDecompress.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ClassicIconWriter.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ForkBackup.swift" 2>/dev/null; then
         uscita=$("$b" 2>&1)
@@ -448,7 +450,8 @@ if command -v swiftc >/dev/null 2>&1 && command -v hdiutil >/dev/null 2>&1; then
 
         if swiftc -O -o "$b" tests/volumi/main.swift tests/support/Testi.swift \
                 "Modules/Apps/Sources/Data - Classic Mac/VolumeClassico.swift" \
-                "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" 2>/dev/null; then
+                "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" \
+                "Modules/Apps/Sources/Data - Classic Mac/ClassicDecompress.swift" 2>/dev/null; then
             uscita=$("$b" "$vc" "$vm" 2>&1)
             if [ $? -eq 0 ]; then
                 ok "si osservano solo i volumi con roba classica: gli altri tengono la loro icona"
@@ -520,6 +523,7 @@ if command -v swiftc >/dev/null 2>&1 && command -v hdiutil >/dev/null 2>&1; then
             "Modules/Apps/Sources/Data - Classic Mac/IconeAutomatiche.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/VolumeClassico.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ClassicIcon.swift" \
+            "Modules/Apps/Sources/Data - Classic Mac/ClassicDecompress.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ClassicIconWriter.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ConsensiDischi.swift" \
             "Modules/Apps/Sources/Data - Classic Mac/ForkBackup.swift" 2>/dev/null; then
@@ -605,6 +609,16 @@ prova tests/dos/main.swift \
     "l'arrotondamento delle icone o il riconoscimento dei programmi DOS non fanno quello che devono" \
     "Modules/Apps/Sources/Common/NSImage+Icon.swift" "Modules/Apps/Sources/Common/NSBezierPath+RoundedRect.swift" \
     "Modules/Apps/Sources/Data - Windows/WindowsIcon.swift"
+
+# 30. Le risorse compresse si decomprimono.
+#     Un programma poteva comprimere le sue risorse, icone comprese. Senza decomprimerle la icl8 da 441 byte veniva
+#     letta come pixel e l'icona dell'Installer del CD-ROM Setup usciva bianca (0.1.3). Il campione e' vero e il
+#     risultato atteso e' quello di resource_dasm.
+# ---------------------------------------------------------------------------
+prova tests/decompressione/main.swift \
+    "le risorse compresse (dcmp 0 e 1) escono identiche a resource_dasm, i flussi rotti non inventano dati" \
+    "la decompressione delle risorse classiche non fa quello che deve" \
+    "$CM/ClassicDecompress.swift"
 
 echo "──────────────────────────────────────────────────────"
 if [ "$FAILED" -gt 0 ]; then

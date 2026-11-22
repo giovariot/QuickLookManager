@@ -80,7 +80,15 @@ enum ClassicIcon {
                           at + 4 + length <= fork.count
                     else { continue }
 
-                    byID[Int16(bitPattern: UInt16(id))] = fork.slice(at + 4, length)
+                    // Le risorse compresse (icone, stringhe) si decomprimono qui,
+                    // una volta, così chiunque le legga dopo trova i dati veri.
+                    // Se il metodo non è fra quelli noti restano vuote: il tipo
+                    // si vede nell'elenco, ma nessuno le scambia per pixel.
+                    var content = fork.slice(at + 4, length)
+                    if ClassicDecompress.isCompressed(content) {
+                        content = ClassicDecompress.decompress(content) ?? Data()
+                    }
+                    byID[Int16(bitPattern: UInt16(id))] = content
                 }
                 if !byID.isEmpty { found[type] = byID }
             }
@@ -281,7 +289,7 @@ enum ClassicIcon {
         var pezzi: [(tipo: String, dati: Data)] = []
 
         for gruppo in gruppi {
-            guard let ricca = gruppo.colori.first(where: { fork.data(type: $0, id: id) != nil }),
+            guard let ricca = gruppo.colori.first(where: { fork.data(type: $0, id: id)?.isEmpty == false }),
                   let composto = componi(fork: fork, id: id,
                                          colori: ricca, maschera: gruppo.maschera,
                                          lato: gruppo.lato),

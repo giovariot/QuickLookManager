@@ -16,6 +16,7 @@ QuickLook Manager è distribuito con licenza GPL v3 (vedi `LICENSE`). Contiene c
 | [dav1d](https://code.videolan.org/videolan/dav1d) (commit 54706fc) | BSD-2 | idem |
 | [zimg](https://github.com/sekrit-twc/zimg) (commit f819b14) | WTFPL | idem |
 | Icona dell'app | Ridisegnata da zero per Icon Composer; l'idea (un occhio con una lente d'ingrandimento) viene dal mockup «New fluent design icon suggestion» di [Donnnno](https://github.com/Donnnno), pubblicato su [QL-Win/QuickLook#627](https://github.com/QL-Win/QuickLook/issues/627). Nessun file grafico dell'originale è incluso. | disegno originale di QuickLook Manager (GPL v3) | `App/AppIcon.icon` |
+| [resource_dasm](https://github.com/fuzziqersoftware/resource_dasm) di Martin Michelsen (algoritmo e tabelle dei decompressori 0 e 1 delle risorse compresse; usato anche come riferimento per verificare le icone dei Mac classici) | MIT, © 2023 Martin Michelsen | `Modules/Apps/Sources/Data - Classic Mac/ClassicDecompress.swift` |
 | QuickTextLook (modulo «Testo e codice») | GPL v3, Giovanni | `Modules/Text`, `tools/js` |
 | highlight.js, js-yaml, markdown-it e plugin, KaTeX, Mermaid, Asciidoctor.js, textile-js | BSD-3 / MIT / ISC / Unlicense | `Modules/Text/Resources/Web` (vedi `tools/js/package.json`) |
 
