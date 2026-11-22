@@ -26,7 +26,9 @@ enum VideoPreview {
         let k = min(maximumSize.width / size.width, maximumSize.height / size.height)
         let fitted = CGSize(width: size.width * k, height: size.height * k)
         return QLThumbnailReply(contextSize: fitted, drawing: { context in
-            context.draw(cg, in: CGRect(origin: .zero, size: fitted))
+            // Il contesto è in pixel (contextSize × scala): si riempie tutto, non solo il rettangolo in punti.
+            let area = CGRect(x: 0, y: 0, width: context.width, height: context.height)
+            context.draw(cg, in: area)
             return true
         })
     }
