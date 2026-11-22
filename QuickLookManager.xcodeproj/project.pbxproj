@@ -115,6 +115,7 @@
 		89EB7A679DA155E8913E3345 /* postprocessing_utils_dcrdefs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 680DE4A877135D585FA55AEF /* postprocessing_utils_dcrdefs.cpp */; };
 		8C6BDBB0D274A0493E4AF42B /* PkgPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F176665F6A04128E89F3D32 /* PkgPreview.swift */; };
 		8D16551C599C42960A8591C2 /* leica.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38783CB182982434EF897AD9 /* leica.cpp */; };
+		8DB11BADA935D23D27D2F60B /* NSImage+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB195EE3486D2A77CC37A5D /* NSImage+Icon.swift */; };
 		8DB6B594782B2B94DA75C7C7 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD6C57DE4955ED6B29B5FE /* CodeView.swift */; };
 		8EB15C90D933546C0CBEEA9B /* OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAC29BCC778A7DEA34493 /* OutlineView.swift */; };
 		8FCA01D9C40F104CB5313591 /* Preview+Sommario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9089C4359F377E46A09616DF /* Preview+Sommario.swift */; };
@@ -506,6 +507,7 @@
 		CCBEA337D22F5F9125E8AF28 /* QLMTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLMTypes.swift; sourceTree = "<group>"; };
 		CDC94628E13FCB4A59469963 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		CDE7DE3C820B2E6D62966913 /* XarArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XarArchive.swift; sourceTree = "<group>"; };
+		CEB195EE3486D2A77CC37A5D /* NSImage+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Icon.swift"; sourceTree = "<group>"; };
 		CF4DAAA5CCE376C02B1BBF58 /* open.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = open.cpp; sourceTree = "<group>"; };
 		D01ADFEFD66D07236BAF7944 /* AppsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPreview.swift; sourceTree = "<group>"; };
 		D3E6800ACF029F24511DE496 /* Preview+Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Footer.swift"; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 				0134733DAF2224726477B1AE /* AppIcon.swift */,
 				17AF3481FF75661B96B5869D /* MetaInfo.swift */,
 				25EEA76B186CC1620B37F6F9 /* NSBezierPath+RoundedRect.swift */,
+				CEB195EE3486D2A77CC37A5D /* NSImage+Icon.swift */,
 				97EDD802DFF4996D03D10985 /* Riga.swift */,
 				76F7D880E3288BC02901A5D9 /* StilePannello.swift */,
 				932254E5A1372702545D68AF /* URL+File.swift */,
@@ -1719,6 +1722,7 @@
 				73B867F916B6115E6961126C /* MarkupWebView.swift in Sources */,
 				ED4D6E942E7BDE49D7103BF8 /* MetaInfo.swift in Sources */,
 				156F6FD0209A188EB0AC0927 /* NSBezierPath+RoundedRect.swift in Sources */,
+				8DB11BADA935D23D27D2F60B /* NSImage+Icon.swift in Sources */,
 				8EB15C90D933546C0CBEEA9B /* OutlineView.swift in Sources */,
 				3771047A4802E5B99374B24B /* Paths.swift in Sources */,
 				1E0DDFB502C352C42B40855F /* PkgInspector.swift in Sources */,

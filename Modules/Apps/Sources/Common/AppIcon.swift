@@ -23,8 +23,11 @@ struct AppIcon {
 		case .ClassicMac:
 			ClassicSupport.icon(for: meta) ?? defaultIcon()
 		case .WindowsPE:
-			// Una DLL (o un .exe) senza icona propria: pagina di documento con il simbolo di Windows.
-			ClassicSupport.icon(for: meta) ?? windowsDocumentIcon(label: meta.url.pathExtension)
+			// Senza icona incorporata: un file .ico con lo stesso nome accanto al programma, se c'è; poi, per un
+			// programma DOS, l'icona del prompt; per il resto (DLL, .exe di Windows) una pagina con il simbolo di Windows.
+			ClassicSupport.icon(for: meta)
+				?? siblingIcon(of: meta.url)
+				?? (WindowsIcon.isDOSProgram(at: meta.url) ? dosIcon() : windowsDocumentIcon(label: meta.url.pathExtension))
 		case .Flatpak:
 			// I due PNG che `flatpak build-bundle` mette nei metadati: si legge
 			// il più grande, e non si tocca il resto del file.
@@ -113,6 +116,47 @@ struct AppIcon {
 			let attrs: [NSAttributedString.Key: Any] = [.font: NSFont.systemFont(ofSize: 44, weight: .semibold), .foregroundColor: ink]
 			let w = text.size(withAttributes: attrs).width
 			text.draw(at: CGPoint(x: rect.midX - w / 2 - 12, y: origin.y - 64), withAttributes: attrs)
+			return true
+		}
+	}
+	
+	/// `NOME.ICO` (qualunque maiuscola) nella stessa cartella. Dalla sandbox dell'estensione la cartella può non
+	/// essere leggibile: in quel caso non si trova niente e si passa all'icona generica.
+	private func siblingIcon(of url: URL) -> NSImage? {
+		let dir = url.deletingLastPathComponent()
+		let base = url.deletingPathExtension().lastPathComponent.lowercased()
+		guard let names = try? FileManager.default.contentsOfDirectory(atPath: dir.path),
+		      let match = names.first(where: { $0.lowercased() == base + ".ico" }),
+		      let data = try? Data(contentsOf: dir.appendingPathComponent(match)),
+		      let image = NSImage(data: data), image.size.width > 0 else { return nil }
+		return image
+	}
+	
+	/// Il prompt dei comandi in una finestra: per i programmi DOS, che non hanno icone dentro.
+	private func dosIcon() -> NSImage {
+		let side: CGFloat = 512
+		return NSImage(size: NSSize(width: side, height: side), flipped: false) { rect in
+			NSGraphicsContext.current?.imageInterpolation = .high
+			let frame = rect.insetBy(dx: 52, dy: 100)
+			let shadow = NSShadow()
+			shadow.shadowColor = NSColor.black.withAlphaComponent(0.35)
+			shadow.shadowBlurRadius = 14
+			shadow.shadowOffset = NSSize(width: 0, height: -6)
+			NSGraphicsContext.saveGraphicsState()
+			shadow.set()
+			NSColor.lightGray.setFill()
+			NSBezierPath(roundedRect: frame, xRadius: 18, yRadius: 18).fill()
+			NSGraphicsContext.restoreGraphicsState()
+			let bar = NSRect(x: frame.minX + 10, y: frame.maxY - 58, width: frame.width - 20, height: 46)
+			NSColor.systemBlue.setFill()
+			NSBezierPath(roundedRect: bar, xRadius: 10, yRadius: 10).fill()
+			let screen = NSRect(x: frame.minX + 14, y: frame.minY + 14, width: frame.width - 28, height: frame.height - 82)
+			NSColor.black.setFill()
+			NSBezierPath(roundedRect: screen, xRadius: 8, yRadius: 8).fill()
+			let attrs: [NSAttributedString.Key: Any] = [
+				.font: NSFont.monospacedSystemFont(ofSize: 72, weight: .bold),
+				.foregroundColor: NSColor.white]
+			("C:\\>_" as NSString).draw(at: CGPoint(x: screen.minX + 26, y: screen.midY - 44), withAttributes: attrs)
 			return true
 		}
 	}
@@ -221,54 +265,3 @@ extension AppIcon {
 // MARK: - Extension: NSImage
 
 // AppIcon extension
-extension NSImage {
-	/// Because some (PNG) image data will return weird float values
-	private func bestImageSize() -> NSSize {
-		var w: Int = 0
-		var h: Int = 0
-		for imageRep in self.representations {
-			w = max(w, imageRep.pixelsWide)
-			h = max(h, imageRep.pixelsHigh)
-		}
-		return NSSize(width: w, height: h)
-	}
-	
-	/// Rounds the corners only when the image is an opaque square (iOS and Android icons): an icon that
-	/// already has its own shape (macOS, Windows, classic Mac) keeps it, with its transparent corners.
-	func roundedIfSquare() -> NSImage {
-		let size = bestImageSize()
-		guard size.width > 0, size.height > 0,
-		      let tiff = tiffRepresentation, let rep = NSBitmapImageRep(data: tiff),
-		      rep.hasAlpha else { return withRoundCorners() }
-		let w = rep.pixelsWide, h = rep.pixelsHigh
-		let corners = [(1, 1), (w - 2, 1), (1, h - 2), (w - 2, h - 2)]
-		let opaque = corners.allSatisfy { (rep.colorAt(x: $0.0, y: $0.1)?.alphaComponent ?? 1) > 0.98 }
-		return opaque ? withRoundCorners() : self
-	}
-	
-	/// Apply rounded corners to image (iOS7 style)
-	func withRoundCorners() -> NSImage {
-		let existingSize = bestImageSize()
-		let composedImage = NSImage(size: existingSize)
-		
-		composedImage.lockFocus()
-		NSGraphicsContext.current?.imageInterpolation = .high
-		
-		let imageFrame = NSRect(origin: .zero, size: existingSize)
-		let clipPath = NSBezierPath.IOS7RoundedRect(imageFrame, cornerRadius: existingSize.width * 0.225)
-		clipPath.windingRule = .evenOdd
-		clipPath.addClip()
-		
-		self.draw(in: imageFrame)
-		composedImage.unlockFocus()
-		return composedImage
-	}
-		
-	/// Convert image to PNG and encode with base64 to be embeded in html output.
-	func asBase64() -> String {
-		let imageData = tiffRepresentation!
-		let imageRep = NSBitmapImageRep(data: imageData)!
-		let imageDataPNG = imageRep.representation(using: .png, properties: [:])!
-		return imageDataPNG.base64EncodedString()
-	}
-}

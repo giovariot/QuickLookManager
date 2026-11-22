@@ -596,6 +596,16 @@ else
 fi
 
 
+# 29. L'icona dei programmi senza icona: un'immagine disegnata al volo (misura 0x0) non fa lanciare l'arrotondamento
+#     degli angoli (guasto di 0.1.2: l'anteprima di un .exe DOS moriva), le icone con la loro forma restano
+#     intatte e i programmi DOS si riconoscono.
+# ---------------------------------------------------------------------------
+prova tests/dos/main.swift \
+    "icone senza misura o con angoli trasparenti non si ritagliano; i programmi DOS si riconoscono" \
+    "l'arrotondamento delle icone o il riconoscimento dei programmi DOS non fanno quello che devono" \
+    "Modules/Apps/Sources/Common/NSImage+Icon.swift" "Modules/Apps/Sources/Common/NSBezierPath+RoundedRect.swift" \
+    "Modules/Apps/Sources/Data - Windows/WindowsIcon.swift"
+
 echo "──────────────────────────────────────────────────────"
 if [ "$FAILED" -gt 0 ]; then
     printf '\033[31m%d falliti\033[0m, %d passati\n' "$FAILED" "$PASSED"; exit 1

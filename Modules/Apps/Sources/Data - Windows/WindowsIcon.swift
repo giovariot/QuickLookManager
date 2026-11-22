@@ -31,6 +31,22 @@ enum WindowsIcon {
     ///
     /// «Principale» è il gruppo con l'id più basso, che è la convenzione con
     /// cui Windows sceglie l'icona da mostrare per il programma.
+    /// Un programma DOS: ha l'intestazione «MZ» ma non quella «PE» di Windows, quindi non può avere icone dentro.
+    static func isDOSProgram(at url: URL) -> Bool {
+        guard let handle = try? FileHandle(forReadingFrom: url) else { return false }
+        defer { try? handle.close() }
+        let head = handle.readData(ofLength: 1 << 20)
+        return isDOSProgram(head)
+    }
+
+    static func isDOSProgram(_ file: Data) -> Bool {
+        guard file.count > 0x1C, file[file.startIndex] == 0x4D, file[file.startIndex + 1] == 0x5A else { return false }
+        guard file.count >= 0x40 else { return true }                  // intestazione troppo corta per puntare a un PE
+        let peAt = Int(le32(file, 0x3C))
+        guard peAt > 0, peAt + 4 <= file.count else { return true }     // il puntatore non porta a un PE
+        return le32(file, peAt) != 0x0000_4550
+    }
+
     static func ico(at url: URL, limit: Int = 64 * 1024 * 1024) -> Data? {
         guard let handle = try? FileHandle(forReadingFrom: url) else { return nil }
         defer { try? handle.close() }
