@@ -14,6 +14,15 @@
 		<string>/Library/Application Support/QuickLookManager/</string>
 	</array>
 	<!--
+	  Immagini con percorso relativo nei documenti Markdown: stanno accanto al file, e l'estensione riceve
+	  l'accesso solo al file in anteprima. Sola lettura su cartelle utente e dischi esterni.
+	-->
+	<key>com.apple.security.temporary-exception.files.absolute-path.read-only</key>
+	<array>
+		<string>/Users/</string>
+		<string>/Volumes/</string>
+	</array>
+	<!--
 	  WebKit non avvia il processo web di una pagina in sandbox senza questo permesso (le anteprime di
 	  Markdown e simili resterebbero sul cerchio di attesa). La rete non si usa: la pagina ha una CSP
 	  senza risorse remote e i collegamenti vengono aperti fuori.

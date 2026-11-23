@@ -189,7 +189,8 @@ public enum PreviewFactory {
         retained.append(view)
         if retained.count > 4 { retained.removeFirst() }
         // pendown e simili: trattati come Markdown
-        try await view.show(kind: kind, source: r.string, settings: settings.markdown, flavor: flavor == "auto" ? "typora" : flavor)
+        try await view.show(kind: kind, source: r.string, settings: settings.markdown, flavor: flavor == "auto" ? "typora" : flavor,
+                           documentDirectory: url.deletingLastPathComponent())
         return view.webView
     }
 }

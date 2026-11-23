@@ -20,7 +20,7 @@ public final class MarkupWebView: NSObject, WKNavigationDelegate {
     }
 
     /// Carica la pagina e mostra `source` interpretato come `kind` (`markdown`, `textile`, `asciidoc`, `creole`, `rst`, `bbcode`, `html`).
-    public func show(kind: String, source: String, settings: QTLSettings.Markdown, flavor: String) async throws {
+    public func show(kind: String, source: String, settings: QTLSettings.Markdown, flavor: String, documentDirectory: URL? = nil) async throws {
         let dir = QTLPaths.webResources
         try await load(dir.appendingPathComponent("preview.html"), readAccess: dir)
         let opts: [String: Any] = [
@@ -35,6 +35,42 @@ public final class MarkupWebView: NSObject, WKNavigationDelegate {
         _ = try await webView.callAsyncJavaScript("return await qtlMount(kind, source, opts);",
                                                   arguments: ["kind": kind, "source": source, "opts": opts],
                                                   in: nil, contentWorld: .page)
+        if let documentDirectory { await inlineRelativeImages(in: documentDirectory) }
+    }
+
+    /// Le immagini con percorso relativo stanno accanto al documento. A leggerle non puo' essere WebKit (il suo
+    /// processo di rete ha un sandbox suo, senza il permesso dell'estensione): le legge l'estensione e le passa
+    /// alla pagina come `data:`. Tetto sul totale, per non gonfiare la memoria con documenti pieni di foto.
+    private func inlineRelativeImages(in directory: URL) async {
+        let script = "return [...document.querySelectorAll('img')].map(i => i.getAttribute('src')).filter(s => s && !/^[a-z][a-z0-9+.-]*:/i.test(s) && !s.startsWith('//'));"
+        guard let srcs = try? await webView.callAsyncJavaScript(script, arguments: [:], in: nil, contentWorld: .page) as? [String] else { return }
+        var map: [String: String] = [:]
+        var budget = 64 * 1024 * 1024
+        let root = directory.standardizedFileURL
+        for src in Set(srcs) {
+            let clean = src.components(separatedBy: CharacterSet(charactersIn: "?#"))[0]
+            let name = clean.removingPercentEncoding ?? clean
+            let file = URL(fileURLWithPath: name, relativeTo: root).standardizedFileURL
+            let mime: String
+            switch file.pathExtension.lowercased() {
+            case "jpg", "jpeg": mime = "image/jpeg"
+            case "png": mime = "image/png"
+            case "gif": mime = "image/gif"
+            case "webp": mime = "image/webp"
+            case "svg": mime = "image/svg+xml"
+            case "bmp": mime = "image/bmp"
+            case "tif", "tiff": mime = "image/tiff"
+            case "heic": mime = "image/heic"
+            default: continue
+            }
+            guard let data = try? Data(contentsOf: file, options: .mappedIfSafe), data.count <= budget else { continue }
+            budget -= data.count
+            map[src] = "data:\(mime);base64," + data.base64EncodedString()
+        }
+        guard !map.isEmpty else { return }
+        _ = try? await webView.callAsyncJavaScript(
+            "for (const img of document.querySelectorAll('img')) { const d = map[img.getAttribute('src')]; if (d) img.src = d; }",
+            arguments: ["map": map], in: nil, contentWorld: .page)
     }
 
     private func load(_ url: URL, readAccess: URL) async throws {
