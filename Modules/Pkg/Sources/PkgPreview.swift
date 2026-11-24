@@ -97,6 +97,8 @@ private struct PkgView: View {
                 }
             }
             .listStyle(.plain)
+            // Senza sfondo proprio: si vede quello semitrasparente della finestra di Quick Look.
+            .scrollContentBackground(.hidden)
             .overlay { if tree.isEmpty { ContentUnavailableView(String(localized: "Nessun elenco dei file", bundle: QLMBundle.framework), systemImage: "shippingbox") } }
         }
     }

@@ -7,6 +7,8 @@ public struct QLMSettings: Codable, Equatable, Sendable {
     public var disabled: Set<QLMModule> = []
     /// Stile del pannello del modulo «App e pacchetti»: `centrato`, `apparency`, `originale`.
     public var appsPanelStyle = "centrato"
+    /// Larghezza dell'icona nel pannello, in punti; 0 = la misura dell'icona stessa (la metà dei suoi pixel).
+    public var appsIconSize = 128
     public var raw = Raw()
     public var eps = EPS()
     public var archives = Archives()
@@ -81,11 +83,12 @@ public struct QLMSettings: Codable, Equatable, Sendable {
         if on { disabled.remove(module) } else { disabled.insert(module) }
     }
 
-    enum CodingKeys: CodingKey { case disabled, appsPanelStyle, raw, eps, archives, video, diagnosticLog }
+    enum CodingKeys: CodingKey { case disabled, appsPanelStyle, appsIconSize, raw, eps, archives, video, diagnosticLog }
     public init(from d: Decoder) throws {
         let c = try d.container(keyedBy: CodingKeys.self)
         disabled = try c.decodeIfPresent(Set<QLMModule>.self, forKey: .disabled) ?? disabled
         appsPanelStyle = try c.decodeIfPresent(String.self, forKey: .appsPanelStyle) ?? appsPanelStyle
+        appsIconSize = try c.decodeIfPresent(Int.self, forKey: .appsIconSize) ?? appsIconSize
         raw = try c.decodeIfPresent(Raw.self, forKey: .raw) ?? raw
         eps = try c.decodeIfPresent(EPS.self, forKey: .eps) ?? eps
         archives = try c.decodeIfPresent(Archives.self, forKey: .archives) ?? archives

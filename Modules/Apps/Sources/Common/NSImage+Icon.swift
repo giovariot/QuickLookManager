@@ -2,7 +2,7 @@ import AppKit
 
 extension NSImage {
 	/// Because some (PNG) image data will return weird float values
-	private func bestImageSize() -> NSSize {
+	func bestImageSize() -> NSSize {
 		var w: Int = 0
 		var h: Int = 0
 		for imageRep in self.representations {
@@ -47,7 +47,16 @@ extension NSImage {
 	}
 		
 	/// Convert image to PNG and encode with base64 to be embeded in html output.
+	///
+	/// Si prende la rappresentazione con più pixel. La strada di prima (`tiffRepresentation` e poi
+	/// `NSBitmapImageRep(data:)`) ne pescava una sola, e con un'icona a più misure non era la più grande.
 	func asBase64() -> String {
+		let best = representations
+			.compactMap { $0 as? NSBitmapImageRep }
+			.max { $0.pixelsWide < $1.pixelsWide }
+		if let best, let png = best.representation(using: .png, properties: [:]) {
+			return png.base64EncodedString()
+		}
 		let imageData = tiffRepresentation!
 		let imageRep = NSBitmapImageRep(data: imageData)!
 		let imageDataPNG = imageRep.representation(using: .png, properties: [:])!

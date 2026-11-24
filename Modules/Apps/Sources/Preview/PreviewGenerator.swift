@@ -1,3 +1,4 @@
+import AppKit
 import Foundation
 
 let CLASS_HIDDEN = "hidden"
@@ -53,7 +54,7 @@ struct PreviewGenerator {
 			procEntitlements(meta, plistApp, plistProvision)
 			procProvision(plistProvision)
 			// App Icon (last, because the image uses a lot of memory)
-			data["AppIcon"] = AppIcon(meta).extractImage(from: plistApp.icons).roundedIfSquare().asBase64()
+			setIcon(AppIcon(meta).extractImage(from: plistApp.icons).roundedIfSquare())
 			
 		case .APK:
 			guard let manifest = meta.readApk_Manifest() else {
@@ -61,11 +62,11 @@ struct PreviewGenerator {
 			}
 			procAppInfoAndroid(manifest)
 			// App Icon (last, because the image uses a lot of memory)
-			data["AppIcon"] = AppIcon(meta).extractImage(from: manifest.icon).roundedIfSquare().asBase64()
+			setIcon(AppIcon(meta).extractImage(from: manifest.icon).roundedIfSquare())
 			
 		case .ClassicMac, .WindowsPE, .Flatpak:
 			// App Icon (last, because the image uses a lot of memory)
-			data["AppIcon"] = AppIcon(meta).extractImageForThumbnail().roundedIfSquare().asBase64()
+			setIcon(AppIcon(meta).extractImageForThumbnail().roundedIfSquare())
 			
 		case .MacApp:
 			// L'`Info.plist` qui può anche non esserci — un binario nudo non ne
@@ -79,13 +80,25 @@ struct PreviewGenerator {
 			// App Icon (last, because the image uses a lot of memory)
 			// Niente angoli arrotondati: l'icona di un programma macOS la sua
 			// forma ce l'ha già, e ritagliarla di nuovo le mangia i bordi.
-			data["AppIcon"] = AppIcon(meta).extractImageForThumbnail().asBase64()
+			setIcon(AppIcon(meta).extractImageForThumbnail())
 		}
 		
 		data["QuickLookTitle"] = stringForFileType(meta)
 		procFileInfo(meta.url)
 		procSommario(meta)
 		procFooterInfo()
+	}
+	
+	/// Mette nel modello l'icona e come mostrarla: larghezza scelta dall'utente e, per le icone piccole
+	/// (quelle dei vecchi Mac, 32 pixel), ingrandimento a blocchi invece che sfumato.
+	private mutating func setIcon(_ image: NSImage) {
+		let pixels = max(image.bestImageSize().width, 1)
+		let pixelArt = pixels <= 64
+		let choice = QLMSettings.load().appsIconSize
+		let width = choice > 0 ? CGFloat(choice) : (pixelArt ? max(pixels * 2, 64) : pixels / 2)
+		data["AppIcon"] = image.asBase64()
+		data["IconWidth"] = "\(Int(width.rounded()))px"
+		data["IconRendering"] = pixelArt ? "pixelated" : "auto"
 	}
 	
 	mutating func apply(_ values: [String: String]) {

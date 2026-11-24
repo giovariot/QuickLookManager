@@ -37,6 +37,9 @@ public enum AppsPreview {
         let html = try html(for: url)
         let web = WebView(frame: NSRect(x: 0, y: 0, width: 800, height: 600))
         web.autoresizingMask = [.width, .height]
+        // Niente sfondo bianco: la finestra di Quick Look ha il suo materiale semitrasparente (Liquid Glass) e la
+        // pagina, con `body` trasparente, lo lascia vedere. Il colore del testo segue `prefers-color-scheme`.
+        web.drawsBackground = false
         web.mainFrame.loadHTMLString(html, baseURL: nil)
         return web
     }

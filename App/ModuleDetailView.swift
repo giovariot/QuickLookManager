@@ -111,6 +111,14 @@ struct AppsModuleSettings: View {
                 Text(current.detail).font(.callout).foregroundStyle(.secondary)
             }
         }
+        Section("Icona") {
+            Picker("Dimensione", selection: $store.value.appsIconSize) {
+                ForEach([64, 96, 128, 192, 256, 512], id: \.self) { Text("\($0) punti").tag($0) }
+                Text("Originale").tag(0)
+            }
+            Text("«Originale» usa la misura dell'icona stessa: la metà dei suoi pixel, nitida su uno schermo Retina.")
+                .font(.callout).foregroundStyle(.secondary)
+        }
         ClassicIconsSection()
         Section("Formati supportati") {
             ForEach(Array(formats.enumerated()), id: \.offset) { _, f in

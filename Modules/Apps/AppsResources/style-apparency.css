@@ -75,8 +75,7 @@ body {
 }
 
 .app img {
-	width: 104px;
-	image-rendering: -webkit-optimize-contrast;
+	/* larghezza e resa le decide il modello (Impostazioni → App e pacchetti → Icona) */
 }
 
 /* L'intestazione: icona a sinistra, nome e righe a destra, come fa Apparency.
@@ -84,7 +83,6 @@ body {
    un'ombra sotto le fa sembrare una fotografia di sé stesse. */
 .icona {
 	float: left;
-	width: 104px;
 	margin-right: 24px;
 	margin-bottom: 8px;
 	text-align: center;

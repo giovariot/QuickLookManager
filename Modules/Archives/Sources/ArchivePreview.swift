@@ -103,6 +103,8 @@ private struct ArchiveView: View {
                 }
             }
             .listStyle(.plain)
+            // Senza sfondo proprio: si vede quello semitrasparente della finestra di Quick Look.
+            .scrollContentBackground(.hidden)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

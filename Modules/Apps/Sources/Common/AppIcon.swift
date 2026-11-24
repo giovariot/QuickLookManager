@@ -79,7 +79,7 @@ struct AppIcon {
 					return img
 				}
 			} else if let img = NSImage(contentsOfFile: actualName) {
-				return img
+				return biggerFromAssetsCar(than: img, name: plistImgNames.first) ?? img
 			}
 			os_log(.error, log: log, "[icon] '%{public}@' non si apre come immagine", actualName)
 		}
@@ -173,6 +173,14 @@ struct AppIcon {
 	}
 	
 	/// Extract an image from `Assets.car`
+	/// Un `.icns` moderno arriva a 256 pixel (le misure da 512 e 1024 stanno nel catalogo `Assets.car`): se il
+	/// catalogo ha la stessa icona più grande, si usa quella. Per le app macOS, non per gli IPA.
+	private func biggerFromAssetsCar(than img: NSImage, name: String?) -> NSImage? {
+		guard meta.type != .IPA, let name, img.bestImageSize().width < 512,
+		      let car = imageFromAssetsCar(name), car.bestImageSize().width > img.bestImageSize().width else { return nil }
+		return car
+	}
+
 	func imageFromAssetsCar(_ imageName: String) -> NSImage? {
 		guard let data = meta.readPayloadFile("Assets.car", osxSubdir: "Resources") else {
 			return nil

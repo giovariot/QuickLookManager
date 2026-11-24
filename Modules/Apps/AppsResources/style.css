@@ -88,8 +88,7 @@ body {
 }
 
 .app img {
-	width: 128px;
-	image-rendering: -webkit-optimize-contrast;
+	/* larghezza e resa le decide il modello (Impostazioni → App e pacchetti → Icona) */
 }
 
 .titolo {
