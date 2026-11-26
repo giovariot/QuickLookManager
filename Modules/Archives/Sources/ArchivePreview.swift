@@ -49,10 +49,54 @@ enum ArchivePreview {
         return root.order.map { convert(root.children[$0]!, name: $0, path: $0) }.sorted(by: folderFirst)
     }
 
+    /// libarchive per i formati d'archivio; per le immagini disco con volume UDF (ISO di Windows, DVD) si aggiunge
+    /// il contenuto del UDF, perché la parte ISO9660 spesso è solo una facciata con un file di avviso.
+    /// La voce «.» (la radice) non è un file e non si conta.
+    static func combinedListing(path: String, maxEntries: Int) throws -> QLMArchiveListing {
+        let base: QLMArchiveListing
+        var failure: Error?
+        var found: QLMArchiveListing?
+        do { found = try QLMArchiveKit.listFile(atPath: path, maxEntries: maxEntries) } catch { failure = error }
+        let udf = UDFReader.list(path: path, maxEntries: maxEntries)
+        if let found { base = found } else if udf != nil { base = QLMArchiveListing(); base.format = "ISO9660"; base.filter = "none"; base.entries = [] }
+        else { throw failure ?? PreviewError.unsupported }
+
+        let isRoot: (QLMArchiveEntry) -> Bool = { e in
+            let p = e.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+            return p.isEmpty || p == "."
+        }
+        let dots = base.entries.filter(isRoot).count
+        base.entries = base.entries.filter { !isRoot($0) }
+        base.totalCount = Swift.max(base.totalCount - dots, base.entries.count)
+
+        guard let udf else { return base }
+        var seen = Set<String>()
+        var merged: [QLMArchiveEntry] = []
+        for u in udf.entries {
+            let e = QLMArchiveEntry()
+            e.path = u.path; e.size = u.size; e.modified = u.modified; e.isDirectory = u.isDirectory
+            merged.append(e)
+            seen.insert(u.path.lowercased())
+        }
+        // Le voci della parte ISO9660 che nel UDF non ci sono (il file di avviso) restano.
+        var extraCount = 0
+        var extraSize: Int64 = 0
+        for e in base.entries where !seen.contains(e.path.trimmingCharacters(in: CharacterSet(charactersIn: "./")).lowercased()) {
+            merged.append(e); extraCount += 1
+            if !e.isDirectory { extraSize += e.size }
+        }
+        base.entries = Array(merged.prefix(maxEntries))
+        base.format = "\(base.format) + \(udf.revision)"
+        base.totalCount = udf.totalCount + extraCount
+        base.totalSize = udf.totalSize + extraSize
+        base.truncated = udf.truncated || merged.count > maxEntries
+        return base
+    }
+
     @MainActor
     static func makeView(for url: URL) throws -> NSView {
         let max = QLMSettings.load().archives.maxEntries
-        let listing = try QLMArchiveKit.listFile(atPath: url.path, maxEntries: max)
+        let listing = try combinedListing(path: url.path, maxEntries: max)
         let fileSize = (try? url.resourceValues(forKeys: [.fileSizeKey]).fileSize).map(Int64.init)
         let root = ArchiveView(name: url.lastPathComponent, listing: listing, fileSize: fileSize, nodes: tree(from: listing.entries))
         let host = NSHostingView(rootView: root)

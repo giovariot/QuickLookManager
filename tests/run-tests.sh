@@ -620,6 +620,16 @@ prova tests/decompressione/main.swift \
     "la decompressione delle risorse classiche non fa quello che deve" \
     "$CM/ClassicDecompress.swift"
 
+# 31. Il lettore UDF legge l'elenco senza montare.
+#     Le ISO di Windows hanno una parte ISO9660 di facciata (un solo file) e i file veri nel volume UDF:
+#     libarchive vedeva solo la facciata e l'anteprima era vuota. L'immagine e' costruita al volo con
+#     `hdiutil makehybrid -udf`; il confronto con le ISO vere di Windows e' stato fatto a mano contro il volume montato.
+# ---------------------------------------------------------------------------
+prova tests/udf/main.swift \
+    "il volume UDF si legge senza montarlo: cartelle annidate, nomi non ASCII, directory su piu' settori, tetto delle voci" \
+    "il lettore UDF non fa quello che deve" \
+    "Modules/Archives/Sources/UDFReader.swift"
+
 echo "──────────────────────────────────────────────────────"
 if [ "$FAILED" -gt 0 ]; then
     printf '\033[31m%d falliti\033[0m, %d passati\n' "$FAILED" "$PASSED"; exit 1

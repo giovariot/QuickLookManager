@@ -107,6 +107,7 @@
 		8147F0A8A41BFDA768ABC27E /* com.giovariot.QuickLookManager.IconeAgent.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3236B510E8C2A1B7A13A976B /* com.giovariot.QuickLookManager.IconeAgent.plist */; };
 		8244895791F64FF965A02E7E /* AssetCarReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8241D2AC773D93D6BD56EB9 /* AssetCarReader.swift */; };
 		838FB4720547805A0C023538 /* Apk+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E47982589CCF7FE0321C2 /* Apk+Icon.swift */; };
+		83F346EA5307EC2C4953F818 /* UDFReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480F099014F9F37EB95A273 /* UDFReader.swift */; };
 		84B39BF0C8BDD06DEDC292F9 /* ThreeMFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2981E718FAE8FD5A2E82B8D /* ThreeMFParser.swift */; };
 		84D56EEC9DE588B3973560C3 /* ThreeMFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059D43E0B2B6EFF97529E1F /* ThreeMFViewController.swift */; };
 		8765AD81837AF23AE2544E56 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101587D016F4AACF1D48CC6F /* RuntimeError.swift */; };
@@ -530,6 +531,7 @@
 		E27531934EFF473C66C656EB /* misc_demosaic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = misc_demosaic.cpp; sourceTree = "<group>"; };
 		E37BFEC2FD910C05A7616132 /* cameralist.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cameralist.cpp; sourceTree = "<group>"; };
 		E38824AAC3EF4D5C43D2A20F /* AssetCarReader.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AssetCarReader.xcconfig; sourceTree = "<group>"; };
+		E480F099014F9F37EB95A273 /* UDFReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDFReader.swift; sourceTree = "<group>"; };
 		E57174734A2303760C43F63F /* load_mfbacks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = load_mfbacks.cpp; sourceTree = "<group>"; };
 		E6BE4BDD99259F9AC7A7BE31 /* curves.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = curves.cpp; sourceTree = "<group>"; };
 		E8CF7A5F7B6F806956A81FFE /* Preview+ArchiveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+ArchiveInfo.swift"; sourceTree = "<group>"; };
@@ -1068,6 +1070,7 @@
 			isa = PBXGroup;
 			children = (
 				AB16113BEC9C253FD0D99055 /* ArchivePreview.swift */,
+				E480F099014F9F37EB95A273 /* UDFReader.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1766,6 +1769,7 @@
 				015481DD79EBD70360BFDB34 /* ThreeMFPreview.swift in Sources */,
 				84D56EEC9DE588B3973560C3 /* ThreeMFViewController.swift in Sources */,
 				7195B3518DC12ED88B74FDE7 /* Thumbnailer.swift in Sources */,
+				83F346EA5307EC2C4953F818 /* UDFReader.swift in Sources */,
 				88A385FBC7569051E07A3F91 /* URL+File.swift in Sources */,
 				B82C6E5F3BAAF29E91A51198 /* VideoPlayerController.swift in Sources */,
 				A67E0B386168775C29CF2DAB /* VideoPreview.swift in Sources */,
@@ -1935,7 +1939,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.6;
+				MARKETING_VERSION = 0.1.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -2001,7 +2005,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.6;
+				MARKETING_VERSION = 0.1.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
